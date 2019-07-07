@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import MainPage from './components/mainpage.jsx';
 
 function App() {
   return (
     <div className="App">
-      <h3>nigga</h3>
+        <MainPage />
     </div>
   );
 }
