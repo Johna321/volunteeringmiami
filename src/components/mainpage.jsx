@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './volmiamlogo.svg';
 import './mainpage.css';
-
+//nigga
 class MainPage extends Component{
     render(){
         return(
