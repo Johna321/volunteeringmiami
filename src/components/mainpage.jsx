@@ -19,7 +19,7 @@ class MainPage extends Component{
                     <div className="container">
                      <div className="row">
                             <div className="gay col-sm-6">
-                              this is a column hahahsdahsdagshdgahsd
+                              this is a column hahahsdahsdagshdgahsd mingrel
                             </div>
                             <div className="gay col-sm-6">
                                 this is another column askjdhaksjdhaksjhd
