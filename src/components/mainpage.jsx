@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './volmiamilogo.png';
 import './mainpage.css';
-//nigga
+
+
 class MainPage extends Component{
     render(){
         return(
