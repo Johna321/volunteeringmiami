@@ -1,0 +1,65 @@
+.main{
+    padding: 20px;
+    position: absolute;
+    top: auto;
+    left: 10%;
+    background-color: whitesmoke;
+    outline: 1px solid lightgrey;
+    width: 75%;
+    
+    text-align: center;
+}
+
+.body{
+    padding: 25px;
+}
+
+.app-logo{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.top{
+    left: 50px;
+    padding: 5px;
+    text-align: left;
+}
+
+.link{
+    padding: 10px;
+}
+
+.panel{
+    text-align: left;
+    padding: 20px;
+    border-bottom: 1px solid black;
+    overflow: hidden;
+}
+
+
+
+.bizpic{
+    width: 300px;
+    height: auto;
+    margin-left: 5px;
+    vertical-align: middle;
+    margin-bottom: 5px;
+    
+}
+
+.functionality{
+    top: 0px;
+    left: 0px;
+    background-color: khaki;
+    width: 200px;
+    height: auto;
+    text-align: center;
+    padding: 5px;
+}
+
+
+
+
+
+
