@@ -4,52 +4,61 @@ import './mainpage.css';
 
 
 class MainPage extends Component{
+    state = {
+        panelBody: "VolunteerMiami is a website designed to help students find community service opportunities."
+    }
     render(){
         return(
             <div className="parent">
-                <div className="logo">
-                    <img 
-                        src={logo}
-                        className="app-logo"
-                        alt="volunteering miami logo"
-                        height="150px"
-                        width="500px" />
-                </div>
-                <div className="farg">
-                    <div className="container">
-                     <div className="row">
-                            <div className="gay col-sm-6">
-                              this is a column hahahsdahsdagshdgahsd mingrel
-                            </div>
-                            <div className="gay col-sm-6">
-                                this is another column askjdhaksjdhaksjhd
+
+                <div className="main">
+                    <div className="top">
+                        <div className="row">
+                            <div className="col">
+                                <a href="/about" className="link">About</a>
+                                <a href="/help" className="link">Help</a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="thing">
-                    <div className="container">
-                        <ul className="thumbnails">
-                            <li className="span4">
-                                <div className="thumbnail">
-                                    <h3>label</h3>
-                                    <p>so i was walking down the street the other day and this guy, this guy says to me hey what the fuck and i said hey man u gaybro and he said no bro so i walked away</p>
-                                    <button className="btn btn-dark">test</button>
-                                </div>
-                            </li>
-                
-                            <li className="span4">
-                                <div className="thumbnail">
-                                    <h3>label2</h3>
-                                    <p>so i was walking down the street the other day and this guy, this guy says to me hey what the fuc</p>
-                                    <button className="btn btn-dark">test</button>
-                                </div>
-                            </li>
-                        </ul>
+                    <div className="logo">
+                        <img 
+                            src={logo}
+                            className="app-logo"
+                            alt="volunteering miami logo"
+                            height="150px"
+                            width="500px" />
                     </div>
+                    <div className="body">
+                        <div className="container">
+                        
+                            <div className="panel panel-default rounded-top">
+                                <div className="panel-body">
+                                    <span>{this.renderPanelOne()}</span>
+                                    <button onClick={this.panelInfo} className="btn btn-dark">mingrel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         );
+    }
+
+    panelInfo = () => {
+        var panelOne = [
+            'mmk now let me test if the thing can handle if certain phrases are longer',
+            'this shit is really weird to get working',
+            "VolunteerMiami is a website designed to help students find community service opportunities."
+        ]
+
+        this.setState({ panelBody: panelOne[Math.floor(Math.random() * panelOne.length)]});
+        
+    }
+
+    renderPanelOne(){
+        const { panelBody } = this.state;
+        return <p>{panelBody}</p>
     }
 }
 

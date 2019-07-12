@@ -1,45 +1,35 @@
-.app-logo{
+.main{
+    padding: 5px;
     position: absolute;
-    left: 696px;
-    top: 15px;
-}
-
-.textbox{
-    top: 50%;
-    left: 50%;
-    position: absolute;
-}
-
-.farg{
-    top: 25%;
-    left: 15%;
-    position: absolute;
-}
-
-ul{
-    list-style: none;
-}
-
-li{
-    padding-right: 5px;
-}
-
-/*.row{
-    background-color: lightblue;
-    outline: 2px solid lightgrey;
+    top: auto;
+    left: 10%;
+    background-color: whitesmoke;
+    outline: 1px solid lightgrey;
+    width: 75%;
+    height: 100%;
     text-align: center;
-    vertical-align: center;
-}
-*/
-
-.gay{
-    background: pink;
 }
 
-.thing{
-    top:500px;
-    left:200px;
-    position: absolute;
-    background-color: lightblue;
-    padding: 20px;
+.body{
+    padding: 25px;
 }
+
+.app-logo{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.top{
+    left: 50px;
+    padding: 5px;
+    text-align: left;
+}
+
+.link{
+    padding: 10px;
+}
+
+
+
+
