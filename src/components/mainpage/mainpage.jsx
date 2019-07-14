@@ -15,7 +15,7 @@ class MainPage extends Component{
     render(){
         return(
             <div className="parent">
-
+             <div className="topbord">hahahaha comic sans</div>
                 <div className="main">
                     <div className="top">
                         <div className="row">
