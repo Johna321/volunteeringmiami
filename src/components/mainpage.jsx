@@ -8,21 +8,28 @@ class MainPage extends Component{
         return(
             <div className="parent">
                 <div className="logo">
-                    <img 
+                    <img
                         src={logo}
                         className="app-logo"
                         alt="volunteering miami logo"
                         height="150px"
                         width="500px" />
-                </div>
+                </div>            
+                <div  className="banner">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    
+                </div>   
                 <div className="farg">
                     <div className="container">
                      <div className="row">
                             <div className="gay col-sm-6">
-                              this is a column hahahsdahsdagshdgahsd mingrel
+                              this is a column 
                             </div>
                             <div className="gay col-sm-6">
-                                this is another column askjdhaksjdhaksjhd
+                                this is another column
                             </div>
                         </div>
                     </div>
@@ -49,6 +56,7 @@ class MainPage extends Component{
                     </div>
                 </div>
             </div>
+        
         );
     }
 }
