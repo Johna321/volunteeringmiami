@@ -2,16 +2,10 @@ import React, { Component } from 'react';
 import logo from './volmiamilogo.png';
 import './mainpage.css';
 import bizpic from './bizimage.jpg';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 
 class MainPage extends Component{
-    constructor(props){
-        super(props);
-        console.log(this.props);
-    }
-    state = {
-        
-    }
     render(){
         return(
             <div className="parent">
@@ -20,8 +14,11 @@ class MainPage extends Component{
                     <div className="top">
                         <div className="row">
                             <div className="col">
-                                <a href="/about" className="link">About</a>
-                                <a href="/help" className="link">Help</a>
+                                <Router>
+                                    <Link to={'/about/'} />
+                                    <a href="/help" className="link">Help</a>
+                                    <a href="/registercomp" className="link">Register</a>
+                                </Router>
                             </div>
                         </div>
                     </div>
@@ -45,6 +42,27 @@ class MainPage extends Component{
                                 </div>
                                 <div className="panel panel-default">
                                     <h1>random business 2</h1>
+                                    <div className="panel-body">
+                                        <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
+                                        (brief summary)
+                                    </div>
+                                </div>
+                                <div className="panel panel-default">
+                                    <h1>random business 3</h1>
+                                    <div className="panel-body">
+                                        <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
+                                        (brief summary)
+                                    </div>
+                                </div>
+                                <div className="panel panel-default">
+                                    <h1>random business 4</h1>
+                                    <div className="panel-body">
+                                        <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
+                                        (brief summary)
+                                    </div>
+                                </div>
+                                <div className="panel panel-default">
+                                    <h1>random business 5</h1>
                                     <div className="panel-body">
                                         <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
                                         (brief summary)

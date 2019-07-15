@@ -12,6 +12,7 @@
 
 .body{
     padding: 25px;
+    
 }
 
 .app-logo{
@@ -35,6 +36,7 @@
     padding: 20px;
     border-bottom: 1px solid black;
     overflow: hidden;
+
 }
 
 
@@ -56,6 +58,7 @@
     height: auto;
     text-align: center;
     padding: 5px;
+    
 }
 
 
