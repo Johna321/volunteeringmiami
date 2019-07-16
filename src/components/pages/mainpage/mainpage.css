@@ -6,12 +6,12 @@
     background-color: whitesmoke;
     outline: 1px solid lightgrey;
     width: 75%;
-    
     text-align: center;
 }
 
 .body{
     padding: 25px;
+    
 }
 
 .app-logo{
@@ -35,6 +35,7 @@
     padding: 20px;
     border-bottom: 1px solid black;
     overflow: hidden;
+
 }
 
 
@@ -56,9 +57,10 @@
     height: auto;
     text-align: center;
     padding: 5px;
+    
 }
 
-.topbord {
+/*.topbord {
     top:0px;
     left:0px;
     width:100%;
@@ -66,8 +68,15 @@
     background-color:lightgrey;
     outline:2px solid rgb(144, 144, 144);
     font-family:cursive;
+<<<<<<< HEAD:src/components/mainpage/mainpage.css
     margin-bottom:10px;
 }
+=======
+    margin-bottom:20px;
+}*/
+
+
+>>>>>>> 618298e73eb7f8b823a9c67029a2a107ba2fb38a:src/components/pages/mainpage/mainpage.css
 
 
 
