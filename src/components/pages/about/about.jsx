@@ -10,6 +10,8 @@ class About extends Component{
                 </div>
                 <div className="paragraph">
                     volunteering miami is a website.
+
+                    we live in a society
                 </div>
             </div>
         );
