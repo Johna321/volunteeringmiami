@@ -4,6 +4,7 @@ import MainPage from './components/pages/mainpage/mainpage.jsx';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './components/pages/about/about.jsx';
 import logo from './components/pages/volmiamilogo.png';
+import ContactUs from './components/pages/contact-us/contact-us.jsx';
 
 
 
@@ -18,6 +19,7 @@ function App() {
                   <a href="/about" className="link">About</a>
                   <a href="/registercomp" className="link">Register</a>
                   <a href="/help" className="link">Help</a>
+                  <a href="/contact-us" className="link">Contact Us</a>
                 </div>
               </div>
             </div>
@@ -32,6 +34,7 @@ function App() {
             <Switch>
               <Route path="/" exact component={MainPage} />
               <Route path="/about" exact component={About} />
+              <Route path="/contact-us" exact component={ContactUs}/>
             </Switch>
           </div>
         </Router>
