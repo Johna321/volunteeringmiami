@@ -6,12 +6,12 @@
     background-color: whitesmoke;
     outline: 1px solid lightgrey;
     width: 75%;
-    
     text-align: center;
 }
 
 .body{
     padding: 25px;
+    
 }
 
 .app-logo{
@@ -35,6 +35,7 @@
     padding: 20px;
     border-bottom: 1px solid black;
     overflow: hidden;
+
 }
 
 
@@ -56,18 +57,21 @@
     height: auto;
     text-align: center;
     padding: 5px;
+    
 }
 
 .topbord {
     top:0px;
     left:0px;
     width:100%;
-    height:100px;
+    height:50px;
     background-color:lightgrey;
-    outline:5px solid grey;
+    outline:2px solid rgb(144, 144, 144);
     font-family:cursive;
-    margin-bottom:20px;
+    margin-bottom:10px;
 }
+
+
 
 
 
