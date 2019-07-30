@@ -11,12 +11,14 @@ class MainPage extends Component{
                     <div className="body">
                         <div className="container">
                             <div className="panel-group">
-                                <div className="panel panel-default">
-                                    <h1>random business</h1>
-                                    <div className="panel-body">
-                                        <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
-                                        (brief summary)
-                                    </div>
+                                
+                                    <div className="panel panel-default">
+                                        <h1>random business</h1>
+                                        <div className="panel-body">
+                                            <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
+                                            (brief summary)
+                                        </div>
+                        
                                 </div>
                                 <div className="panel panel-default">
                                     <h1>random business 2</h1>

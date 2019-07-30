@@ -2,7 +2,7 @@
     padding: 20px;
     position: absolute;
     top: auto;
-    left: 10%;
+    left:20%;
     background-color: whitesmoke;
     outline: 1px solid lightgrey;
     width: 75%;
@@ -13,6 +13,7 @@
     padding: 25px;
     
 }
+
 
 .app-logo{
     position: relative;
@@ -32,9 +33,11 @@
 
 .panel{
     text-align: left;
-    padding: 20px;
+    background-color:#FEFFFE;
+    padding: 10px;
     border-bottom: 1px solid black;
     overflow: hidden;
+    
 
 }
 

@@ -1,6 +1,6 @@
 
 
-/*.App-logo {
+.App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
@@ -29,13 +29,14 @@
     transform: rotate(360deg);
   }
 }
-*/
+
 
 .App{
   padding: 20px;
   position: absolute;
   top: auto;
-  left: 10%;
+  left: 13%;
+  right: auto;
   background-color: whitesmoke;
   outline: 1px solid lightgrey;
   width: 75%;
