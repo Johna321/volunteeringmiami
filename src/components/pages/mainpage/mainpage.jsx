@@ -13,40 +13,39 @@ class MainPage extends Component{
                             <div className="panel-group">
                                 
                                     <div className="panel panel-default">
+                                        <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/>
                                         <h1>random business</h1>
+                                            <div className="panel-body">
+                                                (brief summary)
+                                            </div>
+                                    </div>
+                                <div className="panel panel-default">
+                                    <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/> 
+                                    <h1>random business 2</h1>
                                         <div className="panel-body">
-                                            <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
                                             (brief summary)
                                         </div>
-                        
                                 </div>
                                 <div className="panel panel-default">
-                                    <h1>random business 2</h1>
-                                    <div className="panel-body">
-                                        <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
-                                        (brief summary)
-                                    </div>
-                                </div>
-                                <div className="panel panel-default">
+                                    <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
                                     <h1>random business 3</h1>
-                                    <div className="panel-body">
-                                        <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
-                                        (brief summary)
+                                        <div className="panel-body">
+                                            (brief summary)
                                     </div>
                                 </div>
                                 <div className="panel panel-default">
+                                    <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
                                     <h1>random business 4</h1>
-                                    <div className="panel-body">
-                                        <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
-                                        (brief summary)
-                                    </div>
+                                        <div className="panel-body">
+                                            (brief summary)
+                                        </div>
                                 </div>
                                 <div className="panel panel-default">
+                                    <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
                                     <h1>random business 5</h1>
-                                    <div className="panel-body">
-                                        <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
-                                        (brief summary)
-                                    </div>
+                                        <div className="panel-body">
+                                            (brief summary)
+                                        </div>
                                 </div>
                             </div>
                         </div>
