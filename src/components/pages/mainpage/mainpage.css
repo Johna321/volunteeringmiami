@@ -33,12 +33,10 @@
 
 .panel{
     text-align: left;
-    background-color:#FEFFFE;
+    background-color:whitesmoke;
     padding: 10px;
     border-bottom: 1px solid black;
     overflow: hidden;
-    
-
 }
 
 

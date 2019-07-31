@@ -43,3 +43,11 @@
   height: auto;
   text-align: center;
 }
+
+.logo{
+  padding: 20px;
+}
+
+#father{
+  background-color: red;
+}
