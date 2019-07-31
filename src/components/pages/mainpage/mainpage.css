@@ -33,12 +33,15 @@
 
 .panel{
     text-align: left;
-    background-color:whitesmoke;
+    background-color: #fefffe;
     padding: 10px;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid #cfcfcf;
+    border-right: 3px solid #cfcfcf;
     overflow: hidden;
     border-radius: 10px 10px 10px 10px;
     margin: 30px;
+    height: 200px;
+
 }
 
 
@@ -73,7 +76,6 @@
     font-family:cursive;
     margin-bottom:10px;
 }
-
 
 
 
