@@ -20,8 +20,16 @@ html {
   /*background-image: linear-gradient(to right, #AA0047, #2400AA);*/
   /*background-image: url('./components/pages/mainpage/steve.png')*/
   /*background-image: "steve.png"*/
+<<<<<<< HEAD
   background-color: white;
 >>>>>>> 9f094f15b0d2a2cec759e9c8d705cb95b4c6fc98
+=======
+>>>>>>> 4084dd9439037e121461757b36889f1f8b361115
 }
 
+.root{
+  width: 100%;
+  height:  100%;
+  background: linear-gradient(red, blue);
+}
 
