@@ -39,7 +39,12 @@
     overflow: hidden;
     border-radius: 10px 10px 10px 10px;
     margin: 30px;
+<<<<<<< HEAD
     border-right:3px solid #c5c3c3 ;
+=======
+    border-right: 3px solid #c5c3c3;
+    
+>>>>>>> 9f094f15b0d2a2cec759e9c8d705cb95b4c6fc98
 }
 
 
@@ -74,7 +79,6 @@
     font-family:cursive;
     margin-bottom:10px;
 }
-
 
 
 

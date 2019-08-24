@@ -11,8 +11,8 @@ import Test from './components/functionalities/test.jsx';
 
 function App() {
   return (
+        <div className="father">
         <Router>
-          <div id="father">
           <div className="App">
             <div className="top">
               <div className="row">
@@ -41,8 +41,9 @@ function App() {
               <Route path="/test" exact component={Test} />
             </Switch>
           </div>
-          </div>
+          
         </Router>
+        </div>
         
   );
 }
