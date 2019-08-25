@@ -3,7 +3,7 @@ import './App.css';
 import MainPage from './components/pages/mainpage/mainpage.jsx';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './components/pages/about/about.jsx';
-import logo from './components/newvolmiami.png'
+import logo from './volmiamilogo.png';
 import ContactUs from './components/pages/contact-us/contact-us.jsx';
 import Test from './components/functionalities/test.jsx';
 
@@ -13,17 +13,21 @@ function App() {
   return (
         <Router>
           <div className="App">
-            <div className="top">
-              <div className="row">
-                <div className="col">
-                  <a href="/" className="link">Home</a>
-                  <a href="/about" className="link">About</a>
-                  <a href="/registercomp" className="link">Register</a>
-                  <a href="/help" className="link">Help</a>
-                  <a href="/contact-us" className="link">Contact Us</a>
-                  <a href="/test" className="link">test(shh)</a>
-                </div>
-              </div>
+            <div className="navigationbar">
+              <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a className="navbar-brand" href="/">VM</a>
+                <ul className="navbar-nav bd-navbar flex-row">
+                  <li className="nav-item">
+                    <a className="nav-link active" href="/">Home</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link active" href="/about">About</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link active" href="/help">Help</a>
+                  </li>
+                </ul>
+              </nav>
             </div>
             <div className="logo">
               <img 
@@ -33,6 +37,7 @@ function App() {
                 height="65%"
                 width="65%"/>
             </div>
+            
             <Switch>
               <Route path="/" exact component={MainPage} />
               <Route path="/about" exact component={About} />

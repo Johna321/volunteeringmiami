@@ -12,11 +12,7 @@ code {
     monospace;
 }
 
-html {
-  /*background-image: linear-gradient(to right, #AA0047, #2400AA);*/
-  /*background-image: url('./components/pages/mainpage/steve.png')*/
-  /*background-image: "steve.png"*/
-}
+
 
 .root{
   width: 100%;

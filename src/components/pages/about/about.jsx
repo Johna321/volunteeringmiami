@@ -6,12 +6,10 @@ class About extends Component{
         return(
             <div className="about">
                 <div className="title">
-                    <h1>about us</h1>
+                    <h1>About Us</h1>
                 </div>
                 <div className="paragraph">
-                    volunteering miami is a website.
-
-                    we live in a society
+                    Volunteer Miami is a website designed to help students find community service opportunities.
                 </div>
             </div>
         );

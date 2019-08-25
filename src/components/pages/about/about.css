@@ -1,8 +1,14 @@
 .title{
     text-align: center;
+    font-size: 4rem;
 }
 
 .paragraph{
     text-align: center;
 }
+
+.about{
+    height: 100%;
+}
+
 

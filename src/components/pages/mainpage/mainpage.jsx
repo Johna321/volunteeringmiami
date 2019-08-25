@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-
 import './mainpage.css';
 import bizpic from './bizimage.jpg';
+import McDonalds from './mcdonalds.jpg';
 
 
 class MainPage extends Component{
@@ -12,40 +12,41 @@ class MainPage extends Component{
                         <div className="container">
                             <div className="panel-group">
                                 
-                                    <div className="panel panel-default">
-                                        <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/>
-                                        <h1>random business</h1>
-                                            <div className="panel-body">
-                                                (brief summary)
-                                            </div>
+                                <div className="panel panel-default">
+                                    <img src={McDonalds} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/>
+                                    <h1>McDonalds</h1>
+                                    <div className="panel-body">
+                                        <h5>6-7 hours</h5>
+                                        you make burger for us :)
                                     </div>
+                                </div>
                                 <div className="panel panel-default">
                                     <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/> 
                                     <h1>random business 2</h1>
-                                        <div className="panel-body">
-                                            (brief summary)
-                                        </div>
+                                    <div className="panel-body">
+                                        (brief summary)
+                                    </div>
                                 </div>
                                 <div className="panel panel-default">
                                     <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
                                     <h1>random business 3</h1>
-                                        <div className="panel-body">
-                                            (brief summary)
+                                    <div className="panel-body">
+                                        (brief summary)
                                     </div>
                                 </div>
                                 <div className="panel panel-default">
                                     <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
                                     <h1>random business 4</h1>
-                                        <div className="panel-body">
-                                            (brief summary)
-                                        </div>
+                                    <div className="panel-body">
+                                        (brief summary)
+                                    </div>
                                 </div>
                                 <div className="panel panel-default">
                                     <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business" />
                                     <h1>random business 5</h1>
-                                        <div className="panel-body">
-                                            (brief summary)
-                                        </div>
+                                    <div className="panel-body">
+                                        (brief summary)
+                                    </div>
                                 </div>
                             </div>
                         </div>

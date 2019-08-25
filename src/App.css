@@ -32,28 +32,33 @@
 */
 
 .App{
-  padding: 20px;
   position: absolute;
   top: auto;
-  left: 13%;
   right: auto;
   background-color: #fefefe;
   background-color: #f2f3f6;
   outline: 1px solid lightgrey;
-  width: 75%;
+  width: 100%;
   height: auto;
   text-align: center;
+  background-image: linear-gradient(to right, #C33764, #1E2671);
+  height: auto;
+  color: black;
 }
 
 .logo{
-  margin-top: 20px;
+  margin-top: 100px;
   padding: 10px;
 }
 
-.father{
-  background-color: red;
-  width: 100%;
+.navigationbar{
+  position: static;
 }
+
+
+
+
+
 
 
 
