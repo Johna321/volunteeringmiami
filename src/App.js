@@ -15,7 +15,7 @@ function App() {
           <div className="App">
             <div className="navigationbar">
               <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a className="navbar-brand" href="/">VM</a>
+                <a className="navbar-brand" href="/"><b>VM</b></a>
                 <ul className="navbar-nav bd-navbar flex-row">
                   <li className="nav-item">
                     <a className="nav-link active" href="/">Home</a>
