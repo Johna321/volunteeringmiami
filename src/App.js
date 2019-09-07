@@ -29,14 +29,7 @@ function App() {
                 </ul>
               </nav>
             </div>
-            <div className="logo">
-              <img 
-                src={logo}
-                className="app-logo"
-                alt="volunteering miami logo"
-                height="65%"
-                width="65%"/>
-            </div>
+            
             
             <Switch>
               <Route path="/" exact component={MainPage} />

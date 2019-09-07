@@ -2,12 +2,21 @@ import React, { Component } from 'react';
 import './mainpage.css';
 import bizpic from './bizimage.jpg';
 import McDonalds from './mcdonalds.jpg';
+import logo from '../../../volmiamilogo.png';
 
 
 class MainPage extends Component{
     render(){
         return(
             <div className="parent">
+                <div className="logo">
+                    <img 
+                        src={logo}
+                        className="app-logo"
+                        alt="volunteering miami logo"
+                        height="65%"
+                        width="65%"/>
+                </div>
                     <div className="body">
                         <div className="container">
                             <div className="panel-group">
