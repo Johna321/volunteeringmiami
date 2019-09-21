@@ -4,8 +4,10 @@
 }
 
 .paragraph{
+    align-content:center;
     text-align: center;
     color: lightgrey;
+    width: 300px;
 }
 
 .about{
