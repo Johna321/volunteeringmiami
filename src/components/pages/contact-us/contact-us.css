@@ -1,7 +1,19 @@
 .title{
     text-align: center;
+    color: lightgrey;
+    margin-top: 95px;
 }
 
 .paragraph{
-    text-align: center;
+    align-content:center;
+    text-align: justify;
+    text-justify: auto;
+    color: lightgrey;
+    width: 800px;
+    margin: auto;
+    font-size: 1.25rem;
+}
+
+.contact-us{
+    height: 94vh;
 }

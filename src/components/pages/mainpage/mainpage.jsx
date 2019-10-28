@@ -6,6 +6,25 @@ import logo from '../../../volmiamilogo.png';
 
 
 class MainPage extends Component{
+    state = {
+        expanded: false
+    }
+    applyButton = () =>{
+        if (this.state.expanded === false){
+            this.setState({expanded: true});
+        }
+        else{
+            this.setState({expanded: false});
+        }
+    }
+    expandedInfo(){
+        if (this.state.expanded === false){
+            return <p></p>;
+        }
+        else{
+            return <p>something</p>
+        }
+    }
     render(){
         return(
             <div className="parent">
@@ -22,11 +41,22 @@ class MainPage extends Component{
                             <div className="panel-group">
                                 
                                 <div className="panel panel-default">
-                                    <img src={McDonalds} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/>
-                                    <h1>McDonalds</h1>
+                                    <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/>
+                                    <h1>random business 1</h1>
+                                    
                                     <div className="panel-body">
-                                        <h5>6-7 hours</h5>
-                                        you make burger for us :)
+                                        <h5>however many hours</h5>
+                                        (brief summary)
+                                        <span>{ this.expandedInfo() }</span>
+                                        <button onClick={ this.applyButton }>button</button>
+                                    </div>
+                                    <div className="moreInfo">
+                                        <h5>Location:</h5>
+                                        <h5>Volunteers Needed:</h5>
+                                        <h5>Daily Service Hours:</h5>
+                                        <h5>Total Project Service Hours:</h5>
+                                            <h6>Day-to-Day Hours:</h6>
+                                            <h6>Total Hours Alloted:</h6>
                                     </div>
                                 </div>
                                 <div className="panel panel-default">
@@ -74,7 +104,7 @@ class MainPage extends Component{
             </div>
         );
     }
-
+    
     
 }
 

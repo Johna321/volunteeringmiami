@@ -24,7 +24,7 @@ function App() {
                     <a className="nav-link active" href="/about">About</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link active" href="/help">Help</a>
+                    <a className="nav-link active" href="/contact-us">Contact</a>
                   </li>
                 </ul>
               </nav>

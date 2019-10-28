@@ -9,7 +9,7 @@ class ContactUs extends Component{
                     <h1>Contact Us</h1>
                 </div>
                 <div className="paragraph">
-                    <p>email <br/> email <br/> important shit <br/> fuck </p>
+                    
                 </div>
             </div>
         );
