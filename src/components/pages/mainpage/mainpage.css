@@ -79,7 +79,18 @@
 }
 
 .moreInfo{
-    margin-top:25px;
+    margin-top:40px;
+}
+
+.arrowdropdown{
+    position: relative;
+    top: 35px;
+    left: 0px;
+    
+}
+
+.panel-body{
+    position: relative;
 }
 
 
