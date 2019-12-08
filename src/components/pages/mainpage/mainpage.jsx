@@ -4,6 +4,7 @@ import bizpic from './bizimage.jpg';
 import McDonalds from './mcdonalds.jpg';
 import logo from '../../../volmiamilogo.png';
 import arrow from '../../../arrow.png'
+import banner from './banner.jpg';
 
 
 class MainPage extends Component{
@@ -149,12 +150,8 @@ class MainPage extends Component{
         return(
             <div className="parent">
                 <div className="logo">
-                    <img 
-                        src={logo}
-                        className="app-logo"
-                        alt="volunteering miami logo"
-                        height="65%"
-                        width="65%"/>
+                    <img src={banner} alt="banner" width="100%" height="900vh" className="banner"/>
+                    <img src={logo} alt="logo"  className="app-logo"/>
                 </div>
                     <div className="body">
                         <div className="container">
