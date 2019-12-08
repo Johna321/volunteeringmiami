@@ -151,7 +151,7 @@ class MainPage extends Component{
             <div className="parent">
                 <div className="logo">
                     <img src={banner} alt="banner" width="100%" height="900vh" className="banner"/>
-                    <img src={logo} alt="logo"  className="app-logo"/>
+                    <img src={logo} alt="logo" className="app-logo"/>
                 </div>
                     <div className="body">
                         <div className="container">
