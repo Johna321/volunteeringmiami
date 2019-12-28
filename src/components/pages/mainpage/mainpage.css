@@ -14,14 +14,18 @@
     
 }
 
-
+@keyframes fade {
+    from {opacity: 0%;}
+    to {background-color: 100%;}
+}
 .app-logo{
     position: absolute;
-    top: 250px;
-    left: 25px;
+    top: 10%;
+    left: 12.5%;
     margin-top: 95px;
     padding: 10px;
     z-index: 1;
+    width:75%;
 }
 
 .top{
@@ -46,6 +50,8 @@
     border-right: 3px solid #c5c3c3;
     z-index: 1;
     position: relative;
+    animation-name: fade;
+    animation-duration: 0.5s;
 }
 
 
@@ -99,7 +105,19 @@
 .banner{
     z-index: 1;
     position: relative;
+    opacity: 1;
 }
 
+.bot-bar{
+    z-index: 1;
+    background-color: #343A40;
+    position: absolute;
+    top: 950px;
+    width:100%;
+    height:55px;
+    margin-bottom: 100px;
+}
 
-
+.logo{
+    margin-bottom:80px;
+}
