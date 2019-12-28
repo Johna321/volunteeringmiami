@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import './mainpage.css';
-import bizpic from './bizimage.jpg';
-import McDonalds from './mcdonalds.jpg';
+import bizpic from './business photos/bizimage.jpg';
+import mcdonalds from './business photos/mcdonalds.jpg';
+import cofm from './business photos/cofm.png';
 import logo from '../../../volmiamilogo.png';
 import arrow from '../../../arrow.png'
 import banner from './banner.jpg';
 
 
+
 class MainPage extends Component{
+    
     state = {
         render: true,
         1: {
             expanded: false,
             name:'Business Name 1',
+            photo: {bizpic},
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -31,6 +35,7 @@ class MainPage extends Component{
         2: {
             expanded: false,
             name:'Business Name 2',
+            photo: {mcdonalds},
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -49,6 +54,7 @@ class MainPage extends Component{
         3: {
             expanded: false,
             name:'Business Name 3',
+            photo: './business photos/bizimage.jpg',
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -67,6 +73,7 @@ class MainPage extends Component{
         4: {
             expanded: false,
             name:'Business Name 4',
+            photo: './business photos/bizimage.jpg',
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -85,6 +92,7 @@ class MainPage extends Component{
         5: {
             expanded: false,
             name:'Business Name 5',
+            photo: './business photos/bizimage.jpg',
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -116,7 +124,7 @@ class MainPage extends Component{
         return (
             <div>
             <div className="panel panel-default">
-            <img src={bizpic} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/>
+            <img src={cofm} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/>
         <h1>{this.state[id].name}</h1>
             <div className="panel-body">
         <h5>{this.state[id].hours}</h5>
@@ -181,5 +189,6 @@ class MainPage extends Component{
     
     
 }
+
 
 export default MainPage;

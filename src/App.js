@@ -29,8 +29,7 @@ function App() {
                 </ul>
               </nav>
             </div>
-            
-            
+
             <Switch>
               <Route path="/" exact component={MainPage} />
               <Route path="/about" exact component={About} />
