@@ -100,6 +100,24 @@ class MainPage extends Component{
             dressCode: '',
             anyFurtherSpecifications: ''
         },
+        6: {
+            expanded: false,
+            name:'Business Name 6',
+            hours:'20 hours',
+            summary:'Brief summary.',
+            location: '',
+            volunteersNeeded: '',
+            dailyServiceHours: '',
+            totalProjectServiceHours: '',
+            dayToDayHours: '',
+            credentials: '',
+            gpa: '',
+            certficiation: '',
+            talents: '',
+            languages: '',
+            dressCode: '',
+            anyFurtherSpecifications: ''
+        },
     }
     
     applyButton = (id) =>{
@@ -151,7 +169,8 @@ class MainPage extends Component{
             <div className="parent">
                 <div className="logo">
                     <img src={banner} alt="banner" width="100%" height="900vh" className="banner"/>
-                    <img src={logo} alt="logo" className="app-logo"/>
+                    <img src={logo} alt="logo" className="app-logo"mar/>
+                    <div className="bot-bar"></div>
                 </div>
                     <div className="body">
                         <div className="container">
@@ -161,6 +180,7 @@ class MainPage extends Component{
                                 { this.expandedInfo('3') }
                                 { this.expandedInfo('4') }
                                 { this.expandedInfo('5') }
+                                { this.expandedInfo('6') }
                             </div>
                         </div>
                     </div>
