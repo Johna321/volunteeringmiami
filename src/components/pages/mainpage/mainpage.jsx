@@ -8,6 +8,7 @@ class MainPage extends Component{
     
     state = {
         render: true,
+        scrollHeight: 0,
         1: {
             expanded: false,
             name:'Business Name 1',
@@ -207,11 +208,12 @@ class MainPage extends Component{
         );
     }
     render(){
+        const logoOpacity = Math.min(100 / this.state.scrollHeight, 1)
         return(
             <div className="parent">
                 <div className="logo">
                     <img src={banner} alt="banner" width="100%" height="900vh" className="banner"/>
-                    <img src={logo} alt="logo" className="app-logo"mar/>
+                    <img src={logo} alt="logo" style = {{opacity: logoOpacity}} className="app-logo"mar/>
                     <div className="bot-bar" />
                 </div>
                     <div className="body">
@@ -232,7 +234,11 @@ class MainPage extends Component{
             </div>
         );
     }
-    
+    componentDidMount(){
+        window.onscroll = () =>{
+            this.setState({scrollHeight: window.scrollY});
+        }
+    }
 }
 
 

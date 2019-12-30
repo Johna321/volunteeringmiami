@@ -19,10 +19,7 @@
     to {background-color: 100%;}
 }
 
-@keyframes logoFade{
-    from {opacity: 0%;}
-    to {opacity: 100%;}
-}
+
 
 .app-logo{
     position: absolute;
