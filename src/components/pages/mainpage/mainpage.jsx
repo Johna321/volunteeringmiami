@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import './mainpage.css';
-import bizpic from './business photos/bizimage.jpg';
-import mcdonalds from './business photos/mcdonalds.jpg';
-import cofm from './business photos/cofm.png';
 import logo from '../../../volmiamilogo.png';
 import arrow from '../../../arrow.png'
 import banner from './banner.jpg';
 import banner1 from './banner_test_1.jpg';
-
-
 
 
 class MainPage extends Component{
@@ -18,7 +13,7 @@ class MainPage extends Component{
         1: {
             expanded: false,
             name:'Business Name 1',
-            photo: {bizpic},
+            photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -37,7 +32,7 @@ class MainPage extends Component{
         2: {
             expanded: false,
             name:'Business Name 2',
-            photo: {mcdonalds},
+            photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -56,7 +51,7 @@ class MainPage extends Component{
         3: {
             expanded: false,
             name:'Business Name 3',
-            photo: './business photos/bizimage.jpg',
+            photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -75,7 +70,7 @@ class MainPage extends Component{
         4: {
             expanded: false,
             name:'Business Name 4',
-            photo: './business photos/bizimage.jpg',
+            photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -94,7 +89,7 @@ class MainPage extends Component{
         5: {
             expanded: false,
             name:'Business Name 5',
-            photo: './business photos/bizimage.jpg',
+            photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -113,6 +108,45 @@ class MainPage extends Component{
         6: {
             expanded: false,
             name:'Business Name 6',
+            photo: require('./businessphotos/bizimage.jpg'),
+            hours:'20 hours',
+            summary:'Brief summary.',
+            location: '',
+            volunteersNeeded: '',
+            dailyServiceHours: '',
+            totalProjectServiceHours: '',
+            dayToDayHours: '',
+            credentials: '',
+            gpa: '',
+            certficiation: '',
+            talents: '',
+            languages: '',
+            dressCode: '',
+            anyFurtherSpecifications: ''
+        },
+        7: {
+            expanded: false,
+            name:'Business Name 7',
+            photo: require('./businessphotos/bizimage.jpg'),
+            hours:'20 hours',
+            summary:'Brief summary.',
+            location: '',
+            volunteersNeeded: '',
+            dailyServiceHours: '',
+            totalProjectServiceHours: '',
+            dayToDayHours: '',
+            credentials: '',
+            gpa: '',
+            certficiation: '',
+            talents: '',
+            languages: '',
+            dressCode: '',
+            anyFurtherSpecifications: ''
+        },
+        8: {
+            expanded: false,
+            name:'Business Name 8',
+            photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -144,7 +178,7 @@ class MainPage extends Component{
         return (
             <div>
             <div className="panel panel-default">
-            <img src={cofm} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/>
+            <img src={this.state[id].photo} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/>
         <h1>{this.state[id].name}</h1>
             <div className="panel-body">
         <h5>{this.state[id].hours}</h5>
@@ -180,7 +214,7 @@ class MainPage extends Component{
                 <div className="logo">
                     <img src={banner1} alt="banner" width="100%" height="900vh" className="banner"/>
                     <img src={logo} alt="logo" className="app-logo"mar/>
-                    <div className="bot-bar"></div>
+                    <div className="bot-bar" />
                 </div>
                     <div className="body">
                         <div className="container">
@@ -191,24 +225,15 @@ class MainPage extends Component{
                                 { this.expandedInfo('4') }
                                 { this.expandedInfo('5') }
                                 { this.expandedInfo('6') }
+                                { this.expandedInfo('7') }
+                                { this.expandedInfo('8') }
                             </div>
                         </div>
                     </div>
                 
-                <div className="functionality">
-                    <h6>inputs</h6>
-                    <form onSubmit={this.handleSubmit}>
-                        company name
-                        <input type="text" name="compname" onChange={this.compName} />
-                        company description
-                        <input type="text" name="compdesc" onChange={this.compDesc} />
-                        <input type="submit" value="submit" />
-                    </form>  
-                </div>
             </div>
         );
     }
-    
     
 }
 
