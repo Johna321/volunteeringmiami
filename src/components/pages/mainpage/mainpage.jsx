@@ -3,6 +3,7 @@ import './mainpage.css';
 import logo from '../../../volmiamilogo.png';
 import arrow from '../../../arrow.png'
 import banner from './banner.jpg';
+import {Link} from 'react-router-dom';
 
 class MainPage extends Component{
     
@@ -11,22 +12,21 @@ class MainPage extends Component{
         scrollHeight: 0,
         1: {
             expanded: false,
-            name:'Business Name 1',
+            name:'Mixological Inc',
             photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
-            location: '',
+            location: '5728 cool guy street',
             volunteersNeeded: 'We need volunteers!',
-            dailyServiceHours: '',
-            totalProjectServiceHours: '',
-            dayToDayHours: '',
-            credentials: '',
-            gpa: '',
-            certficiation: '',
-            talents: '',
-            languages: '',
-            dressCode: '',
-            anyFurtherSpecifications: ''
+            dailyServiceHours: '6 hours per day',
+            totalProjectServiceHours: '72 hours',
+            credentials: '2 Years of School at Wittenberg',
+            gpa: '3.5',
+            certficiation: 'Adobe Certification',
+            talents: 'Skill and aspiration',
+            languages: 'English, Esperanto',
+            dressCode: 'Red shirt',
+            anyFurtherSpecifications: 'Make sure to wear a red shirt'
         },
         2: {
             expanded: false,
@@ -38,7 +38,6 @@ class MainPage extends Component{
             volunteersNeeded: 'Please volunteer for us.',
             dailyServiceHours: '',
             totalProjectServiceHours: '',
-            dayToDayHours: '',
             credentials: '',
             gpa: '',
             certficiation: '',
@@ -57,7 +56,6 @@ class MainPage extends Component{
             volunteersNeeded: '',
             dailyServiceHours: '',
             totalProjectServiceHours: '',
-            dayToDayHours: '',
             credentials: '',
             gpa: '',
             certficiation: '',
@@ -76,7 +74,6 @@ class MainPage extends Component{
             volunteersNeeded: '',
             dailyServiceHours: '',
             totalProjectServiceHours: '',
-            dayToDayHours: '',
             credentials: '',
             gpa: '',
             certficiation: '',
@@ -95,7 +92,6 @@ class MainPage extends Component{
             volunteersNeeded: '',
             dailyServiceHours: '',
             totalProjectServiceHours: '',
-            dayToDayHours: '',
             credentials: '',
             gpa: '',
             certficiation: '',
@@ -114,7 +110,6 @@ class MainPage extends Component{
             volunteersNeeded: '',
             dailyServiceHours: '',
             totalProjectServiceHours: '',
-            dayToDayHours: '',
             credentials: '',
             gpa: '',
             certficiation: '',
@@ -133,7 +128,6 @@ class MainPage extends Component{
             volunteersNeeded: '',
             dailyServiceHours: '',
             totalProjectServiceHours: '',
-            dayToDayHours: '',
             credentials: '',
             gpa: '',
             certficiation: '',
@@ -152,7 +146,6 @@ class MainPage extends Component{
             volunteersNeeded: '',
             dailyServiceHours: '',
             totalProjectServiceHours: '',
-            dayToDayHours: '',
             credentials: '',
             gpa: '',
             certficiation: '',
@@ -173,7 +166,9 @@ class MainPage extends Component{
             this.setState({render: true});
         }
     }
+
     expandedInfo(id){
+        const whichBusiness = React.createContext(id);
         return (
             <div>
             <div className="panel panel-default">
@@ -194,7 +189,6 @@ class MainPage extends Component{
             <h5>Volunteers Needed: {this.state[id].volunteersNeeded}</h5>
             <h5>Daily Service Hours: {this.state[id].dailyServiceHours}</h5>
             <h5>Total Project Service Hours: {this.state[id].totalProjectServiceHours}</h5>
-            <h5>Day-to-Day Hours: {this.state[id].dayToDayHours}</h5>
             <h5>Credentials: {this.state[id].credentials}</h5>
             <h6>GPA: {this.state[id].gpa}</h6>
             <h6>Certification: {this.state[id].certficiation}</h6>
@@ -202,6 +196,9 @@ class MainPage extends Component{
             <h6>Languages: {this.state[id].languages}</h6>
             <h5>Dress Code: {this.state[id].dressCode}</h5>
             <h5>Any Further Specifications: {this.state[id].anyFurtherSpecifications}</h5>
+            <Link to={`business/${this.state[id].name}`}>
+                <button type="button" className="btn btn-secondary apply-button">Apply</button>
+            </Link>
             </div>
             </div>) : (<p></p>)}
             </div>

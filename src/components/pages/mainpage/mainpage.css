@@ -19,7 +19,10 @@
     to {background-color: 100%;}
 }
 
-
+.apply-button{
+    float: right;
+    margin-top: 10px;
+}
 
 .app-logo{
     position: absolute;

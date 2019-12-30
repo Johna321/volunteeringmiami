@@ -6,11 +6,11 @@ import About from './components/pages/about/about.jsx';
 import logo from './volmiamilogo.png';
 import ContactUs from './components/pages/contact-us/contact-us.jsx';
 import Test from './components/functionalities/test.jsx';
+import bizContactUs from './components/pages/business-contact/bizContactHub';
 
 
 
 function App() {
-
   return (
         <Router>
           <div className="App">
@@ -35,7 +35,7 @@ function App() {
               <Route path="/" exact component={MainPage} />
               <Route path="/about" exact component={About} />
               <Route path="/contact-us" exact component={ContactUs}/>
-              <Route path="/test" exact component={Test} />
+              <Route path="/business" component={bizContactUs} />
             </Switch>
           </div>
       </Router>
