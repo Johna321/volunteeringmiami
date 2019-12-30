@@ -3,8 +3,6 @@ import './mainpage.css';
 import logo from '../../../volmiamilogo.png';
 import arrow from '../../../arrow.png'
 import banner from './banner.jpg';
-import banner1 from './banner_test_1.jpg';
-
 
 class MainPage extends Component{
     
