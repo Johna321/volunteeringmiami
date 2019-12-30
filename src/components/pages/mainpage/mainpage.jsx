@@ -6,6 +6,8 @@ import cofm from './business photos/cofm.png';
 import logo from '../../../volmiamilogo.png';
 import arrow from '../../../arrow.png'
 import banner from './banner.jpg';
+import banner1 from './banner_test_1.jpg';
+
 
 
 
@@ -176,7 +178,7 @@ class MainPage extends Component{
         return(
             <div className="parent">
                 <div className="logo">
-                    <img src={banner} alt="banner" width="100%" height="900vh" className="banner"/>
+                    <img src={banner1} alt="banner" width="100%" height="900vh" className="banner"/>
                     <img src={logo} alt="logo" className="app-logo"mar/>
                     <div className="bot-bar"></div>
                 </div>
