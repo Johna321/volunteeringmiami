@@ -35,7 +35,7 @@ class MainPage extends Component{
         2: {
             expanded: false,
             name:'Business Name 2',
-            photo: require('./businessphotos/mcdonalds.jpg'),
+            photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -54,7 +54,7 @@ class MainPage extends Component{
         3: {
             expanded: false,
             name:'Business Name 3',
-            photo: require('./businessphotos/cofm.png'),
+            photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -73,7 +73,7 @@ class MainPage extends Component{
         4: {
             expanded: false,
             name:'Business Name 4',
-            photo: './business photos/bizimage.jpg',
+            photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -92,7 +92,7 @@ class MainPage extends Component{
         5: {
             expanded: false,
             name:'Business Name 5',
-            photo: './business photos/bizimage.jpg',
+            photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -111,6 +111,7 @@ class MainPage extends Component{
         6: {
             expanded: false,
             name:'Business Name 6',
+            photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -193,16 +194,6 @@ class MainPage extends Component{
                         </div>
                     </div>
                 
-                <div className="functionality">
-                    <h6>inputs</h6>
-                    <form onSubmit={this.handleSubmit}>
-                        company name
-                        <input type="text" name="compname" onChange={this.compName} />
-                        company description
-                        <input type="text" name="compdesc" onChange={this.compDesc} />
-                        <input type="submit" value="submit" />
-                    </form>  
-                </div>
             </div>
         );
     }
