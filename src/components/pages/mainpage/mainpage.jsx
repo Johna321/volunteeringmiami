@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import './mainpage.css';
-import bizpic from './businessphotos/bizimage.jpg';
-import mcdonalds from './businessphotos/mcdonalds.jpg';
-import cofm from './businessphotos/cofm.png';
 import logo from '../../../volmiamilogo.png';
 import arrow from '../../../arrow.png'
 import banner from './banner.jpg';
-
-
 
 class MainPage extends Component{
     
@@ -127,6 +122,44 @@ class MainPage extends Component{
             dressCode: '',
             anyFurtherSpecifications: ''
         },
+        7: {
+            expanded: false,
+            name:'Business Name 7',
+            photo: require('./businessphotos/bizimage.jpg'),
+            hours:'20 hours',
+            summary:'Brief summary.',
+            location: '',
+            volunteersNeeded: '',
+            dailyServiceHours: '',
+            totalProjectServiceHours: '',
+            dayToDayHours: '',
+            credentials: '',
+            gpa: '',
+            certficiation: '',
+            talents: '',
+            languages: '',
+            dressCode: '',
+            anyFurtherSpecifications: ''
+        },
+        8: {
+            expanded: false,
+            name:'Business Name 8',
+            photo: require('./businessphotos/bizimage.jpg'),
+            hours:'20 hours',
+            summary:'Brief summary.',
+            location: '',
+            volunteersNeeded: '',
+            dailyServiceHours: '',
+            totalProjectServiceHours: '',
+            dayToDayHours: '',
+            credentials: '',
+            gpa: '',
+            certficiation: '',
+            talents: '',
+            languages: '',
+            dressCode: '',
+            anyFurtherSpecifications: ''
+        },
     }
     
     applyButton = (id) =>{
@@ -179,7 +212,7 @@ class MainPage extends Component{
                 <div className="logo">
                     <img src={banner} alt="banner" width="100%" height="900vh" className="banner"/>
                     <img src={logo} alt="logo" className="app-logo"mar/>
-                    <div className="bot-bar"></div>
+                    <div className="bot-bar" />
                 </div>
                     <div className="body">
                         <div className="container">
@@ -190,6 +223,8 @@ class MainPage extends Component{
                                 { this.expandedInfo('4') }
                                 { this.expandedInfo('5') }
                                 { this.expandedInfo('6') }
+                                { this.expandedInfo('7') }
+                                { this.expandedInfo('8') }
                             </div>
                         </div>
                     </div>
@@ -197,7 +232,6 @@ class MainPage extends Component{
             </div>
         );
     }
-    
     
 }
 
