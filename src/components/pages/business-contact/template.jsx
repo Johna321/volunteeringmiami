@@ -6,7 +6,8 @@ class Template extends Component{
         Body: '',
         Subject: 'Volunteering Interest',
         Name: '',
-        SenderEmail: ''
+        SenderEmail: '',
+        entryPoint: '0'
     }
 
     
@@ -23,7 +24,7 @@ class Template extends Component{
                     <textarea type="text" className="form-control" id="inputMessage" onChange={(event)=>{this.setState({Body: event.target.value});}}  />
                 </form>
                 <button className="btn btn-dark" onClick={()=>{
-                    fetch(`http://209.97.154.166/sendgrid?Body=${this.state.Body}&Email=${this.props.email}&Subject=${this.state.Subject}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&ContactUs=0`)
+                    fetch(`http://209.97.154.166/sendgrid?Body=${this.state.Body}&Email=${this.props.email}&Subject=${this.state.Subject}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&ContactUs=${this.state.entryPoint}`)
                     .then(res => res.json())
                     .then((result) => {
                         console.log(result);
