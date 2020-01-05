@@ -218,7 +218,7 @@ class MainPage extends Component{
             <div className="parent">
                 <div className="logo">
                     <img src={banner} alt="banner" width="100%" height="900vh" className="banner"/>
-                    <img src={logo} alt="logo" style = {{opacity: logoOpacity}} className="app-logo"mar/>
+                    <img src={logo} alt="logo" style = {{opacity: logoOpacity}} className="app-logo"/>
                     <div className="bot-bar" />
                 </div>
                     <div className="body">
