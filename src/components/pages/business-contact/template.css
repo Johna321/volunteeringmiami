@@ -1,0 +1,21 @@
+.stuff{
+    color: white;
+    padding: 50px;
+    width: 50%;
+    left: 25%;
+    position: absolute;
+}
+
+.something{
+    top: 1000px;
+}
+
+.bigparent{
+    height: 94vh
+}
+
+.form-control{
+    width: 100%;
+    margin-bottom: 20px;
+}
+

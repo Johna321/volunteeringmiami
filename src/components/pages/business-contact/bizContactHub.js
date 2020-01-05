@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import Template from './template.jsx';
-import './bizContactHub.css';
+
 
 
 class bizContactHub extends Component{
     state={
         1: {
             expanded: false,
-            name:'Mixological Inc',
+            name:'Example Company',
+            email: 'johna321123@gmail.com',//'volunteering@mixological.co',
             photo: require('../mainpage/businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
@@ -26,6 +27,7 @@ class bizContactHub extends Component{
         2: {
             expanded: false,
             name:'Business Name 2',
+            email: 'johnisawesome53@gmail.com',
             photo: require('../mainpage/businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
@@ -44,6 +46,7 @@ class bizContactHub extends Component{
         3: {
             expanded: false,
             name:'Business Name 3',
+            email: '',
             photo: require('../mainpage/businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
@@ -62,6 +65,7 @@ class bizContactHub extends Component{
         4: {
             expanded: false,
             name:'Business Name 4',
+            email: '',
             photo: require('../mainpage/businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
@@ -80,6 +84,7 @@ class bizContactHub extends Component{
         5: {
             expanded: false,
             name:'Business Name 5',
+            email: '',
             photo: require('../mainpage/businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
@@ -98,6 +103,7 @@ class bizContactHub extends Component{
         6: {
             expanded: false,
             name:'Business Name 6',
+            email: '',
             photo: require('../mainpage/businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
@@ -116,6 +122,7 @@ class bizContactHub extends Component{
         7: {
             expanded: false,
             name:'Business Name 7',
+            email: '',
             photo: require('../mainpage/businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
@@ -134,6 +141,7 @@ class bizContactHub extends Component{
         8: {
             expanded: false,
             name:'Business Name 8',
+            email: '',
             photo: require('../mainpage/businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
@@ -153,7 +161,7 @@ class bizContactHub extends Component{
     render(){
         return(
             <div className="bigparent">
-                <Template name={this.state[2].name} />
+                <Template name={this.state[new URLSearchParams(window.location.search).get('ItemId')].name} email={this.state[new URLSearchParams(window.location.search).get('ItemId')].email} />
             </div>
         );
     }

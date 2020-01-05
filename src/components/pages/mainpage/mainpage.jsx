@@ -12,30 +12,32 @@ class MainPage extends Component{
         scrollHeight: 0,
         1: {
             expanded: false,
-            name:'Mixological Inc',
-            photo: require('./businessphotos/bizimage.jpg'),
-            hours:'20 hours',
-            summary:'Brief summary.',
-            location: '5728 cool guy street',
-            volunteersNeeded: 'We need volunteers!',
-            dailyServiceHours: '6 hours per day',
-            totalProjectServiceHours: '72 hours',
-            credentials: '2 Years of School at Wittenberg',
-            gpa: '3.5',
-            certficiation: 'Adobe Certification',
-            talents: 'Skill and aspiration',
-            languages: 'English, Esperanto',
-            dressCode: 'Red shirt',
-            anyFurtherSpecifications: 'Make sure to wear a red shirt'
-        },
-        2: {
-            expanded: false,
-            name:'Business Name 2',
+            name:'Example Company',
+            email: '',
             photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
-            volunteersNeeded: 'Please volunteer for us.',
+            volunteersNeeded: '',
+            dailyServiceHours: '',
+            totalProjectServiceHours: '',
+            credentials: '',
+            gpa: '',
+            certficiation: '',
+            talents: '',
+            languages: '',
+            dressCode: '',
+            anyFurtherSpecifications: ''
+        },
+        2: {
+            expanded: false,
+            name:'Business Name 2',
+            email: '',
+            photo: require('./businessphotos/bizimage.jpg'),
+            hours:'20 hours',
+            summary:'Brief summary.',
+            location: '',
+            volunteersNeeded: '',
             dailyServiceHours: '',
             totalProjectServiceHours: '',
             credentials: '',
@@ -49,6 +51,7 @@ class MainPage extends Component{
         3: {
             expanded: false,
             name:'Business Name 3',
+            email: '',
             photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
@@ -67,6 +70,7 @@ class MainPage extends Component{
         4: {
             expanded: false,
             name:'Business Name 4',
+            email: '',
             photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
@@ -85,6 +89,7 @@ class MainPage extends Component{
         5: {
             expanded: false,
             name:'Business Name 5',
+            email: '',
             photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
@@ -103,6 +108,7 @@ class MainPage extends Component{
         6: {
             expanded: false,
             name:'Business Name 6',
+            email: '',
             photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
@@ -121,6 +127,7 @@ class MainPage extends Component{
         7: {
             expanded: false,
             name:'Business Name 7',
+            email: '',
             photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
@@ -139,6 +146,7 @@ class MainPage extends Component{
         8: {
             expanded: false,
             name:'Business Name 8',
+            email: '',
             photo: require('./businessphotos/bizimage.jpg'),
             hours:'20 hours',
             summary:'Brief summary.',
@@ -196,7 +204,7 @@ class MainPage extends Component{
             <h6>Languages: {this.state[id].languages}</h6>
             <h5>Dress Code: {this.state[id].dressCode}</h5>
             <h5>Any Further Specifications: {this.state[id].anyFurtherSpecifications}</h5>
-            <Link to={`business/${this.state[id].name}`}>
+            <Link to={`business?ItemId=${id}`}>
                 <button type="button" className="btn btn-secondary apply-button">Apply</button>
             </Link>
             </div>
