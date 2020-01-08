@@ -3,12 +3,8 @@ import './App.css';
 import MainPage from './components/pages/mainpage/mainpage.jsx';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './components/pages/about/about.jsx';
-import logo from './volmiamilogo.png';
 import ContactUs from './components/pages/contact-us/contact-us.jsx';
-import Test from './components/functionalities/test.jsx';
 import bizContactUs from './components/pages/business-contact/bizContactHub';
-
-
 
 function App() {
   return (

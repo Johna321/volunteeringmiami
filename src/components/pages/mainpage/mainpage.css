@@ -3,7 +3,7 @@
     position: absolute;
     top: auto;
     left:20%;
-    background-color: whitesmoke;
+    background-color: #ffffff;
     outline: 1px solid lightgrey;
     width: 75%;
     text-align: center;
@@ -62,7 +62,9 @@
     animation-duration: 0.5s;
 }
 
-
+.sortBy{
+    padding-right: 20px;
+}
 
 .bizpic{
     width: 300px;

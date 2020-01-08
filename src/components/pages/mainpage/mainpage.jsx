@@ -6,10 +6,11 @@ import banner from './banner.jpg';
 import {Link} from 'react-router-dom';
 
 class MainPage extends Component{
-    
+
     state = {
         render: true,
         scrollHeight: 0,
+        filterBy: 'new',
         1: {
             expanded: false,
             name:'Example Company',
@@ -176,7 +177,6 @@ class MainPage extends Component{
     }
 
     expandedInfo(id){
-        const whichBusiness = React.createContext(id);
         return (
             <div>
             <div className="panel panel-default">
@@ -186,7 +186,7 @@ class MainPage extends Component{
         <h5>{this.state[id].hours}</h5>
                 {this.state[id].summary}
                 <div className="arrowdropdown">
-                    <input type="image" src={arrow} width="24" height="24" onClick={() => { this.applyButton(id) }} />
+                    <input type="image" src={arrow} alt="arrow" width="24" height="24" onClick={() => { this.applyButton(id) }} />
                 </div>
             </div>
             </div>
@@ -212,32 +212,62 @@ class MainPage extends Component{
             </div>
         );
     }
+
     render(){
+    
+        const bizPanels = [
+            this.expandedInfo('1'), this.expandedInfo('2'), this.expandedInfo('3'), this.expandedInfo('4'), this.expandedInfo('5'),
+            this.expandedInfo('6'), this.expandedInfo('7'), this.expandedInfo('8')
+        ];
         const logoOpacity = Math.min(100 / this.state.scrollHeight, 1)
-        return(
-            <div className="parent">
-                <div className="logo">
-                    <img src={banner} alt="banner" width="100%" height="900vh" className="banner"/>
-                    <img src={logo} alt="logo" style = {{opacity: logoOpacity}} className="app-logo"/>
-                    <div className="bot-bar" />
-                </div>
-                    <div className="body">
-                        <div className="container">
-                            <div className="panel-group">
-                                { this.expandedInfo('1') }
-                                { this.expandedInfo('2') }
-                                { this.expandedInfo('3') }
-                                { this.expandedInfo('4') }
-                                { this.expandedInfo('5') }
-                                { this.expandedInfo('6') }
-                                { this.expandedInfo('7') }
-                                { this.expandedInfo('8') }
+        if (this.state.filterBy === 'new'){
+            return(
+                <div className="parent">
+                    <div className="logo">
+                        <img src={banner} alt="banner" width="100%" height="900vh" className="banner"/>
+                        <img src={logo} alt="logo" style = {{opacity: logoOpacity}} className="app-logo"/>
+                        <div className="bot-bar" />
+                    </div>
+                    <div className="sortBy">
+                        <button className="btn btn-dark" style={{float: "right", marginTop: 0}} onClick={()=>{
+                                this.setState({filterBy: 'old'})
+                        }}>Sort by Oldest</button>
+                    </div>
+                        <div className="body">
+                            <div className="container">
+                                <div className="panel-group">
+                                    {bizPanels}
+                                </div>
                             </div>
                         </div>
+                    
+                </div>
+            );
+        }
+        else if (this.state.filterBy === 'old'){
+            return(
+                <div className="parent">
+                    <div className="logo">
+                        <img src={banner} alt="banner" width="100%" height="900vh" className="banner"/>
+                        <img src={logo} alt="logo" style = {{opacity: logoOpacity}} className="app-logo"/>
+                        <div className="bot-bar" />
                     </div>
-                
-            </div>
-        );
+                    <div className="sortBy">
+                        <button className="btn btn-dark" style={{float: "right", marginTop: 0}} onClick={()=>{
+                                this.setState({filterBy: 'new'})
+                        }}>Sort by Newest</button>
+                    </div>
+                        <div className="body">
+                            <div className="container">
+                                <div className="panel-group">
+                                    {bizPanels.reverse()}
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            );
+        }
     }
     componentDidMount(){
         window.onscroll = () =>{
