@@ -35,14 +35,12 @@
   position: absolute;
   top: auto;
   right: auto;
-  background-color: #ffffff;
-  background-color: #fefefe;
-  background-color: #f2f3f6;
+  background-color: rgb(161, 47, 85);
   outline: 1px solid lightgrey;
   width: 100%;
   height: auto;
+  
   text-align: center;
-  background-image: linear-gradient(to right, #C33764, #1E2671);
   height: auto;
   color: black;
 }

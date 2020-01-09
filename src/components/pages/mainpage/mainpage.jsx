@@ -13,22 +13,22 @@ class MainPage extends Component{
         filterBy: 'new',
         1: {
             expanded: false,
-            name:'Example Company',
+            name:'Generic Corpo Inc.',
             email: '',
             photo: require('./businessphotos/bizimage.jpg'),
-            hours:'20 hours',
-            summary:'Brief summary.',
-            location: '',
-            volunteersNeeded: '',
-            dailyServiceHours: '',
-            totalProjectServiceHours: '',
+            hours:'100 hours',
+            summary:'We are dedicated to helping.',
+            location: '7865 SW 76 AVE',
+            volunteersNeeded: '12',
+            dailyServiceHours: '10',
+            totalProjectServiceHours: '100',
             credentials: '',
-            gpa: '',
-            certficiation: '',
-            talents: '',
-            languages: '',
-            dressCode: '',
-            anyFurtherSpecifications: ''
+            gpa: '3.5 or above',
+            certficiation: 'Registered with MDCPS Volunteering',
+            talents: 'Problem-solver, trombone player',
+            languages: 'English, Esperanto, French',
+            dressCode: 'Khaki cargo shorts, red shirt',
+            anyFurtherSpecifications: 'Be on time.'
         },
         2: {
             expanded: false,
@@ -198,10 +198,12 @@ class MainPage extends Component{
             <h5>Daily Service Hours: {this.state[id].dailyServiceHours}</h5>
             <h5>Total Project Service Hours: {this.state[id].totalProjectServiceHours}</h5>
             <h5>Credentials: {this.state[id].credentials}</h5>
+            <div className="credentials">
             <h6>GPA: {this.state[id].gpa}</h6>
             <h6>Certification: {this.state[id].certficiation}</h6>
             <h6>Talents: {this.state[id].talents}</h6>
             <h6>Languages: {this.state[id].languages}</h6>
+            </div>
             <h5>Dress Code: {this.state[id].dressCode}</h5>
             <h5>Any Further Specifications: {this.state[id].anyFurtherSpecifications}</h5>
             <Link to={`business?ItemId=${id}`}>
@@ -228,13 +230,15 @@ class MainPage extends Component{
                         <img src={logo} alt="logo" style = {{opacity: logoOpacity}} className="app-logo"/>
                         <div className="bot-bar" />
                     </div>
-                    <div className="sortBy">
-                        <button className="btn btn-dark" style={{float: "right", marginTop: 0}} onClick={()=>{
-                                this.setState({filterBy: 'old'})
-                        }}>Sort by Oldest</button>
-                    </div>
+                    
                         <div className="body">
+                            
                             <div className="container">
+                                <div className="sortBy">
+                                    <button className="btn btn-light" style={{float: "left", fontWeight: 500}} onClick={()=>{
+                                        this.setState({filterBy: 'old'})
+                                    }}>Sort by Oldest</button>
+                                </div>
                                 <div className="panel-group">
                                     {bizPanels}
                                 </div>
@@ -252,13 +256,14 @@ class MainPage extends Component{
                         <img src={logo} alt="logo" style = {{opacity: logoOpacity}} className="app-logo"/>
                         <div className="bot-bar" />
                     </div>
-                    <div className="sortBy">
-                        <button className="btn btn-dark" style={{float: "right", marginTop: 0}} onClick={()=>{
-                                this.setState({filterBy: 'new'})
-                        }}>Sort by Newest</button>
-                    </div>
                         <div className="body">
+                            
                             <div className="container">
+                            <div className="sortBy">
+                                <button className="btn btn-light" style={{float: "left", fontWeight: 500}} onClick={()=>{
+                                    this.setState({filterBy: 'new'})
+                                }}>Sort by Newest</button>
+                            </div>
                                 <div className="panel-group">
                                     {bizPanels.reverse()}
                                 </div>
