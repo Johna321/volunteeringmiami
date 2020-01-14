@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './components/pages/about/about.jsx';
 import ContactUs from './components/pages/contact-us/contact-us.jsx';
 import bizContactUs from './components/pages/business-contact/bizContactHub';
+import navbarLogo from './navbarlogo.ico';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
           <div className="App">
             <div className="navigationbar">
               <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a className="navbar-brand" href="/"><b>VM</b></a>
+                <a className="navbar-brand" href="/"><img src={navbarLogo} height="30" className="navbarLogo"/></a>
                 <ul className="navbar-nav bd-navbar flex-row">
                   <li className="nav-item">
                     <a className="nav-link active" href="/">Home</a>
@@ -33,6 +34,12 @@ function App() {
               <Route path="/contact-us" exact component={ContactUs}/>
               <Route path="/business" component={bizContactUs} />
             </Switch>
+
+            <div className="footerBottom">
+                <div className="footerContact">
+                  Contact Us
+                </div>
+            </div>
           </div>
       </Router>
   );

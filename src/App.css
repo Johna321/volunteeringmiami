@@ -35,7 +35,7 @@
   position: absolute;
   top: auto;
   right: auto;
-  background-color: rgb(161, 47, 85);
+  background-color: rgb(47, 87, 161);
   outline: 1px solid lightgrey;
   width: 100%;
   height: auto;
@@ -45,11 +45,25 @@
   color: black;
 }
 
+.footerBottom{
+  bottom: 0;
+  justify-content: center;
+  background-color: #343A40;
+}
 
+.footerContact{
+  color: white;
+  font-weight: 30;
+}
 
 .navigationbar{
   position: static;
 }
+
+.navbarLogo{
+  margin-bottom: 0.15rem;
+}
+
 
 
 

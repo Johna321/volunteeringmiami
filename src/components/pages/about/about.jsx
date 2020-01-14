@@ -8,7 +8,7 @@ class About extends Component{
             <div className="about">
                 <div className="title">
                     <img src={about}
-                         className="logo"
+                         className="aboutLogo"
                          alt="volunteering miami logo"
                          height="30%"
                          width="30%"/>

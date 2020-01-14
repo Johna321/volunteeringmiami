@@ -1,21 +1,15 @@
 .contactLogo{
     text-align: center;
     color: lightgrey;
-    margin-top: 95px;
-}
-
-.paragraph{
-    align-content:center;
-    text-align: justify;
-    text-justify: auto;
-    color: lightgrey;
-    width: 800px;
-    margin: auto;
-    font-size: 1.25rem;
-    margin-top: 20px;
+    margin-top: 165px;
+    width: 75%;
+    height: auto;
+    left: 40%;
+    margin-left: 12.5%;
+    margin-bottom: 30px;
 }
 
 .contact-us{
-    height: 94vh;
+    height: 76.7vh;
 }
 
