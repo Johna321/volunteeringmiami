@@ -37,7 +37,8 @@ function App() {
 
             <div className="footerBottom">
                 <div className="footerContact">
-                  Contact Us
+                  Contact Us:
+                  info@volunteeringmiami.org
                 </div>
             </div>
           </div>

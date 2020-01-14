@@ -88,6 +88,7 @@ class MainPage extends Component{
                                                     <div className="moreInfo" >
                                                     <h5>Location: {obj.location}</h5>
                                                     <h5>Volunteers Needed: {obj.volunteersNeeded}</h5>
+                                                    <h5>Age Range: {obj.ageWindow}</h5>
                                                     <h5>Daily Service Hours: {obj.dailyServiceHours}</h5>
                                                     <h5>Total Project Service Hours: {obj.totalProjectServiceHours}</h5>
                                                     <h5>Credentials: {obj.credentials}</h5>
