@@ -59,8 +59,8 @@ class MainPage extends Component{
                                             Sort By:
                                         </DropdownToggle>
                                         <DropdownMenu>
-                                            <DropdownItem onClick={()=>{this.setState({businesses: this.state.businesses})}}>New</DropdownItem>
-                                            <DropdownItem onClick={()=>{this.setState({businesses: this.state.businesses.reverse()})}}>Old</DropdownItem>
+                                            <DropdownItem onClick={()=>{this.setState({businesses: this.state.businesses.sort((a, b) => {return a.id - b.id})})}}>New</DropdownItem>
+                                            <DropdownItem onClick={()=>{this.setState({businesses: this.state.businesses.sort((a, b) => {return a.id - b.id}).reverse()})}}>Old</DropdownItem>
                                             <DropdownItem onClick={()=>{this.setState({businesses: this.state.businesses.sort((a, b) => a.name.localeCompare(b.name))})}}>A to Z</DropdownItem>
                                             <DropdownItem onClick={()=>{this.setState({businesses: this.state.businesses.sort((a, b) => a.name.localeCompare(b.name)).reverse()})}}>Z to A</DropdownItem>
                                         </DropdownMenu>
