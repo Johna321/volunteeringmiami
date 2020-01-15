@@ -4,7 +4,7 @@ import contactLogo from './contactlogo.png';
 
 class ContactUs extends Component{
     state = {
-        ourEmail: 'johna321123@gmail.com',
+        ourEmail: 'info@volunteeringmiami.org',
         Body: '',
         Subject: 'Contact Us Request',
         SenderEmail: '',
@@ -21,9 +21,9 @@ class ContactUs extends Component{
                     <label for="inputEmail">Your Email</label>
                     <input type="email" className="form-control" id="inputEmail" placeHolder="example@example.com" onChange={(event)=>{this.setState({SenderEmail: event.target.value});}}/>
                     <label for="inputName">Your Name</label>
-                    <input type="text" className="form-control" id="inputName" placeHolder="Last Name, First Name" onChange={(event)=>{this.setState({Name: event.target.value});}}/>
+                    <input type="text" className="form-control" id="inputName" placeHolder="John Smith" onChange={(event)=>{this.setState({Name: event.target.value});}}/>
                     <label for="inputMessage">Message</label>
-                    <textarea type="text" className="form-control" id="inputMessage" placeHolder="(Name of business, primary contact, address, website, social media)" onChange={(event)=>{this.setState({Body: event.target.value});}} />
+                    <textarea type="text" className="form-control" id="inputMessage" placeHolder="(Name of business, primary contact, address, website, social media, general inquiries)" onChange={(event)=>{this.setState({Body: event.target.value});}} />
                     
                     <button className="btn btn-dark" onClick={()=>{
                         fetch(`http://209.97.154.166/sendgrid?Body=${this.state.Body}&Email=${this.state.ourEmail}&Subject=${this.state.Subject}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&ContactUs=${this.state.entryPoint}`)

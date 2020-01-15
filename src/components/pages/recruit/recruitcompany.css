@@ -1,0 +1,25 @@
+
+
+.infographic{
+    width: 60%;
+    height: auto;
+    top: 5%;
+    left: 20%;
+    position: absolute;
+}
+
+.intro{
+   margin: auto;
+}
+
+.left{
+    width: 50%;
+}
+
+.right{
+    width: 50%;
+}
+
+.logo{
+    margin-bottom: 0px;
+}
