@@ -1,15 +1,19 @@
 .contactLogo{
     text-align: center;
     color: lightgrey;
-    margin-top: 165px;
-    width: 75%;
+    margin-top: 75px;
+    width: 50%;
     height: auto;
-    left: 40%;
-    margin-left: 12.5%;
-    margin-bottom: 30px;
+    left: 20%;
+    margin-left: 25%;
+    margin-bottom: 50px;
 }
 
 .contact-us{
-    height: 76.7vh;
+    height: 88vh;
 }
 
+.sendButton{
+    margin-left: calc(50% - 40px);
+    width: 80px;
+}

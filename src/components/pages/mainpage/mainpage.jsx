@@ -62,8 +62,8 @@ class MainPage extends Component{
                                             Sort By:
                                         </DropdownToggle>
                                         <DropdownMenu>
-                                            <DropdownItem onClick={()=>{this.setState({businesses: this.state.businesses})}}>New</DropdownItem>
-                                            <DropdownItem onClick={()=>{this.setState({businesses: this.state.businesses.reverse()})}}>Old</DropdownItem>
+                                            <DropdownItem onClick={()=>{this.setState({businesses: this.state.businesses.sort((a, b) => {return a.id - b.id})})}}>New</DropdownItem>
+                                            <DropdownItem onClick={()=>{this.setState({businesses: this.state.businesses.sort((a, b) => {return a.id - b.id}).reverse()})}}>Old</DropdownItem>
                                             <DropdownItem onClick={()=>{this.setState({businesses: this.state.businesses.sort((a, b) => a.name.localeCompare(b.name))})}}>A to Z</DropdownItem>
                                             <DropdownItem onClick={()=>{this.setState({businesses: this.state.businesses.sort((a, b) => a.name.localeCompare(b.name)).reverse()})}}>Z to A</DropdownItem>
                                         </DropdownMenu>
@@ -76,36 +76,52 @@ class MainPage extends Component{
                                                 return (
                                                     <div>
                                                     <div className="panel panel-default">
-                                                    <img src={obj.photo} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/>
-                                                <h1>{obj.name}</h1>
-                                                    <div className="panel-body">
-                                                <h5>{obj.hours}</h5>
-                                                        {obj.summary}
-                                                        <div className="arrowdropdown">
-                                                            <input className={obj.spun ? 'arrowhead' : 'arrowheadspun'} type="image" src={arrow} alt="arrow" width="35" height="35" onClick={() => { this.applyButton(obj.id) }} />
+                                                        <img src={obj.photo} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/>
+                                                        <h1>{obj.name}</h1>
+                                                        <div className="panel-body">
+                                                            <h5>{obj.hours}</h5>
+                                                            {obj.summary}
+                                                            <div className="arrowdropdown">
+                                                                <input className={obj.spun ? 'arrowhead' : 'arrowheadspun'} type="image" src={arrow} alt="arrow" width="35" height="35" onClick={() => { this.applyButton(obj.id) }} />
+                                                            </div>
                                                         </div>
-                                                    </div>
                                                     </div>
                                                     {obj.expanded !== false ? (
                                                     <div className="panel panel-default" style={{marginLeft:100, marginTop: -80, paddingTop:0, zIndex: 0, borderTopLeftRadius: 0, borderTopRightRadius: 0, width:'86.5%'}}>
-                                                    <div className="moreInfo" >
-                                                    <h5>Location: {obj.location}</h5>
-                                                    <h5>Volunteers Needed: {obj.volunteersNeeded}</h5>
-                                                    <h5>Daily Service Hours: {obj.dailyServiceHours}</h5>
-                                                    <h5>Total Project Service Hours: {obj.totalProjectServiceHours}</h5>
-                                                    <h5>Credentials: {obj.credentials}</h5>
-                                                    <div className="credentials">
-                                                    <p>GPA: {obj.gpa}</p>
-                                                    <p>Certification: {obj.certficiation}</p>
-                                                    <p>Talents: {obj.talents}</p>
-                                                    <p>Languages: {obj.languages}</p>
-                                                    </div>
-                                                    <h5>Dress Code: {obj.dressCode}</h5>
-                                                    <h5>Any Further Specifications: {obj.anyFurtherSpecifications}</h5>
-                                                    <Link to={`business?ItemId=${obj.id}`}>
-                                                        <button type="button" className="btn btn-secondary apply-button">Apply</button>
-                                                    </Link>
-                                                    </div>
+                                                        <div className="moreInfo" >
+                                                            <h5>Location: {obj.location}</h5>
+                                                            <h5>Website: {obj.website}</h5>
+                                                            <h5>Volunteers Needed: {obj.volunteersNeeded}</h5>
+                                                            <h5>Age Range: {obj.ageWindow}</h5>
+                                                            <h5>Daily Service Hours: {obj.dailyServiceHours}</h5>
+                                                            <div className="credentials">
+                                                                <p>Sunday: {obj.Sunday}</p>
+                                                                <p>Monday: {obj.Monday}</p>
+                                                                <p>Tuesday: {obj.Tuesday}</p>
+                                                                <p>Wednesday: {obj.Wednesday}</p>
+                                                                <p>Thursday: {obj.Thursday}</p>
+                                                                <p>Friday: {obj.Friday}</p>
+                                                                <p>Saturday: {obj.Saturday}</p>
+                                                            </div>
+                                                            <h5>Total Project Service Hours: {obj.totalProjectServiceHours}</h5>
+                                                            <h5>Dates: {obj.dates}</h5>
+                                                            <h5>Job Title: {obj.jobTitle}</h5>
+                                                            <div className="credentials">
+                                                                <p>Job Description: {obj.jobDescription}</p>
+                                                            </div>
+                                                            <h5>Credentials: {obj.credentials}</h5>
+                                                            <div className="credentials">
+                                                                <p>GPA: {obj.gpa}</p>
+                                                                <p>Certification: {obj.certficiation}</p>
+                                                                <p>Talents: {obj.talents}</p>
+                                                                <p>Languages: {obj.languages}</p>
+                                                            </div>
+                                                            <h5>Dress Code: {obj.dressCode}</h5>
+                                                            <h5>Any Further Specifications: {obj.anyFurtherSpecifications}</h5>
+                                                            <Link to={`business?ItemId=${obj.id}`}>
+                                                                <button type="button" className="btn btn-secondary apply-button">Apply</button>
+                                                            </Link>
+                                                        </div>
                                                     </div>) : (<p></p>)}
                                                     </div>
                                                 );

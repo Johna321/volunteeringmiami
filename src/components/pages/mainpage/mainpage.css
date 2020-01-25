@@ -10,8 +10,7 @@
 }
 
 .body{
-    padding: 0px;
-    
+    padding: 20px;   
 }
 
 @keyframes fade {
@@ -71,9 +70,10 @@
 }
 
 .sortBy{
-    padding-left: 25px;
+    padding-left: 0px;
     padding-bottom: 50px;
     float: left;
+    
 }
 
 .bizpic{

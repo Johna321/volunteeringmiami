@@ -7,10 +7,9 @@ class bizContactHub extends Component{
         businesses: businessesJson()
     }
     render(){
-        console.log(this.state);
         return(
             <div className="bigparent">
-                <Template name={this.state.businesses.find(obj => obj.id = new URLSearchParams(window.location.search).get('ItemId')).name} email={this.state.businesses.find(obj => obj.id = new URLSearchParams(window.location.search).get('ItemId')).email} />
+                <Template name={this.state.businesses.find(obj => obj.id === Number(new URLSearchParams(window.location.search).get('ItemId'))).name} email={this.state.businesses.find(obj => obj.id === Number(new URLSearchParams(window.location.search).get('ItemId'))).email} />
             </div>
         );
     }
