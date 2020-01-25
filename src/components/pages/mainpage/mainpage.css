@@ -71,7 +71,6 @@
 
 .sortBy{
     padding-left: 0px;
-    padding-bottom: 50px;
     float: left;
     
 }
@@ -189,4 +188,8 @@
     top:67.5%;
     opacity: 90%;
     left: -1.5%;
+}
+
+.container{
+    padding-top: 100px;
 }

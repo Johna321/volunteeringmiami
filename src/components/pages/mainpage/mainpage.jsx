@@ -75,7 +75,7 @@ class MainPage extends Component{
                                     {this.state.businesses.map(obj=>{
                                                 return (
                                                     <div>
-                                                    <div className="panel panel-default">
+                                                    <div className="panel panel-default" onClick={() => { this.applyButton(obj.id) }} >
                                                         <img src={obj.photo} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/>
                                                         <h1>{obj.name}</h1>
                                                         <div className="panel-body">
