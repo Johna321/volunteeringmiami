@@ -41,16 +41,16 @@
   height: auto;
   
   text-align: center;
-  height: auto;
   color: black;
 }
 
 .footerBottom{
+  position: relative;
   bottom: 0;
   justify-content: center;
   background-color: #343A40;
-  height: 3rem;
-  top: 50%;
+  height: 3rem;    
+  width: 100%;
 }
 
 .footerContact{

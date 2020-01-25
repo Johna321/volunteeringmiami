@@ -15,7 +15,7 @@ class ContactUs extends Component{
         return(
             <div className="contact-us">
                 <div className="contactLogo">
-                    <img src={contactLogo} alt="contact us" style={{width: 1000}}/> 
+                    <img src={contactLogo} alt="contact us" style={{width: 800}}/> 
                 </div>
                 <div className="paragraph">
                     <label for="inputEmail">Your Email</label>
@@ -25,7 +25,7 @@ class ContactUs extends Component{
                     <label for="inputMessage">Message</label>
                     <textarea type="text" className="form-control" id="inputMessage" placeHolder="(Name of business, primary contact, address, website, social media, general inquiries)" onChange={(event)=>{this.setState({Body: event.target.value});}} />
                     
-                    <button className="btn btn-dark" onClick={()=>{
+                    <button className="btn btn-dark sendButton"   onClick={()=>{
                         fetch(`http://209.97.154.166/sendgrid?Body=${this.state.Body}&Email=${this.state.ourEmail}&Subject=${this.state.Subject}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&ContactUs=${this.state.entryPoint}`)
                             .then(res => res.json())
                             .then((result) => {
@@ -37,7 +37,7 @@ class ContactUs extends Component{
                                 alert('Error: '+error);
                                 window.location.reload();
                             })
-                    }}>Submit</button>
+                    }}>Send</button>
                 </div>
             </div>
         );
