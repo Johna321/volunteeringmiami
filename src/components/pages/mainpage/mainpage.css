@@ -182,3 +182,11 @@
 .noshow{
     z-index: -1
 }
+
+.scrollButton{
+    position:relative;
+    z-index: 1;
+    top:67.5%;
+    opacity: 90%;
+    left: -1.5%;
+}
