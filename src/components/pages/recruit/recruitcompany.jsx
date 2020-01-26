@@ -39,6 +39,34 @@ class RecruitCompany extends Component{
                                 <input type="text" className="form-control" id="inputSchool" placeHolder="Age Range" onChange={(event)=>{this.setState({School: event.target.value});}}  />
                             </div>
                             <div className="singleInput">
+                                <label for="inputSchool">Sunday Hours</label>
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Sundays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                            </div>
+                            <div className="singleInput">
+                                <label for="inputSchool">Monday Hours</label>
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Mondays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                            </div>
+                            <div className="singleInput">
+                                <label for="inputSchool">Tuesday Hours</label>
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Tuesdays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                            </div>
+                            <div className="singleInput">
+                                <label for="inputSchool" style={{marginTop: -13}}>Wednesday Hours</label>
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Wednesdays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                            </div>
+                            <div className="singleInput">
+                                <label for="inputSchool" style={{marginTop: -13}}>Thursday Hours</label>
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Thursdays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                            </div>
+                            <div className="singleInput">
+                                <label for="inputSchool">Friday Hours</label>
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Fridays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                            </div>
+                            <div className="singleInput">
+                                <label for="inputSchool">Saturday Hours</label>
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work time on Saturdays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                            </div>
+                            <div className="singleInput">
                                 <label for="inputGPA" style={{marginTop: -13}}>Total Project Service Hours</label>
                                 <input type="text" className="form-control" id="inputGPA" placeHolder="Total Project Service Hours" onChange={(event)=>{this.setState({GPA: event.target.value});}}  />
                             </div>
@@ -49,6 +77,10 @@ class RecruitCompany extends Component{
                             <div className="singleInput">
                                 <label for="inputTalent">Job Title</label>
                                 <input type="text" className="form-control" id="inputTalent" placeHolder="Job Title" onChange={(event)=>{this.setState({Talents: event.target.value});}}  />
+                            </div>
+                            <div className="singleInput">
+                                <label for="inputTalent">Job Description</label>
+                                <input type="text" className="form-control" id="inputTalent" placeHolder="Job Description" onChange={(event)=>{this.setState({Talents: event.target.value});}}  />
                             </div>
                             <div className="singleInput">
                                 <label for="inputLang">GPA</label>
