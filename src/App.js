@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './components/pages/about/about.jsx';
 import ContactUs from './components/pages/contact-us/contact-us.jsx';
 import bizContactUs from './components/pages/business-contact/bizContactHub';
-
 import navbarLogo from './navbarlogo.ico';
 import RecruitCompany from './components/pages/recruit/recruitcompany';
 

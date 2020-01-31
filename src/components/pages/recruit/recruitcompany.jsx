@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './recruitcompany.css';
-import whoCanRecruit from './whocanrecruit.jpg';
+import whoCanRecruit from './infographic3.png';
+import background from './background.png';
 import businessesJson from '../../../businesses';
 import bizPic from '../mainpage/businessphotos/bizimage.jpg';
 
@@ -8,14 +9,17 @@ class RecruitCompany extends Component{
     state={
         Location: '',
         Website: '',
-
+        scrollHeight: ''
     }
+    
     render(){
+        const logoOpacity = Math.min(100 / this.state.scrollHeight, 1)
         return(
             <div className="RecruitCompany">
-
-                <div className="logo">
-                    <img src={whoCanRecruit} alt="graphic" className="infographic" width="100%" height="auto"/>
+                
+                <div className="logo" style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                    <img src={whoCanRecruit} style={{opacity: logoOpacity}} alt="graphic" className="infographic" width="100%" height="auto"/>
+                    <img src={background} alt="graphic" className="bannerRecruit" width="100%" height="auto"/>
                     <div className="bot-bar" />
                 </div>
                 <div className="mainBody">
@@ -63,7 +67,7 @@ class RecruitCompany extends Component{
                                 <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Fridays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
                             </div>
                             <div className="singleInput">
-                                <label for="inputSchool">Saturday Hours</label>
+                                <label for="inputSchool" >Saturday Hours</label>
                                 <input type="text" className="form-control" id="inputSchool" placeHolder="Work time on Saturdays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
                             </div>
                             <div className="singleInput">
@@ -125,6 +129,11 @@ class RecruitCompany extends Component{
                 
             </div>
         );
+    }
+    componentDidMount(){
+        window.onscroll = () =>{
+            this.setState({scrollHeight: window.scrollY});
+        }
     }
 }
 

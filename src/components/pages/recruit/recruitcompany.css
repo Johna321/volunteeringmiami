@@ -1,11 +1,27 @@
 
 
 .infographic{
-    width: 60%;
-    height: auto;
-    top: 3.4%;
-    left: 19%;
+    padding: 10px;
+    width: 50%;
+    z-index: 2;
+    margin-top: -100px;
+}
+
+
+
+.bannerRecruit{
+    top: -20%;
+    left: 0;
+    z-index: 1;
     position: absolute;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .intro{

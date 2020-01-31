@@ -48,9 +48,7 @@ class MainPage extends Component{
                 <div className="parent">
                     <div className="logo">
                         <img src={banner} alt="banner" width="100%" height="900vh" className="banner"/>
-                            <div className="scrollButton">
-                                <button className="btn btn-secondary btn-lg">See Listings</button>
-                            </div>
+                            
                         <img src={logo} alt="logo" style = {{opacity: logoOpacity}} className="app-logo"/>
                         <div className="bot-bar" />
                     </div>
@@ -75,7 +73,7 @@ class MainPage extends Component{
                                     {this.state.businesses.map(obj=>{
                                                 return (
                                                     <div>
-                                                    <div className="panel panel-default" onClick={() => { this.applyButton(obj.id) }} >
+                                                    <div className="panel panel-default">
                                                         <img src={obj.photo} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/>
                                                         <h1>{obj.name}</h1>
                                                         <div className="panel-body">
