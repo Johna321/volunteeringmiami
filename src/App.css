@@ -39,33 +39,40 @@
   outline: 1px solid lightgrey;
   width: 100%;
   height: auto;
-  
+  scroll-behavior: smooth;
   text-align: center;
   color: black;
 }
 
 .footerBottom{
   position: relative;
-  bottom: 0;
   justify-content: center;
   background-color: #343A40;
-  height: 3rem;    
+  height: 2rem;    
   width: 100%;
 }
 
 .footerContact{
   color: white;
   font-weight: 30;
+  font-family: "Times New Roman", Times, serif;
+  padding-top: 5px;
 }
 
 .navigationbar{
-  position: static;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
 }
 
 .navbarLogo{
   margin-bottom: 0.15rem;
 }
 
+.navbar-nav .nav-link {
+  padding-right: 0.4rem !important ;
+  padding-left: 0.4rem !important ;
+}
 
 
 

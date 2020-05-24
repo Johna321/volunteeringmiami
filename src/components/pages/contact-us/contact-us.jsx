@@ -18,13 +18,19 @@ class ContactUs extends Component{
                     <img src={contactLogo} alt="contact us" style={{width: 800}}/> 
                 </div>
                 <div className="paragraph">
-                    <label for="inputEmail">Your Email</label>
-                    <input type="email" className="form-control" id="inputEmail" placeHolder="example@example.com" onChange={(event)=>{this.setState({SenderEmail: event.target.value});}}/>
-                    <label for="inputName">Your Name</label>
-                    <input type="text" className="form-control" id="inputName" placeHolder="John Smith" onChange={(event)=>{this.setState({Name: event.target.value});}}/>
-                    <label for="inputMessage">Message</label>
-                    <textarea type="text" className="form-control" id="inputMessage" placeHolder="(Name of business, primary contact, address, website, social media, general inquiries)" onChange={(event)=>{this.setState({Body: event.target.value});}} />
-                    
+                    <div className="contactField">
+                        <label className="contactLabel" for="inputEmail">Your Email</label>
+                        <input type="email" className="form-control" id="inputEmail" placeHolder="example@example.com" onChange={(event)=>{this.setState({SenderEmail: event.target.value});}}/>
+                    </div>
+                    <div className="contactField">
+                        <label className="contactLabel" for="inputName">Your Name</label>
+                        <input type="text" className="form-control" id="inputName" placeHolder="John Smith" onChange={(event)=>{this.setState({Name: event.target.value});}}/>
+                    </div>
+                    <div className="contactField">
+                        <label className="contactLabel" for="inputMessage">Message</label>
+                        <textarea type="text" className="form-control" id="inputMessage" placeHolder="(Name of business, primary contact, address, website, social media, general inquiries)" onChange={(event)=>{this.setState({Body: event.target.value});}} />
+                    </div>
+
                     <button className="btn btn-dark sendButton"   onClick={()=>{
                         fetch(`http://209.97.154.166/sendgrid?Body=${this.state.Body}&Email=${this.state.ourEmail}&Subject=${this.state.Subject}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&ContactUs=${this.state.entryPoint}`)
                             .then(res => res.json())

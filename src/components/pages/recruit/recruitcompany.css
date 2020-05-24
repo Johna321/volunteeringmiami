@@ -3,7 +3,7 @@
 .infographic{
     padding: 10px;
     width: 50%;
-    z-index: 2;
+    z-index: 1;
     margin-top: -100px;
 }
 
@@ -12,7 +12,7 @@
 .bannerRecruit{
     top: -20%;
     left: 0;
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     opacity: 1;
     display: flex;
@@ -56,3 +56,5 @@ h1{
 .singleInput input{
     margin: auto;
 }
+
+

@@ -27,7 +27,7 @@ export default function businessesJson (extraState, sort) {
             credentials: '',
             gpa: '3.5',
             certficiation: 'MDCPS Volunteer Certification',
-            talents: 'Chess and swimming',
+            skills: 'Chess and swimming',
             languages: 'English, Spanish',
             dressCode: 'Business casual',
             anyFurtherSpecifications: 'Must take required orientation course'
@@ -38,7 +38,7 @@ export default function businessesJson (extraState, sort) {
             name:'Business Name 2',
             email: '',//'volunteering@mixological.co',
             website: '',
-            photo: require('./components/pages/mainpage/businessphotos/bizimage.jpg'),
+            photo: require('./components/pages/mainpage/businessphotos/cofm.png'),
             hours:'20 hours',
             summary:'Brief summary.',
             location: '',
@@ -59,7 +59,7 @@ export default function businessesJson (extraState, sort) {
             credentials: '',
             gpa: '',
             certficiation: '',
-            talents: '',
+            skills: '',
             languages: '',
             dressCode: '',
             anyFurtherSpecifications: ''
@@ -90,7 +90,7 @@ export default function businessesJson (extraState, sort) {
             credentials: '',
             gpa: '',
             certficiation: '',
-            talents: '',
+            skills: '',
             languages: '',
             dressCode: '',
             anyFurtherSpecifications: ''
@@ -121,7 +121,7 @@ export default function businessesJson (extraState, sort) {
             credentials: '',
             gpa: '',
             certficiation: '',
-            talents: '',
+            skills: '',
             languages: '',
             dressCode: '',
             anyFurtherSpecifications: ''
@@ -152,7 +152,7 @@ export default function businessesJson (extraState, sort) {
             credentials: '',
             gpa: '',
             certficiation: '',
-            talents: '',
+            skills: '',
             languages: '',
             dressCode: '',
             anyFurtherSpecifications: ''
@@ -183,7 +183,7 @@ export default function businessesJson (extraState, sort) {
             credentials: '',
             gpa: '',
             certficiation: '',
-            talents: '',
+            skills: '',
             languages: '',
             dressCode: '',
             anyFurtherSpecifications: ''
@@ -214,7 +214,7 @@ export default function businessesJson (extraState, sort) {
             credentials: '',
             gpa: '',
             certficiation: '',
-            talents: '',
+            skills: '',
             languages: '',
             dressCode: '',
             anyFurtherSpecifications: ''
@@ -245,7 +245,7 @@ export default function businessesJson (extraState, sort) {
             credentials: '',
             gpa: '',
             certficiation: '',
-            talents: '',
+            skills: '',
             languages: '',
             dressCode: '',
             anyFurtherSpecifications: ''

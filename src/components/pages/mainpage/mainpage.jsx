@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './mainpage.css';
-import logo from '../../../volmiamilogo.png';
+import logo from '../../../volmiamisvg2.svg';
 import arrow from '../../../arrow.png'
 import banner from './banner.jpg';
 import {Link} from 'react-router-dom';
 import businessesJson from '../../../businesses.js';
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import {BrowserView, MobileView, isBrowser, isMobile} from 'react-device-detect';
 
 class MainPage extends Component{
 
@@ -43,18 +44,22 @@ class MainPage extends Component{
 
     render(){
         const logoOpacity = Math.min(100 / this.state.scrollHeight, 1)
+        
         var show = (this.state.toggleDropdown==="true") ? 'show' : 'noshow';
             return(
                 <div className="parent">
                     <div className="logo">
-                        <img src={banner} alt="banner" width="100%" height="900vh" className="banner"/>
-                            
-                        <img src={logo} alt="logo" style = {{opacity: logoOpacity}} className="app-logo"/>
                         <div className="bot-bar" />
+                        <img src={banner} alt="background" className="banner" />
+                        <img src={logo} alt="logo" style = {{opacity: logoOpacity}} className="app-logo"/>
+                        
                     </div>
-                    
+                    <div className="scrollTo">
+                            <a id="body" />
+                    </div>
                         <div className="body">
-                        <div className="sortBy">
+                            <a id="body" />
+                            <div className="sortBy">
                                     <ButtonDropdown isOpen={this.state.dropdownToggled} toggle={this.toggleDropdown}>
                                         <DropdownToggle caret color="light">
                                             Sort By:
@@ -68,61 +73,81 @@ class MainPage extends Component{
                                     </ButtonDropdown>
                             </div>
                             <div className="container">
-                                
                                 <div className="panel-group">
                                     {this.state.businesses.map(obj=>{
-                                                return (
-                                                    <div>
-                                                    <div className="panel panel-default">
-                                                        <img src={obj.photo} className="rounded float-right .img-thumbnail bizpic"alt="pic of business"/>
-                                                        <h1>{obj.name}</h1>
-                                                        <div className="panel-body">
-                                                            <h5>{obj.hours}</h5>
-                                                            {obj.summary}
-                                                            <div className="arrowdropdown">
-                                                                <input className={obj.spun ? 'arrowhead' : 'arrowheadspun'} type="image" src={arrow} alt="arrow" width="35" height="35" onClick={() => { this.applyButton(obj.id) }} />
-                                                            </div>
+                                        return (
+                                            <div>
+                                                <div className="panel panel-default">
+                                                    
+                                                    <img src={obj.photo} className="rounded float-right .img-thumbnail bizpic" alt="pic of business"/>
+                                                    
+                                                    <h1>{obj.name}</h1>
+                                                    <div className="panel-body">
+                                                        <h5>{obj.hours}</h5>
+                                                        {obj.summary}
+                                                        <div className="arrowdropdown">
+                                                            <input className={obj.spun ? 'arrowhead' : 'arrowheadspun'} type="image" src={arrow} alt="arrow" width="35" height="35" onClick={() => { this.applyButton(obj.id) }} />
                                                         </div>
                                                     </div>
-                                                    {obj.expanded !== false ? (
-                                                    <div className="panel panel-default" style={{marginLeft:100, marginTop: -80, paddingTop:0, zIndex: 0, borderTopLeftRadius: 0, borderTopRightRadius: 0, width:'86.5%'}}>
-                                                        <div className="moreInfo" >
-                                                            <h5>Location: {obj.location}</h5>
-                                                            <h5>Website: {obj.website}</h5>
-                                                            <h5>Volunteers Needed: {obj.volunteersNeeded}</h5>
-                                                            <h5>Age Range: {obj.ageWindow}</h5>
-                                                            <h5>Daily Service Hours: {obj.dailyServiceHours}</h5>
-                                                            <div className="credentials">
-                                                                <p>Sunday: {obj.Sunday}</p>
-                                                                <p>Monday: {obj.Monday}</p>
-                                                                <p>Tuesday: {obj.Tuesday}</p>
-                                                                <p>Wednesday: {obj.Wednesday}</p>
-                                                                <p>Thursday: {obj.Thursday}</p>
-                                                                <p>Friday: {obj.Friday}</p>
-                                                                <p>Saturday: {obj.Saturday}</p>
-                                                            </div>
-                                                            <h5>Total Project Service Hours: {obj.totalProjectServiceHours}</h5>
-                                                            <h5>Dates: {obj.dates}</h5>
-                                                            <h5>Job Title: {obj.jobTitle}</h5>
-                                                            <div className="credentials">
-                                                                <p>Job Description: {obj.jobDescription}</p>
-                                                            </div>
-                                                            <h5>Credentials: {obj.credentials}</h5>
-                                                            <div className="credentials">
-                                                                <p>GPA: {obj.gpa}</p>
-                                                                <p>Certification: {obj.certficiation}</p>
-                                                                <p>Talents: {obj.talents}</p>
-                                                                <p>Languages: {obj.languages}</p>
-                                                            </div>
-                                                            <h5>Dress Code: {obj.dressCode}</h5>
-                                                            <h5>Any Further Specifications: {obj.anyFurtherSpecifications}</h5>
-                                                            <Link to={`business?ItemId=${obj.id}`}>
-                                                                <button type="button" className="btn btn-secondary apply-button">Apply</button>
-                                                            </Link>
+                                                </div>
+                                                {obj.expanded !== false ? (
+                                                <div className="panel panel-default" style={{marginLeft:100, marginTop: -80, paddingTop:0, zIndex: 0, borderTopLeftRadius: 0, borderTopRightRadius: 0, width:'86.5%'}}>
+                                                    <div className="moreInfo" >
+                                                        <div className="category">
+                                                            <h5>Location: </h5><div className="answer">{obj.location}</div>
                                                         </div>
-                                                    </div>) : (<p></p>)}
+                                                        <div className="category">
+                                                            <h5>Website: </h5><div className="answer">{obj.website}</div>
+                                                        </div>
+                                                        <div className="category">
+                                                            <h5>Age Range: </h5><div className="answer">{obj.ageWindow}</div>
+                                                        </div>
+                                                        <div className="category">
+                                                            <h5>Daily Service Hours: </h5><div className="answer">{obj.dailyServiceHours}</div>
+                                                        </div>
+                                                        <div className="category">
+                                                            <div className="credentials">
+                                                                <div className="subCategory"><h6>Sunday: </h6><div className="subAnswer">{obj.Sunday}</div></div>
+                                                                <div className="subCategory"><h6>Monday: </h6><div className="subAnswer">{obj.Monday}</div></div>
+                                                                <div className="subCategory"><h6>Tuesday: </h6><div className="subAnswer">{obj.Tuesday}</div></div>
+                                                                <div className="subCategory"><h6>Wednesday: </h6><div className="subAnswer">{obj.Wednesday}</div></div>
+                                                                <div className="subCategory"><h6>Thursday: </h6><div className="subAnswer">{obj.Thursday}</div></div>
+                                                                <div className="subCategory"><h6>Friday: </h6><div className="subAnswer">{obj.Friday}</div></div>
+                                                                <div className="subCategory"><h6>Saturday: </h6><div className="subAnswer">{obj.Saturday}</div></div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="category">
+                                                            <h5>Total Project Service Hours: </h5><div className="answer">{obj.totalProjectServiceHours}</div>
+                                                        </div>
+                                                        <div className="category">
+                                                            <h5>Dates: </h5><div className="answer">{obj.dates}</div>
+                                                        </div>
+                                                        <div className="category">
+                                                            <h5>Job Title: </h5><div className="answer">{obj.jobTitle}</div>
+                                                        </div>
+                                                        <div className="category">
+                                                            <h5>Job Description: </h5><div className="answer">{obj.jobDescription}</div>
+                                                        </div>
+                                                        <div className="category">
+                                                            <h5>Credentials: </h5><div className="answer">{obj.credentials}</div>
+                                                        </div>
+                                                        <div className="credentials">
+                                                            <div className="subCategory"><h6>GPA: </h6><div className="subAnswer">{obj.gpa}</div></div>
+                                                            <div className="subCategory"><h6>Certification: </h6><div className="subAnswer">{obj.certficiation}</div></div>
+                                                            <div className="subCategory"><h6>Skills: </h6><div className="subAnswer">{obj.skills}</div></div>
+                                                            <div className="subCategory"><h6>Language: </h6><div className="subAnswer">{obj.languages}</div></div>
+                                                        </div>
+                                                        <div className="category">
+                                                            <h5>Dress Code:</h5> <div className="answer">{obj.dressCode}</div>
+                                                        </div>
+                                                        <h5>Any Further Specifications:</h5> <div className="answer">{obj.anyFurtherSpecifications}</div>
+                                                        <Link to={`business?ItemId=${obj.id}`}>
+                                                            <button type="button" className="btn btn-secondary apply-button">Apply</button>
+                                                        </Link>
                                                     </div>
-                                                );
+                                                </div>) : (<p></p>)}
+                                            </div>
+                                        );
                                     })}
                                 </div>
                             </div>

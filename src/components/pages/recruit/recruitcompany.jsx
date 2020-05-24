@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './recruitcompany.css';
-import whoCanRecruit from './infographic3.png';
+import whoCanRecruit from './infographic4.png';
 import background from './background.png';
 import businessesJson from '../../../businesses';
 import bizPic from '../mainpage/businessphotos/bizimage.jpg';
@@ -13,12 +13,12 @@ class RecruitCompany extends Component{
     }
     
     render(){
-        const logoOpacity = Math.min(100 / this.state.scrollHeight, 1)
+        //const logoOpacity = Math.min(100 / this.state.scrollHeight, 1)
         return(
             <div className="RecruitCompany">
                 
                 <div className="logo" style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                    <img src={whoCanRecruit} style={{opacity: logoOpacity}} alt="graphic" className="infographic" width="100%" height="auto"/>
+                    <img src={whoCanRecruit} alt="graphic" className="infographic" width="100%" height="auto"/>
                     <img src={background} alt="graphic" className="bannerRecruit" width="100%" height="auto"/>
                     <div className="bot-bar" />
                 </div>
@@ -36,11 +36,11 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputAge" style={{marginTop: -13}}>Volunteers Needed</label>
-                                <input type="text" className="form-control" id="inputAge" placeHolder="Volunteers Needed" onChange={(event)=>{this.setState({Age: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputAge" placeHolder="Volunteers needed" onChange={(event)=>{this.setState({Age: event.target.value});}}  />
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool">Age Range</label>
-                                <input type="text" className="form-control" id="inputSchool" placeHolder="Age Range" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Age range" onChange={(event)=>{this.setState({School: event.target.value});}}  />
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool">Sunday Hours</label>
@@ -72,7 +72,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputGPA" style={{marginTop: -13}}>Total Project Service Hours</label>
-                                <input type="text" className="form-control" id="inputGPA" placeHolder="Total Project Service Hours" onChange={(event)=>{this.setState({GPA: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputGPA" placeHolder="Total project service hours" onChange={(event)=>{this.setState({GPA: event.target.value});}}  />
                             </div>
                             <div className="singleInput">
                                 <label for="inputCert">Dates</label>
@@ -80,11 +80,11 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputTalent">Job Title</label>
-                                <input type="text" className="form-control" id="inputTalent" placeHolder="Job Title" onChange={(event)=>{this.setState({Talents: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputTalent" placeHolder="Job title" onChange={(event)=>{this.setState({Talents: event.target.value});}}  />
                             </div>
                             <div className="singleInput">
                                 <label for="inputTalent">Job Description</label>
-                                <input type="text" className="form-control" id="inputTalent" placeHolder="Job Description" onChange={(event)=>{this.setState({Talents: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputTalent" placeHolder="Job description" onChange={(event)=>{this.setState({Talents: event.target.value});}}  />
                             </div>
                             <div className="singleInput">
                                 <label for="inputLang">GPA</label>
@@ -95,8 +95,8 @@ class RecruitCompany extends Component{
                                 <input type="text" className="form-control" id="inputMessage" placeHolder="Certification"onChange={(event)=>{this.setState({Body: event.target.value});}}  />
                             </div>
                             <div className="singleInput">
-                                <label for="inputMessage">Talents</label>
-                                <input type="text" className="form-control" id="inputMessage" placeHolder="Talents"onChange={(event)=>{this.setState({Body: event.target.value});}}  />
+                                <label for="inputMessage">Skills</label>
+                                <input type="text" className="form-control" id="inputMessage" placeHolder="Skills"onChange={(event)=>{this.setState({Body: event.target.value});}}  />
                             </div>
                             <div className="singleInput">
                                 <label for="inputMessage">Languages</label>
@@ -104,7 +104,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputMessage">Dress Code</label>
-                                <input type="text" className="form-control" id="inputMessage" placeHolder="Dress Code"onChange={(event)=>{this.setState({Body: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputMessage" placeHolder="Dress code"onChange={(event)=>{this.setState({Body: event.target.value});}}  />
                             </div>
                             <div className="singleInput">
                                 <label for="inputMessage" style={{marginTop: -13}}>Any Further Specifications</label>

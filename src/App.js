@@ -7,8 +7,10 @@ import ContactUs from './components/pages/contact-us/contact-us.jsx';
 import bizContactUs from './components/pages/business-contact/bizContactHub';
 import navbarLogo from './navbarlogo.ico';
 import RecruitCompany from './components/pages/recruit/recruitcompany';
+import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, NavbarText} from 'reactstrap';
 
 function App() {
+
   return (
         <Router>
           <div className="App">
@@ -18,6 +20,9 @@ function App() {
                 <ul className="navbar-nav bd-navbar flex-row">
                   <li className="nav-item">
                     <a className="nav-link active" href="/">Home</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link active" href="/#body">Volunteer Now</a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link active" href="/recruit">Recruit Volunteers</a>
@@ -42,10 +47,7 @@ function App() {
 
             <div className="footerBottom">
                 <div className="footerContact">
-                  Contact Us:<br />
-                  info@volunteeringmiami.org
-      
-
+                  Copyright © 2020 Alexandr Kim, John Aitken
                 </div>
             </div>
           </div>
