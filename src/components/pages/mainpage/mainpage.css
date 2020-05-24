@@ -1,9 +1,3 @@
-@font-face {font-family: 'couture';src: url('https://volunteeringmiami.com/static/media/couture.otf');}
-
-.cls-2 {
-    font-family: 'couture';
-}
-
 .main{
     padding: 20px;
     position: absolute;
