@@ -1,2 +1,2 @@
-#Volunteering Miami
-###Now on GitHub
+# Volunteering Miami
+### Now on GitHub
