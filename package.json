@@ -9,6 +9,7 @@
     "react-animate-on-scroll": "^2.1.5",
     "react-device-detect": "^1.11.14",
     "react-dom": "^16.8.6",
+    "react-infinite-scroll-component": "^5.0.5",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "reactstrap": "^8.2.0"

@@ -33,15 +33,13 @@
 
 .App{
   position: absolute;
-  top: auto;
-  right: auto;
   background-color: rgb(47, 87, 161);
   outline: 1px solid lightgrey;
   width: 100%;
-  height: auto;
   scroll-behavior: smooth;
   text-align: center;
   color: black;
+  
 }
 
 .footerBottom{
@@ -50,6 +48,9 @@
   background-color: #343A40;
   height: 2rem;    
   width: 100%;
+  bottom: 0;
+  
+  text-align: center;
 }
 
 .footerContact{
@@ -74,10 +75,15 @@
   padding-left: 0.4rem !important ;
 }
 
+.nav-link {
+  transition: text-shadow 0.25s ease-in-out;
+}
 
-
-
-
+.nav-link:hover {
+  text-shadow:#343434 1px 1px 1px,
+  0 0 10px #fff; 
+  text-decoration: none;
+}
 
 
 

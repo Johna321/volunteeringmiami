@@ -1,22 +1,27 @@
 .title{
-    text-align: center;
-    margin-top: 7.5%;
-    padding: 15px;
-    margin-bottom: 100px;
+    height: auto;
+    width: 75%;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    left: 50%;
+    position: fixed;
 }
 
-.paragraph{
-    align-content:center;
+.aboutParagraph{
     text-align: justify;
     text-justify: auto;
     color: lightgrey;
     width: 800px;
-    margin: auto;
     font-size: 1.25rem;
+    transform: translate(-50%, -50%);
+    top: 55%;
+    left: 50%;
+    position: fixed;
 }
 
 .about{
-    height: auto;
+    height: calc(100vh - 32px);
+    
 }
 
 

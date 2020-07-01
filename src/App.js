@@ -22,7 +22,7 @@ function App() {
                     <a className="nav-link active" href="/">Home</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link active" href="/#body">Volunteer Now</a>
+                    <a className="nav-link active" href="/#bot-bar">Volunteer Now</a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link active" href="/recruit">Recruit Volunteers</a>
@@ -49,8 +49,9 @@ function App() {
                 <div className="footerContact">
                   Copyright © 2020 Alexandr Kim, John Aitken
                 </div>
-            </div>
           </div>
+          </div>
+          
       </Router>
   );
 }

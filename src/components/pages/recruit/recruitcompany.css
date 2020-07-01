@@ -24,6 +24,30 @@
     min-height: 100%;
 }
 
+.information{
+    position: absolute;
+    top: 30%;
+    left: 76%;
+}
+
+.information .infoText{
+    visibility: hidden;
+    box-shadow: 0 0 3px black;
+    background-color: white;
+    padding: 10px;
+    margin-left: 80%;
+    z-index: 1;
+    overflow: visible;
+    width: 250px;
+    margin-top: -30%;
+    border-radius: 20px;
+    text-align: left;
+}
+
+.information:hover .infoText{
+    visibility: visible;
+}
+
 .intro{
    margin: auto;
 }
@@ -51,10 +75,13 @@ h1{
 
 .singleInput{
     padding: 10px;
+    position: relative;
+    z-index: 0;
 }
 
 .singleInput input{
     margin: auto;
+    z-index: 0;
 }
 
 

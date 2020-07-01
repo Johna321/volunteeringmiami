@@ -4,12 +4,25 @@ import businessesJson from '../../../businesses.js';
 
 class bizContactHub extends Component{
     state={
-        businesses: businessesJson()
+        business: []
     }
+
+    componentDidMount = async() => {
+        let jsonData = await fetch(
+            `https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/businesses?itemId=${new URLSearchParams(window.location.search).get('ItemId')}&limit=1&offset=0&orderBy=id&ascOrDesc=ASC`,
+            { method: "GET" }
+        );
+        jsonData = await jsonData.json()
+        this.setState({
+            business: jsonData
+        })
+    }   
+
     render(){
         return(
             <div className="bigparent">
-                <Template name={this.state.businesses.find(obj => obj.id === Number(new URLSearchParams(window.location.search).get('ItemId'))).name} email={this.state.businesses.find(obj => obj.id === Number(new URLSearchParams(window.location.search).get('ItemId'))).email} />
+                {this.state.business.length > 0 && 
+                <Template name={this.state.business[0].name} email={this.state.business[0].email} />}
             </div>
         );
     }
