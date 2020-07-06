@@ -16,7 +16,7 @@ class bizContactHub extends Component{
         this.setState({
             business: jsonData
         })
-    }   
+    }
 
     render(){
         return(

@@ -3,16 +3,16 @@ import './template.css';
 
 class Template extends Component{
     state = {
-        Body: '',
-        Subject: 'Volunteering Interest',
-        Name: '',
-        SenderEmail: '',
-        Age: '',
-        School: '',
-        GPA: '',
-        Cert: '',
-        Skills: '',
-        Languages: '',
+        Body: 'N/A',
+        Subject: 'Volunteering Request: ',
+        Name: 'N/A',
+        SenderEmail: 'N/A',
+        Age: 'N/A',
+        School: 'N/A',
+        GPA: 'N/A',
+        Cert: 'N/A',
+        Skills: 'N/A',
+        Languages: 'N/A',
         entryPoint: '0'
     }
 
@@ -43,7 +43,7 @@ class Template extends Component{
                     <textarea type="text" className="form-control" id="inputMessage" placeHolder="Any additional notes"onChange={(event)=>{this.setState({Body: event.target.value});}}  />
                 </form>
                 <button className="btn btn-dark" onClick={()=>{
-                    fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/contact?Body=${this.state.Body}&Email=${this.props.email}&Subject=${this.state.Subject}&CompanyName=${this.props.name}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&Age=${this.state.Age}&School=${this.state.School}&GPA=${this.state.GPA}&Cert=${this.state.Cert}&Talents=${this.state.Skills}&Languages=${this.state.Languages}&ContactUs=${this.state.entryPoint}`)
+                    fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/contact?Body=${this.state.Body}&Email=${this.props.email}&Subject=${this.state.Subject + this.state.Name}&CompanyName=${this.props.name}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&Age=${this.state.Age}&School=${this.state.School}&GPA=${this.state.GPA}&Cert=${this.state.Cert}&Skills=${this.state.Skills}&Languages=${this.state.Languages}&ContactUs=${this.state.entryPoint}`)
                     .then(res => res.json())
                     .then((result) => {
                         console.log(result);

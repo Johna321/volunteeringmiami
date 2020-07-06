@@ -23,7 +23,7 @@ class RecruitCompany extends Component{
                     <div className="bot-bar" />
                 </div>
                 <div className="mainBody">
-                    <div className="theForm">
+                    <div className="formBox">
                         <h1>Add a Volunteer Listing</h1>
                         <form>
                             <div className="singleInput">
@@ -33,6 +33,17 @@ class RecruitCompany extends Component{
                                     <div className="infoText">
                                         <span>
                                             This is the location where your volunteer should report to. Please write out your organization’s full address, e.g. <u>123 Main Street, New York, NY 10030</u>.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="singleInput">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" className="form-control" id="inputEmail" placeholder="Email" onChange={(event)=>{this.setState({SenderEmail: event.target.value});}}  />
+                                <div className="information">ⓘ
+                                    <div className="infoText">
+                                        <span>
+                                            This is where volunteer requests will be sent to for your consideration, e.g. <u>info@volunteeringmiami.org</u>.
                                         </span>
                                     </div>
                                 </div>
@@ -93,7 +104,7 @@ class RecruitCompany extends Component{
                                 </div>
                             </div>
                             <div className="singleInput">
-                                <label for="inputSchool" style={{marginTop: -13}}>Wednesday Hours</label>
+                                <label for="inputSchool" >Wednesday Hours</label>
                                 <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Wednesdays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
@@ -104,7 +115,7 @@ class RecruitCompany extends Component{
                                 </div>
                             </div>
                             <div className="singleInput">
-                                <label for="inputSchool" style={{marginTop: -13}}>Thursday Hours</label>
+                                <label for="inputSchool" >Thursday Hours</label>
                                 <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Thursdays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
@@ -142,7 +153,7 @@ class RecruitCompany extends Component{
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
-                                        Here, input when you want the volunteer to start and finish volunteering. Please input the dates as <u>start month/start day/start year - end month/end day/end year</u>; for example, <u>10/12/20 - 6/4/21</u>. 
+                                        Here, input when you want the volunteer to start and finish volunteering. Please input the dates as start month/start day/start year - end month/end day/end year; for example, <u>10/12/20 - 6/4/21</u>. 
                                         </span>
                                     </div>
                                 </div>
@@ -197,7 +208,7 @@ class RecruitCompany extends Component{
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
-                                        This category is for skills or miscellaneous talents that your organization looks for in a volunteer. These are by no means mandatory and can include a variety of specifications. Skills can be those that are learned or those which volunteers are savvy to, e.g. <u>chess, programming</u> or <u>time management, leadership</u>. If this category does not apply, please input <u>N/A</u>. 
+                                        This category is for skills or miscellaneous talents that your organization looks for in a volunteer. These are by no means mandatory but can include a variety of specifications. Skills can be those that are learned or those which volunteers are savvy to, e.g. <u>chess, programming</u> or <u>time management, leadership</u>. If this category does not apply, please input <u>N/A</u>. 
                                         </span>
                                     </div>
                                 </div>
@@ -249,9 +260,9 @@ class RecruitCompany extends Component{
                                 window.location.reload();
                             })
                         }}>Submit</button>
+                        
                     </div>
                 </div>
-                
             </div>
         );
     }
