@@ -93,8 +93,8 @@ class MainPage extends Component {
 
   render() {
     const logoOpacity = Math.min(100 / this.state.scrollHeight, 1);
-
     var show = this.state.toggleDropdown === "true" ? "show" : "noshow";
+    
     return (
       <div className="parent">
         <div className="logo">
@@ -177,7 +177,7 @@ class MainPage extends Component {
                     <div>
                       <div className="panel panel-default">
                         <img
-                          //src={obj.location ? `https://maps.googleapis.com/maps/api/streetview?key=AIzaSyBBk4SuCFLjvk_OgUh28LYnBGNx2Y7i-ho&size=300x178&location=${obj.location}` : ///'https://volunteeringmiami.com/images/bizimage.jpg'}
+                          //src={obj.location ? `https://maps.googleapis.com/maps/api/streetview?key=AIzaSyBBk4SuCFLjvk_OgUh28LYnBGNx2Y7i-ho&size=300x178&location=${obj.location}` : 'https://volunteeringmiami.com/images/bizimage.jpg'}
                           src={obj.photo}
                           className="rounded float-right .img-thumbnail bizpic"
                           alt="pic of business"
@@ -186,7 +186,7 @@ class MainPage extends Component {
                         <h1>{obj.name}</h1>
                         <div className="panel-body">
                           <h5>{obj.location}</h5>
-                          {obj.summary}
+                          {obj.jobDescription}
                           <div className="arrowdropdown">
                             <input
                               className={
@@ -231,10 +231,11 @@ class MainPage extends Component {
                               <div className="answer">{obj.ageWindow}</div>
                             </div>
                             <div className="category">
+                              <h5>Dates: </h5>
+                              <div className="answer">{obj.dates}</div>
+                            </div>
+                            <div className="category">
                               <h5>Daily Service Hours: </h5>
-                              <div className="answer">
-                                {obj.dailyServiceHours}
-                              </div>
                             </div>
                             <div className="category">
                               <div className="credentials">
@@ -275,16 +276,6 @@ class MainPage extends Component {
                               </div>
                             </div>
                             <div className="category">
-                              <h5>Total Project Service Hours: </h5>
-                              <div className="answer">
-                                {obj.totalProjectServiceHours}
-                              </div>
-                            </div>
-                            <div className="category">
-                              <h5>Dates: </h5>
-                              <div className="answer">{obj.dates}</div>
-                            </div>
-                            <div className="category">
                               <h5>Job Title: </h5>
                               <div className="answer">{obj.jobTitle}</div>
                             </div>
@@ -294,7 +285,6 @@ class MainPage extends Component {
                             </div>
                             <div className="category">
                               <h5>Credentials: </h5>
-                              <div className="answer">{obj.credentials}</div>
 
                               <div className="credentials">
                                 <div className="subCategory">

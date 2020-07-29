@@ -26,7 +26,7 @@ class Template extends Component{
                     <label for="inputEmail">Your Email</label>
                     <input type="email" className="form-control" id="inputEmail" placeholder="example@example.com" onChange={(event)=>{this.setState({SenderEmail: event.target.value});}}  />
                     <label for="inputAge">Your Name</label>
-                    <input type="text" className="form-control" id="inputName" placeHolder="First Name, Last Name" onChange={(event)=>{this.setState({Name: event.target.value});}}  />
+                    <input type="text" className="form-control" id="inputName" placeHolder="Last Name, First Name" onChange={(event)=>{this.setState({Name: event.target.value});}}  />
                     <label for="inputAge">Age</label>
                     <input type="text" className="form-control" id="inputAge" placeHolder="Age" onChange={(event)=>{this.setState({Age: event.target.value});}}  />
                     <label for="inputSchool">School, Grade</label>
@@ -47,7 +47,7 @@ class Template extends Component{
                     .then(res => res.json())
                     .then((result) => {
                         console.log(result);
-                        alert('Message sent successfully');
+                        alert(result === 'error' ? 'Message not sent' : 'Message sent successfully');
                         window.location.href='/';
                     },(error) => {
                         console.log(error);

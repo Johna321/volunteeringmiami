@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import MainPage from './components/pages/mainpage/mainpage.jsx';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -9,12 +9,14 @@ import navbarLogo from './navbarlogo.ico';
 import RecruitCompany from './components/pages/recruit/recruitcompany';
 import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, NavbarText} from 'reactstrap';
 
-function App() {
 
+function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
   return (
         <Router>
           <div className="App">
-            <div className="navigationbar">
+            {/*<div className="navigationbar">
               <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a className="navbar-brand" href="/"><img src={navbarLogo} height="30" className="navbarLogo"/></a>
                 <ul className="navbar-nav bd-navbar flex-row">
@@ -35,7 +37,32 @@ function App() {
                   </li>
                 </ul>
               </nav>
-            </div>
+           </div>*/}
+           <div className="navigationbar">
+            <Navbar color='dark' dark expand='md'>
+              <NavbarBrand href="/"><a className="navbar-brand" href="/"><img src={navbarLogo} height="30" className="navbarLogo"/></a></NavbarBrand>
+              <NavbarToggler className="" onClick={toggle}></NavbarToggler>
+              <Collapse isOpen={isOpen} navbar>
+                <Nav className="mr-auto" navbar>
+                  <NavItem>
+                    <NavLink style={{color: 'white'}} href="/">Home</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink style={{color: 'white'}} href="/#bot-bar">Volunteer Now</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink style={{color: 'white'}} href="/recruit">Recruit Volunteers</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink style={{color: 'white'}} href="/about">About</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink style={{color: 'white'}} href="/contact-us">Contact</NavLink>
+                  </NavItem>
+                </Nav>
+              </Collapse>
+            </Navbar>
+           </div>
 
             <Switch>
               <Route path="/" exact component={MainPage} />

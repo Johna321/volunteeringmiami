@@ -109,9 +109,7 @@
 
 
 .arrowhead{
-    position: absolute;
-    top: 160%;
-    left: 0px;
+    
     animation-name: arrowheadspinup;
     animation-duration: 0.25s;
     animation-fill-mode: forwards;
@@ -119,13 +117,14 @@
 
 .arrowhead, .arrowheadspun{
     background-color: lightgrey;
+    position: absolute;
+    top: 75%;
+    left: 1%;
 }
 
 
 .arrowheadspun{
-    position: absolute;
-    top: 160%;
-    left: 0px;
+    
     animation-name: arrowheadspindown;
     animation-duration: 0.25s;
     animation-fill-mode: forwards;
@@ -142,7 +141,7 @@
 }
 
 .panel-body{
-    position: relative;
+    position: static;
 }
 
 .banner{

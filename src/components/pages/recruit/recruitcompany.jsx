@@ -3,32 +3,94 @@ import './recruitcompany.css';
 import whoCanRecruit from './newestinfographic.png';
 import background from './background.png';
 import businessesJson from '../../../businesses';
-import bizPic from '../mainpage/businessphotos/bizimage.jpg';
+import bizpic from '../mainpage/businessphotos/bizimage.jpg'; 
+import arrow from "../../../arrow.png";
+
 
 class RecruitCompany extends Component{
     state={
+        CompanyName: '',
         Location: '',
+        Email: '',
         Website: '',
-        scrollHeight: ''
+        VolunteersNeeded: '',
+        AgeRange: '',
+        Dates: '',
+        Sunday: '',
+        Monday: '',
+        Tuesday: '',
+        Wednesday: '',
+        Thursday: '',
+        Friday: '',
+        Saturday: '',
+        JobTitle: '',
+        JobDescription: '',
+        GPA: '',
+        Certifications: '',
+        Skills: '',
+        Languages: '',
+        DressCode: '',
+        Specifications: '',
+        expanded: true
     }
     
+    expandButton(){
+        !this.state.expanded ? this.setState({expanded: true}) : this.setState({expanded: false})
+    }
+
     render(){
         //const logoOpacity = Math.min(100 / this.state.scrollHeight, 1)
         return(
             <div className="RecruitCompany">
                 
                 <div className="logo" style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                    <img src={whoCanRecruit} alt="graphic" className="infographic" width="100%" height="auto"/>
+                    <a className="infographic" href="/recruit/#body"><img src={whoCanRecruit} alt="graphic" width="100%" height="auto" href="/recruit/#body"/></a>
                     <img src={background} alt="graphic" className="bannerRecruit" width="100%" height="auto"/>
                     <div className="bot-bar" />
                 </div>
+                
                 <div className="mainBody">
+                    <div className="descriptionBox">
+                        <h1 style={{marginBottom:0}}>Volunteering organizations, welcome! </h1> <br />
+                        <div className="descriptionParagraph">
+                            Our site allows schools, registered 501 (c) nonprofit organizations, and governmental programs to create connections with volunteers across Miami. 
+
+                            You may create a listing to recruit volunteers by completing the form below. Listing all of your organization’s requirements tells volunteers about what kind of work you’ll be doing together. 
+
+                            Filling out our categories, please reference the info buttons labeled ⓘ for instructions and formatting details.
+
+                            Your input will then be processed into a volunteering listing and featured on our home page for budding volunteers. An example listing can be seen below.
+
+                            On our home page, volunteers will input their credentials—such as: age, grade point average, languages, etc.—which are then formatted into a professional email and sent to your organization for approval. 
+
+                            Thank you for choosing us and happy volunteering.
+                        </div><br />
+                        <div className="descriptionSignature">
+                            —Kind regards, <br />
+                            <b style={{marginLeft:17.5}}>Volunteering Miami</b>
+                        </div>
+                        <a id="body"/>
+                    </div>
+                    
+                    
                     <div className="formBox">
+                        
                         <h1>Add a Volunteer Listing</h1>
                         <form>
                             <div className="singleInput">
+                                <label for="inputEmail">Company Name</label>
+                                <input type="email" className="form-control" id="inputEmail" placeholder="Company Name" onChange={(event)=>{this.setState({CompanyName: event.target.value});}}  />
+                                <div className="information">ⓘ
+                                    <div className="infoText">
+                                        <span>
+                                            Please input the name of your organization, e.g. <u>Volunteering Miami</u>.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="singleInput">
                                 <label for="inputEmail">Location</label>
-                                <input type="email" className="form-control" id="inputEmail" placeholder="Location" onChange={(event)=>{this.setState({SenderEmail: event.target.value});}}  />
+                                <input type="email" className="form-control" id="inputEmail" placeholder="Location" onChange={(event)=>{this.setState({Location: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -39,7 +101,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputEmail">Email</label>
-                                <input type="email" className="form-control" id="inputEmail" placeholder="Email" onChange={(event)=>{this.setState({SenderEmail: event.target.value});}}  />
+                                <input type="email" className="form-control" id="inputEmail" placeholder="Email" onChange={(event)=>{this.setState({Email: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -50,7 +112,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputAge">Website</label>
-                                <input type="text" className="form-control" id="inputName" placeHolder="Website" onChange={(event)=>{this.setState({Name: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputName" placeHolder="Website" onChange={(event)=>{this.setState({Website: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -60,8 +122,19 @@ class RecruitCompany extends Component{
                                 </div>
                             </div>
                             <div className="singleInput">
+                                <label for="inputMessage">Volunteers Needed</label>
+                                <input type="text" className="form-control" id="inputMessage" placeHolder="Volunteers needed" onChange={(event)=>{this.setState({VolunteersNeeded: event.target.value});}}  />
+                                <div className="information">ⓘ
+                                    <div className="infoText">
+                                        <span>
+                                            In this field, please input the total amount of volunteers your organization is looking for, e.g. <u>7</u> 
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="singleInput">
                                 <label for="inputSchool">Age Range</label>
-                                <input type="text" className="form-control" id="inputSchool" placeHolder="Age range" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Age range" onChange={(event)=>{this.setState({AgeRange: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -71,8 +144,19 @@ class RecruitCompany extends Component{
                                 </div>
                             </div>
                             <div className="singleInput">
+                                <label for="inputCert">Dates</label>
+                                <input type="text" className="form-control" id="inputCert" placeHolder="Dates" onChange={(event)=>{this.setState({Dates: event.target.value});}}  />
+                                <div className="information">ⓘ
+                                    <div className="infoText">
+                                        <span>
+                                        Here, input when you want the volunteer to start and finish volunteering. Please input the dates as start month/start day/start year - end month/end day/end year; for example, <u>10/12/20 - 6/4/21</u>. 
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="singleInput">
                                 <label for="inputSchool">Sunday Hours</label>
-                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Sundays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Sundays" onChange={(event)=>{this.setState({Sunday: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -83,7 +167,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool">Monday Hours</label>
-                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Mondays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Mondays" onChange={(event)=>{this.setState({Monday: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -94,7 +178,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool">Tuesday Hours</label>
-                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Tuesdays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Tuesdays" onChange={(event)=>{this.setState({Tuesday: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -105,7 +189,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool" >Wednesday Hours</label>
-                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Wednesdays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Wednesdays" onChange={(event)=>{this.setState({Wednseday: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -116,7 +200,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool" >Thursday Hours</label>
-                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Thursdays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Thursdays" onChange={(event)=>{this.setState({Thursday: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -127,7 +211,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool">Friday Hours</label>
-                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Fridays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Fridays" onChange={(event)=>{this.setState({Friday: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -138,7 +222,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool" >Saturday Hours</label>
-                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work time on Saturdays" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work time on Saturdays" onChange={(event)=>{this.setState({Saturday: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -147,20 +231,10 @@ class RecruitCompany extends Component{
                                     </div>
                                 </div>
                             </div>
-                            <div className="singleInput">
-                                <label for="inputCert">Dates</label>
-                                <input type="text" className="form-control" id="inputCert" placeHolder="Dates" onChange={(event)=>{this.setState({Cert: event.target.value});}}  />
-                                <div className="information">ⓘ
-                                    <div className="infoText">
-                                        <span>
-                                        Here, input when you want the volunteer to start and finish volunteering. Please input the dates as start month/start day/start year - end month/end day/end year; for example, <u>10/12/20 - 6/4/21</u>. 
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div className="singleInput">
                                 <label for="inputTalent">Job Title</label>
-                                <input type="text" className="form-control" id="inputTalent" placeHolder="Job title" onChange={(event)=>{this.setState({Talents: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputTalent" placeHolder="Job title" onChange={(event)=>{this.setState({JobTitle: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -171,18 +245,18 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputTalent">Job Description</label>
-                                <input type="text" className="form-control" id="inputTalent" placeHolder="Job description" onChange={(event)=>{this.setState({Talents: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputTalent" placeHolder="Job description" onChange={(event)=>{this.setState({JobDescription: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
-                                        Here, input the kind of tasks your volunteer will need to perform. Please mention specific activities or projects. For example: <u>At (organization name), we aid in the protection of our local wildlife. We regularly take excursions onto polluted sites such as bays and marinas to collect waste and to preserve nature. However, our work is not limited to the physical; we also do a lot of fundraising, so please be ready to put your best side forward.</u> 
+                                            Here, input the kind of tasks your volunteer will need to perform. Please mention specific activities or projects. For example: <u>At (organization name), we aid in the protection of our local wildlife. We regularly take excursions onto polluted sites such as bays and marinas to collect waste and to preserve nature. However, our work is not limited to the physical; we also do a lot of fundraising, so please be ready to put your best side forward.</u> 
                                         </span>
                                     </div>
                                 </div>
                             </div>
                             <div className="singleInput">
                                 <label for="inputLang">GPA</label>
-                                <input type="text" className="form-control" id="inputLang" placeHolder="GPA" onChange={(event)=>{this.setState({Languages: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputLang" placeHolder="GPA" onChange={(event)=>{this.setState({GPA: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -192,8 +266,8 @@ class RecruitCompany extends Component{
                                 </div>
                             </div>
                             <div className="singleInput">
-                                <label for="inputMessage">Certification</label>
-                                <input type="text" className="form-control" id="inputMessage" placeHolder="Certification"onChange={(event)=>{this.setState({Body: event.target.value});}}  />
+                                <label for="inputMessage">Certifications</label>
+                                <input type="text" className="form-control" id="inputMessage" placeHolder="Certifications"onChange={(event)=>{this.setState({Certifications: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -204,7 +278,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputMessage">Skills</label>
-                                <input type="text" className="form-control" id="inputMessage" placeHolder="Skills"onChange={(event)=>{this.setState({Body: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputMessage" placeHolder="Skills"onChange={(event)=>{this.setState({Skills: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -215,7 +289,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputMessage">Languages</label>
-                                <input type="text" className="form-control" id="inputMessage" placeHolder="Languages"onChange={(event)=>{this.setState({Body: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputMessage" placeHolder="Languages"onChange={(event)=>{this.setState({Languages: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -226,7 +300,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputMessage">Dress Code</label>
-                                <input type="text" className="form-control" id="inputMessage" placeHolder="Dress code"onChange={(event)=>{this.setState({Body: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputMessage" placeHolder="Dress code"onChange={(event)=>{this.setState({DressCode: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -237,7 +311,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputMessage" style={{marginTop: -13}}>Any Further Specifications</label>
-                                <input type="text" className="form-control" id="inputMessage" placeHolder="Any additional notes"onChange={(event)=>{this.setState({Body: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputMessage" placeHolder="Any additional notes"onChange={(event)=>{this.setState({Specifications: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -246,13 +320,14 @@ class RecruitCompany extends Component{
                                     </div>
                                 </div>
                             </div>
+                            
                         </form>
                         <button className="btn btn-dark" style={{marginTop: 25}} onClick={()=>{
-                            fetch(`http://209.97.154.166/sendgrid?Body=${this.state.Body}&Email=${this.props.email}&Subject=${this.state.Subject}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}}&Age=${this.state.Age}&School=${this.state.School}&GPA=${this.state.GPA}&Cert=${this.state.Cert}&Talents=${this.state.Talents}&Languages=${this.state.Languages}&ContactUs=${this.state.entryPoint}`)
+                            fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/recruit?CompanyName=${this.state.CompanyName}&Location=${this.state.Location}&Email=${this.state.Email}&Website=${this.state.Website}&AgeRange=${this.state.AgeRange}&Dates=${this.state.Dates}&Sunday=${this.state.Sunday}&Monday=${this.state.Monday}&Tuesday=${this.state.Tuesday}&Wednesday=${this.state.Wednesday}&Thursday=${this.state.Thursday}&Friday=${this.state.Friday}&Saturday=${this.state.Saturday}&JobTitle=${this.state.JobTitle}&JobDescription=${this.state.JobDescription}&GPA=${this.state.GPA}&Certification=${this.state.Certification}&Skills=${this.state.Skills}&Languages=${this.state.Languages}&DressCode=${this.state.DressCode}&Specifications=${this.state.Specifications}`)
                             .then(res => res.json())
                             .then((result) => {
                                 console.log(result);
-                                alert('Message sent successfully');
+                                alert('Application sent successfully');
                                 window.location.href='/';
                             },(error) => {
                                 console.log(error);
@@ -261,6 +336,161 @@ class RecruitCompany extends Component{
                             })
                         }}>Submit</button>
                         
+                    </div>
+                    <div style={{paddingTop:0}} className="container">
+                        <div>
+                            <div style={{backgroundColor: 'white'}} className="panel panel-default">
+                            <img
+                                //src={obj.location ? `https://maps.googleapis.com/maps/api/streetview?key=AIzaSyBBk4SuCFLjvk_OgUh28LYnBGNx2Y7i-ho&size=300x178&location=${obj.location}` : ///'https://volunteeringmiami.com/images/bizimage.jpg'}
+                                src={bizpic}
+                                className="rounded float-right .img-thumbnail bizpic"
+                                alt="pic of business"
+                            />
+
+                            <h1>Example Company</h1>
+                            <div className="panel-body">
+                                <h5>1234 Example St, Springfield, 54321</h5>
+                                Brief Summary
+                                <div className="arrowdropdown">
+                                <input
+                                    type="image"
+                                    src={arrow}
+                                    alt="arrow"
+                                    width="35"
+                                    height="35"
+                                    className={this.state.expanded ? "arrowheadspun" : "arrowhead"}
+                                    onClick ={() => {
+                                        this.expandButton();
+                                    }}
+                                />
+                                </div>
+                            </div>
+                            </div>
+                            {!this.state.expanded ? (
+                            <div
+                                className="panel panel-default"
+                                style={{
+                                marginLeft: 100,
+                                marginTop: -80,
+                                paddingTop: 0,
+                                zIndex: 0,
+                                borderTopLeftRadius: 0,
+                                borderTopRightRadius: 0,
+                                width: "86.5%",
+                                backgroundColor: 'white'
+                                }}
+                            >
+                                <div className="moreInfo">
+                                <div className="category">
+                                    <h5>Location: </h5>
+                                    <div className="answer">1234 Example St, Springfield, 54321</div>
+                                </div>
+                                <div className="category">
+                                    <h5>Website: </h5>
+                                    <div className="answer">www.examplecompany.org</div>
+                                </div>
+                                <div className="category">
+                                    <h5>Age Range: </h5>
+                                    <div className="answer">16-24 years old</div>
+                                </div>
+                                <div className="category">
+                                    <h5>Dates: </h5>
+                                    <div className="answer">12/20/19 - 1/20/20</div>
+                                </div>
+                                <div className="category">
+                                    <h5>Daily Service Hours: </h5>
+                                </div>
+                                <div className="category">
+                                    <div className="credentials">
+                                    <div className="subCategory">
+                                        <h6>Sunday: </h6>
+                                        <div className="subAnswer">9:00 AM - 6:00 PM</div>
+                                    </div>
+                                    <div className="subCategory">
+                                        <h6>Monday: </h6>
+                                        <div className="subAnswer">9:00 AM - 6:00 PM</div>
+                                    </div>
+                                    <div className="subCategory">
+                                        <h6>Tuesday: </h6>
+                                        <div className="subAnswer">9:00 AM - 6:00 PM</div>
+                                    </div>
+                                    <div className="subCategory">
+                                        <h6>Wednesday: </h6>
+                                        <div className="subAnswer">
+                                        9:00 AM - 6:00 PM
+                                        </div>
+                                    </div>
+                                    <div className="subCategory">
+                                        <h6>Thursday: </h6>
+                                        <div className="subAnswer">
+                                        9:00 AM - 6:00 PM
+                                        </div>
+                                    </div>
+                                    <div className="subCategory">
+                                        <h6>Friday: </h6>
+                                        <div className="subAnswer">9:00 AM - 6:00 PM}</div>
+                                    </div>
+                                    <div className="subCategory">
+                                        <h6>Saturday: </h6>
+                                        <div className="subAnswer">
+                                        9:00 AM - 6:00 PM
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div className="category">
+                                    <h5>Job Title: </h5>
+                                    <div className="answer">Caretaker</div>
+                                </div>
+                                <div className="category">
+                                    <h5>Job Description: </h5>
+                                    <div className="answer">Attend nursing home and assist employees in the workplace</div>
+                                </div>
+                                <div className="category">
+                                    <h5>Credentials: </h5>
+
+                                    <div className="credentials">
+                                    <div className="subCategory">
+                                        <h6>GPA: </h6>
+                                        <div className="subAnswer">3.5</div>
+                                    </div>
+                                    <div className="subCategory">
+                                        <h6>Certification: </h6>
+                                        <div className="subAnswer">
+                                        N/A
+                                        </div>
+                                    </div>
+                                    <div className="subCategory">
+                                        <h6>Skills: </h6>
+                                        <div className="subAnswer">Chess and swimming</div>
+                                    </div>
+                                    <div className="subCategory">
+                                        <h6>Language: </h6>
+                                        <div className="subAnswer">
+                                        English, Spanish
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div className="category">
+                                    <h5>Dress Code:</h5>
+                                    <div className="answer">Business Casual</div>
+                                </div>
+                                <h5>Any Further Specifications:</h5>
+                                <div className="answer">
+                                    Must take required orientation course
+                                </div>
+                                <button
+                                type="button"
+                                className="btn btn-secondary apply-button"
+                                >
+                                Apply
+                                </button>
+                                
+                                </div>
+                            </div>
+                            ) : (<p></p>)}
+                        </div>
                     </div>
                 </div>
             </div>

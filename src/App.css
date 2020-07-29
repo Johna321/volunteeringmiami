@@ -42,6 +42,12 @@
   
 }
 
+.navbar-brand{
+  padding-top: 0.15625rem !important;
+  padding-bottom: 0.15625rem !important;
+  margin-right: 0.5rem !important;
+}
+
 .footerBottom{
   position: relative;
   justify-content: center;

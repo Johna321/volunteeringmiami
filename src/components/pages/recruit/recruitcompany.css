@@ -62,12 +62,37 @@
     background-color: white;
     color: black;
     padding: 50px;
-    width: 50%;
+    width: 60%;
     margin-top: 50px;
     border-radius: 20px 20px 20px 20px;
     border-bottom: 3px solid #c5c3c3;
     border-right:3px solid #c5c3c3 ;
-    transform: translate(50%, 0%);
+    transform: translate(33%, 0%);
+    margin-bottom: 50px;
+}
+
+.descriptionParagraph{
+    text-align: justify;
+    text-justify: auto;
+    font-size: 17.5px;
+}
+
+.descriptionSignature{
+    text-align: left;
+    font-size: 17.5px;
+}
+
+.descriptionBox{
+    position: relative;
+    background-color: white;
+    color: black;
+    padding: 50px;
+    width: 60%;
+    margin-top: 50px;
+    border-radius: 20px 20px 20px 20px;
+    border-bottom: 3px solid #c5c3c3;
+    border-right:3px solid #c5c3c3 ;
+    transform: translate(33%, 0%);
     margin-bottom: 50px;
 }
 
