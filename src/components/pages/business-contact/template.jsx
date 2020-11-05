@@ -13,7 +13,8 @@ class Template extends Component{
         Cert: 'N/A',
         Skills: 'N/A',
         Languages: 'N/A',
-        entryPoint: '0'
+        entryPoint: '0',
+        tosChecked: false
     }
 
     
@@ -22,9 +23,11 @@ class Template extends Component{
             <div className="stuff">
                 <h1 className="businessTitle">Contact {this.props.name}</h1>
                 
-                <form>
+                <form className="applicationForm">
+                    
                     <label for="inputEmail">Your Email</label>
                     <input type="email" className="form-control" id="inputEmail" placeholder="example@example.com" onChange={(event)=>{this.setState({SenderEmail: event.target.value});}}  />
+                    
                     <label for="inputAge">Your Name</label>
                     <input type="text" className="form-control" id="inputName" placeHolder="Last Name, First Name" onChange={(event)=>{this.setState({Name: event.target.value});}}  />
                     <label for="inputAge">Age</label>
@@ -41,7 +44,16 @@ class Template extends Component{
                     <input type="text" className="form-control" id="inputLang" placeHolder="Any proficiency in foreign language" onChange={(event)=>{this.setState({Languages: event.target.value});}}  />
                     <label for="inputMessage">Message</label>
                     <textarea type="text" className="form-control" id="inputMessage" placeHolder="Any additional notes"onChange={(event)=>{this.setState({Body: event.target.value});}}  />
+                    
                 </form>
+                <div style={{marginBottom: 15}} className="tosCheckbox">
+                    <div style={{marginRight: 5}}>
+                        <input style={{marginRight: 10}} type="checkbox" id="tos" onChange={() => this.setState({tosChecked: !this.state.tosChecked})}/>
+                        I agree to the Volunteering Miami <a style={{color: "white"}} href="https://volunteeringmiami.com/termsofservice/Terms_of_Service.pdf"><b>Terms of Service</b></a>
+                    </div>
+                    
+                </div>
+                {this.state.tosChecked ? 
                 <button className="btn btn-dark" onClick={()=>{
                     fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/contact?Body=${this.state.Body}&Email=${this.props.email}&Subject=${this.state.Subject + this.state.Name}&CompanyName=${this.props.name}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&Age=${this.state.Age}&School=${this.state.School}&GPA=${this.state.GPA}&Cert=${this.state.Cert}&Skills=${this.state.Skills}&Languages=${this.state.Languages}&ContactUs=${this.state.entryPoint}`)
                     .then(res => res.json())
@@ -55,6 +67,9 @@ class Template extends Component{
                         window.location.reload();
                     })
                 }}>Submit</button>
+                :
+                <button className="btn btn-dark">Submit</button>
+                }
             </div>
         );
     }

@@ -8,61 +8,68 @@ import bizContactUs from './components/pages/business-contact/bizContactHub';
 import navbarLogo from './navbarlogo.ico';
 import RecruitCompany from './components/pages/recruit/recruitcompany';
 import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, NavbarText} from 'reactstrap';
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from "react-device-detect";
 
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+  const [popUpClosed, setPopUpOpen] = useState(false);
+  const togglePopUp = () => setPopUpOpen(!popUpClosed);
+  
   return (
         <Router>
           <div className="App">
-            {/*<div className="navigationbar">
-              <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a className="navbar-brand" href="/"><img src={navbarLogo} height="30" className="navbarLogo"/></a>
-                <ul className="navbar-nav bd-navbar flex-row">
-                  <li className="nav-item">
-                    <a className="nav-link active" href="/">Home</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link active" href="/#bot-bar">Volunteer Now</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link active" href="/recruit">Recruit Volunteers</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link active" href="/about">About</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link active" href="/contact-us">Contact</a>
-                  </li>
-                </ul>
-              </nav>
-           </div>*/}
-           <div className="navigationbar">
-            <Navbar color='dark' dark expand='md'>
-              <NavbarBrand href="/"><a className="navbar-brand" href="/"><img src={navbarLogo} height="30" className="navbarLogo"/></a></NavbarBrand>
-              <NavbarToggler className="" onClick={toggle}></NavbarToggler>
-              <Collapse isOpen={isOpen} navbar>
-                <Nav className="mr-auto" navbar>
-                  <NavItem>
-                    <NavLink style={{color: 'white'}} href="/">Home</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink style={{color: 'white'}} href="/#bot-bar">Volunteer Now</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink style={{color: 'white'}} href="/recruit">Recruit Volunteers</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink style={{color: 'white'}} href="/about">About</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink style={{color: 'white'}} href="/contact-us">Contact</NavLink>
-                  </NavItem>
-                </Nav>
-              </Collapse>
-            </Navbar>
-           </div>
+            {isMobile ? 
+            <div className="popupcontainer">
+              {popUpClosed ? <div></div> : 
+              <div className="popup">
+                <div className="popupdivider" />
+                <div className="popupbody">
+                  <b>Volunteering Miami</b> is primarily a desktop application. <br /><br />
+                  While you can see which organizations are looking for volunteers, to actually apply or create a volunteer recruitment listing, you have to visit our site from a computer. <br /> <br />
+                  Please feel free to browse our site regardless. <br /><br />
+                  Thank you for choosing us, and happy volunteering!
+                </div>
+                <div className="okbutton">
+                  <button className="btn btn-secondary" onClick={togglePopUp}>
+                    Ok
+                  </button>
+                </div>
+              </div>
+              }
+            </div> : <div></div>}
+            
+            <div className="navigationbar">
+              <Navbar color='dark' dark expand='md'>
+                <NavbarBrand href="/"><a className="navbar-brand" href="/"><img src={navbarLogo} height="30" className="navbarLogo"/></a></NavbarBrand>
+                <NavbarToggler className="" onClick={toggle}></NavbarToggler>
+                <Collapse isOpen={isOpen} navbar>
+                  <Nav className="mr-auto" navbar>
+                    <NavItem>
+                      <NavLink style={{color: 'white'}} href="/">Home</NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink style={{color: 'white'}} href="/#bot-bar">Volunteer Now</NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink style={{color: 'white'}} href="/recruit">Recruit Volunteers</NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink style={{color: 'white'}} href="/about">About</NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink style={{color: 'white'}} href="/contact-us">Contact</NavLink>
+                    </NavItem>
+                  </Nav>
+                </Collapse>
+              </Navbar>
+            </div>
 
             <Switch>
               <Route path="/" exact component={MainPage} />

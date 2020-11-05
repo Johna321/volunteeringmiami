@@ -22,6 +22,28 @@
     min-height: 100%;
 }
 
+.bannerRecruitMobile{
+    left: -10%;
+    z-index: 0;
+    position: absolute;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    height: auto;
+    width: 200%;
+}
+
+.mobileRecruitParagraph{
+    text-align: left;
+}
+
+.agreementTOS{
+    text-align: justify;
+    width: 75%;
+    margin-left: 10%;
+}
+
 .information{
     height: 38px;
     position: relative;
@@ -57,6 +79,37 @@
     margin-bottom: 0px;
 }
 
+.mobileRecruitInfo{
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    height: 75%;
+    background-color: white;
+    border-radius: 20px 20px 20px 20px;
+    border-bottom: 3px solid #c5c3c3;
+    border-right:3px solid #c5c3c3 ;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 5%;
+}
+
+.mobileInfoSignature{
+    text-align: left;
+}
+
+.mobileInfographic{
+    width: 200%;
+    margin-left: 2.5%;
+    margin-top: 50%;
+}
+
+.desktopInfographic{
+    width: 100%;
+    margin-left: 50%;
+    margin-top: 0%;
+}
+
 .formBox{
     position: relative;
     background-color: white;
@@ -64,11 +117,27 @@
     padding: 50px;
     width: 60%;
     margin-top: 50px;
+    margin-bottom: 50px;
     border-radius: 20px 20px 20px 20px;
     border-bottom: 3px solid #c5c3c3;
     border-right:3px solid #c5c3c3 ;
     transform: translate(33%, 0%);
-    margin-bottom: 50px;
+}
+
+.tosLink:link{
+    color: white;
+    margin-left: 42.5%;
+}
+
+.tosLink:hover{
+    color: white;
+    margin-left: 42.5%;
+}
+
+.tosLink{
+    color: white;
+    margin-left: 42.5%;
+    text-decoration: none;
 }
 
 .descriptionParagraph{
@@ -89,11 +158,12 @@
     padding: 50px;
     width: 60%;
     margin-top: 50px;
+    margin-bottom: 50px;
     border-radius: 20px 20px 20px 20px;
     border-bottom: 3px solid #c5c3c3;
     border-right:3px solid #c5c3c3 ;
     transform: translate(33%, 0%);
-    margin-bottom: 50px;
+    
 }
 
 h1{
@@ -121,5 +191,3 @@ h1{
     width:  20% !important;
     padding: 0;
 }
-
-

@@ -1,19 +1,27 @@
 .stuff{
     color: white;
-    width: 50%;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    position: absolute;
+    padding: 5em;
+    padding-top: 5em;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 textarea{
     max-height: 18vh;
 }
 
-.bigparent{
-    min-height: calc(100vh - 32px);
-    
+.applicationForm{
+    height: 575px;
+    width: 50%;
+    margin-left: 0%;
+}
+
+.tosLinkApply{
+    color: white;
+    text-decoration: none;
 }
 
 .form-control{

@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import './recruitcompany.css';
-import whoCanRecruit from './newestinfographic.png';
+import whoCanRecruitMobile from './infographicnewrevised.png';
+import whoCanRecruit from './infographicrevised.png';
 import background from './background.png';
 import businessesJson from '../../../businesses';
 import bizpic from '../mainpage/businessphotos/bizimage.jpg'; 
 import arrow from "../../../arrow.png";
+import {
+    isMobile,
+  } from "react-device-detect";
 
 
 class RecruitCompany extends Component{
     state={
         CompanyName: '',
         Location: '',
+        CompanyDescription: '',
         Email: '',
         Website: '',
         VolunteersNeeded: '',
@@ -24,6 +29,7 @@ class RecruitCompany extends Component{
         Friday: '',
         Saturday: '',
         JobTitle: '',
+        VolunteeringSpace: '',
         JobDescription: '',
         GPA: '',
         Certifications: '',
@@ -31,7 +37,8 @@ class RecruitCompany extends Component{
         Languages: '',
         DressCode: '',
         Specifications: '',
-        expanded: true
+        expanded: true,
+        tosChecked: false
     }
     
     expandButton(){
@@ -43,13 +50,14 @@ class RecruitCompany extends Component{
         return(
             <div className="RecruitCompany">
                 
-                <div className="logo" style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                    <a className="infographic" href="/recruit/#body"><img src={whoCanRecruit} alt="graphic" width="100%" height="auto" href="/recruit/#body"/></a>
-                    <img src={background} alt="graphic" className="bannerRecruit" width="100%" height="auto"/>
+                <div className="logo" style={isMobile ? {display:'flex',alignItems:'center',height:500} : {display:'flex', alignItems:'center'}}>
+                    <a className="infographic" href="/recruit/#body"><img src={isMobile ? whoCanRecruitMobile : whoCanRecruit} className={isMobile ? "mobileInfographic" : "desktopInfographic"} alt="graphic" height="auto" href="/recruit/#body"/></a>
+                    <img src={background} alt="graphic" className={isMobile ? "bannerRecruitMobile" : "bannerRecruit"} height="auto"/>
                     <div className="bot-bar" />
                 </div>
-                
+                {!isMobile ? 
                 <div className="mainBody">
+                    
                     <div className="descriptionBox">
                         <h1 style={{marginBottom:0}}>Volunteering organizations, welcome! </h1> <br />
                         <div className="descriptionParagraph">
@@ -63,7 +71,7 @@ class RecruitCompany extends Component{
 
                             On our home page, volunteers will input their credentials—such as: age, grade point average, languages, etc.—which are then formatted into a professional email and sent to your organization for approval. 
 
-                            Thank you for choosing us and happy volunteering.
+                            Thank you for choosing us, and happy volunteering.
                         </div><br />
                         <div className="descriptionSignature">
                             —Kind regards, <br />
@@ -74,7 +82,7 @@ class RecruitCompany extends Component{
                     
                     
                     <div className="formBox">
-                        
+
                         <h1>Add a Volunteer Listing</h1>
                         <form>
                             <div className="singleInput">
@@ -89,12 +97,23 @@ class RecruitCompany extends Component{
                                 </div>
                             </div>
                             <div className="singleInput">
-                                <label for="inputEmail">Location</label>
-                                <input type="email" className="form-control" id="inputEmail" placeholder="Location" onChange={(event)=>{this.setState({Location: event.target.value});}}  />
+                                <label for="inputEmail">Address</label>
+                                <input type="email" className="form-control" id="inputEmail" placeholder="Address" onChange={(event)=>{this.setState({Location: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
                                             This is the location where your volunteer should report to. Please write out your organization’s full address, e.g. <u>123 Main Street, New York, NY 10030</u>.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="singleInput">
+                                <label for="inputEmail">Company Description</label>
+                                <input type="email" className="form-control" id="inputEmail" placeholder="Company Description" onChange={(event)=>{this.setState({CompanyDescription: event.target.value});}}  />
+                                <div className="information">ⓘ
+                                    <div className="infoText">
+                                        <span>
+                                            Here, input a small description of your organization's chief function, beliefs, and goals. Only a small paragraph is necessary; this helps our volunteers understand what your organization does. For example, <u>"For Volunteering Miami, our chief mission is to connect local, Miami-based businesses and organizations with capable students and volunteers. As high-schoolers, we understand that the greatest challenge for meeting our volunteering requirements is actually starting. Often, as students, our opportunities are limited and beginning is intimidating. Volunteering Miami wants to ease the load of starting, and in the process, help out our local market and community. We constantly strive to expand our selection of local organizations to better accommodate the needs and interest of our volunteers. We are regularly growing, so rest assured, if you haven’t found your fit today, you might be more lucky tomorrow. Concerning organizations and businesses interested in creating a listing to recruit volunteers, please visit our "Recruit Volunteers" tab. We are always interested in aiding your growth and improving our community through service. Thank you for choosing us, and we are confident in your shared success."</u>
                                         </span>
                                     </div>
                                 </div>
@@ -149,7 +168,7 @@ class RecruitCompany extends Component{
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
-                                        Here, input when you want the volunteer to start and finish volunteering. Please input the dates as start month/start day/start year - end month/end day/end year; for example, <u>10/12/20 - 6/4/21</u>. 
+                                        Here, input when you want the volunteer to start and finish volunteering. Please input the dates as: start month/start day/start year - end month/end day/end year; for example, <u>10/12/20 - 6/4/21</u>. 
                                         </span>
                                     </div>
                                 </div>
@@ -189,7 +208,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool" >Wednesday Hours</label>
-                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Wednesdays" onChange={(event)=>{this.setState({Wednseday: event.target.value});}}  />
+                                <input type="text" className="form-control" id="inputSchool" placeHolder="Work times on Wednesdays" onChange={(event)=>{this.setState({Wednesday: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -231,7 +250,6 @@ class RecruitCompany extends Component{
                                     </div>
                                 </div>
                             </div>
-                            
                             <div className="singleInput">
                                 <label for="inputTalent">Job Title</label>
                                 <input type="text" className="form-control" id="inputTalent" placeHolder="Job title" onChange={(event)=>{this.setState({JobTitle: event.target.value});}}  />
@@ -239,6 +257,17 @@ class RecruitCompany extends Component{
                                     <div className="infoText">
                                         <span>
                                         If applicable, this is where you state what the official title of your volunteer will be at your organization, e.g. <u>Caretaker</u>. If job title doesn’t apply, simply write <u>Volunteer</u>. 
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="singleInput">
+                                <label for="inputTalent">Volunteering Space</label>
+                                <input type="text" className="form-control" id="inputTalent" placeHolder="Volunteering space" onChange={(event)=>{this.setState({VolunteeringSpace: event.target.value});}}  />
+                                <div className="information">ⓘ
+                                    <div className="infoText">
+                                        <span>
+                                            Here, specify if your volunteers' work is in-person or virtual, e.g. <u>On-site</u>. Or <u>Virtually</u>. 
                                         </span>
                                     </div>
                                 </div>
@@ -320,10 +349,17 @@ class RecruitCompany extends Component{
                                     </div>
                                 </div>
                             </div>
+                            <div className="agreementTOS" style={{marginTop: 15}}>
+                                <input style={{marginRight: 15}} type="checkbox" onClick={() => this.setState({tosChecked: !this.state.tosChecked})}/>
+                                
+                                I verify that I am an authorized representative of this organization and have the right to act on its behalf in the creation and management of this listing. The organization and I agree to the additional <a style={{color: "black"}} href="https://volunteeringmiami.com/termsofservice/Terms_of_Service.pdf"><b>Terms of Service</b></a>
+                                
+                            </div>
                             
                         </form>
-                        <button className="btn btn-dark" style={{marginTop: 25}} onClick={()=>{
-                            fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/recruit?CompanyName=${this.state.CompanyName}&Location=${this.state.Location}&Email=${this.state.Email}&Website=${this.state.Website}&AgeRange=${this.state.AgeRange}&Dates=${this.state.Dates}&Sunday=${this.state.Sunday}&Monday=${this.state.Monday}&Tuesday=${this.state.Tuesday}&Wednesday=${this.state.Wednesday}&Thursday=${this.state.Thursday}&Friday=${this.state.Friday}&Saturday=${this.state.Saturday}&JobTitle=${this.state.JobTitle}&JobDescription=${this.state.JobDescription}&GPA=${this.state.GPA}&Certification=${this.state.Certification}&Skills=${this.state.Skills}&Languages=${this.state.Languages}&DressCode=${this.state.DressCode}&Specifications=${this.state.Specifications}`)
+                        {this.state.tosChecked ? 
+                        <button className="btn btn-dark" style={{marginTop: 20}} onClick={()=>{
+                            fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/recruit?CompanyName=${this.state.CompanyName}&Location=${this.state.Location}&CompanyDescription=${this.state.CompanyDescription}&Email=${this.state.Email}&VolunteersNeeded=${this.state.VolunteersNeeded}&Website=${this.state.Website}&AgeRange=${this.state.AgeRange}&Dates=${this.state.Dates}&Sunday=${this.state.Sunday}&Monday=${this.state.Monday}&Tuesday=${this.state.Tuesday}&Wednesday=${this.state.Wednesday}&Thursday=${this.state.Thursday}&Friday=${this.state.Friday}&Saturday=${this.state.Saturday}&JobTitle=${this.state.JobTitle}&VolunteeringSpace=${this.state.VolunteeringSpace}&JobDescription=${this.state.JobDescription}&GPA=${this.state.GPA}&Certifications=${this.state.Certifications}&Skills=${this.state.Skills}&Languages=${this.state.Languages}&DressCode=${this.state.DressCode}&Specifications=${this.state.Specifications}`)
                             .then(res => res.json())
                             .then((result) => {
                                 console.log(result);
@@ -335,8 +371,12 @@ class RecruitCompany extends Component{
                                 window.location.reload();
                             })
                         }}>Submit</button>
-                        
+                        :
+                        <button className="btn btn-dark" style={{marginTop: 20}}>Submit</button>
+                        }
                     </div>
+                    
+                    
                     <div style={{paddingTop:0}} className="container">
                         <div>
                             <div style={{backgroundColor: 'white'}} className="panel panel-default">
@@ -386,6 +426,10 @@ class RecruitCompany extends Component{
                                     <div className="answer">1234 Example St, Springfield, 54321</div>
                                 </div>
                                 <div className="category">
+                                    <h5>Company Description: </h5>
+                                    <div className="answer">"For Volunteering Miami, our chief mission is to connect local, Miami-based businesses and organizations with capable students and volunteers. As high-schoolers, we understand that the greatest challenge for meeting our volunteering requirements is actually starting. Often, as students, our opportunities are limited and beginning is intimidating. Volunteering Miami wants to ease the load of starting, and in the process, help out our local market and community. We constantly strive to expand our selection of local organizations to better accommodate the needs and interest of our volunteers. We are regularly growing, so rest assured, if you haven’t found your fit today, you might be more lucky tomorrow. Concerning organizations and businesses interested in creating a listing to recruit volunteers, please visit our "Recruit Volunteers" tab. We are always interested in aiding your growth and improving our community through service. Thank you for choosing us, and we are confident in your shared success."</div>
+                                </div>
+                                <div className="category">
                                     <h5>Website: </h5>
                                     <div className="answer">www.examplecompany.org</div>
                                 </div>
@@ -428,7 +472,7 @@ class RecruitCompany extends Component{
                                     </div>
                                     <div className="subCategory">
                                         <h6>Friday: </h6>
-                                        <div className="subAnswer">9:00 AM - 6:00 PM}</div>
+                                        <div className="subAnswer">9:00 AM - 6:00 PM</div>
                                     </div>
                                     <div className="subCategory">
                                         <h6>Saturday: </h6>
@@ -443,6 +487,10 @@ class RecruitCompany extends Component{
                                     <div className="answer">Caretaker</div>
                                 </div>
                                 <div className="category">
+                                    <h5>Volunteering Space: </h5>
+                                    <div className="answer">On-site</div>
+                                </div>
+                                <div className="category">
                                     <h5>Job Description: </h5>
                                     <div className="answer">Attend nursing home and assist employees in the workplace</div>
                                 </div>
@@ -455,7 +503,7 @@ class RecruitCompany extends Component{
                                         <div className="subAnswer">3.5</div>
                                     </div>
                                     <div className="subCategory">
-                                        <h6>Certification: </h6>
+                                        <h6>Certifications: </h6>
                                         <div className="subAnswer">
                                         N/A
                                         </div>
@@ -491,9 +539,31 @@ class RecruitCompany extends Component{
                             </div>
                             ) : (<p></p>)}
                         </div>
+                        
                     </div>
+                     
                 </div>
+                : 
+                <div className="mobileRecruitInfo">
+                    <div className="mobileRecruitParagraph">
+                        Our site allows schools, registered 501 (c) nonprofit organizations, and governmental programs to create connections with volunteers across. Listing all of your organization's
+                        requirements tells volunteers about what kind of work you'll be doing together. Your input will then be processed into a volunteering listing and featured on our home page for
+                        budding volunteers. On our home page, volunteers will input their credentials — such as: age, grade point average, languages, etc. — which are then formatted and sent to your
+                        organization for approval. To access this function please visit our site from a computer. Thank you for choosing us, and happy volunteering.
+                    </div>
+                    <br />
+                    <br />
+                    <div className="mobileInfoSignature">
+                        — Kind regards,
+                        <br />
+                        <b style={{marginLeft: 40}}>Volunteering Miami</b>
+                    </div>
+                    
+
+                </div>
+                }
             </div>
+            
         );
     }
     componentDidMount(){

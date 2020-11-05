@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./mainpage.css";
 import logo from "../../../volmiamisvg2.svg";
+import navbarLogo from '../../../vmlogonav2.png';
 import arrow from "../../../arrow.png";
 import banner from "./banner.jpg";
 import { Link } from "react-router-dom";
-import businessesJson from "../../../businesses.js";
 import {
   ButtonDropdown,
   DropdownToggle,
@@ -101,9 +101,9 @@ class MainPage extends Component {
           <div className="bot-bar" />
           <img src={banner} alt="background" className="banner" />
           <img
-            src={logo}
+            src={isMobile ? navbarLogo : logo}
             alt="logo"
-            style={{ opacity: logoOpacity }}
+            style={isMobile ? { top: 225, opacity: logoOpacity } : { opacity: logoOpacity }}
             className="app-logo"
           />
         </div>
@@ -122,7 +122,7 @@ class MainPage extends Component {
                   onClick={() => {
                     this.setState({
                       orderBy: "id",
-                      ascOrDesc: "ASC",
+                      ascOrDesc: "DESC",
                     });
                     this.refreshBusinesses();
                   }}
@@ -133,7 +133,7 @@ class MainPage extends Component {
                   onClick={() => {
                     this.setState({
                       orderBy: "id",
-                      ascOrDesc: "DESC",
+                      ascOrDesc: "ASC",
                     });
                     this.refreshBusinesses();
                   }}
@@ -175,7 +175,7 @@ class MainPage extends Component {
                 {this.state.businesses.map((obj) => {
                   return (
                     <div>
-                      <div className="panel panel-default">
+                      <div className="panel panel-default" style={{maxHeight: 206}}>
                         <img
                           //src={obj.location ? `https://maps.googleapis.com/maps/api/streetview?key=AIzaSyBBk4SuCFLjvk_OgUh28LYnBGNx2Y7i-ho&size=300x178&location=${obj.location}` : 'https://volunteeringmiami.com/images/bizimage.jpg'}
                           src={obj.photo}
@@ -183,10 +183,10 @@ class MainPage extends Component {
                           alt="pic of business"
                         />
 
-                        <h1>{obj.name}</h1>
+                        <div className="businessNames"><h1>{obj.name}</h1></div>
                         <div className="panel-body">
                           <h5>{obj.location}</h5>
-                          {obj.jobDescription}
+                          {obj.jobDescription == '' ? 'N/A' : obj.jobDescription}
                           <div className="arrowdropdown">
                             <input
                               className={
@@ -223,16 +223,20 @@ class MainPage extends Component {
                               <div className="answer">{obj.location}</div>
                             </div>
                             <div className="category">
+                              <h5>Company Description: </h5>
+                              <div className="answer">{obj.companyDescription == '' ? 'N/A' : obj.companyDescription}</div>
+                            </div>
+                            <div className="category">
                               <h5>Website: </h5>
-                              <div className="answer">{obj.website}</div>
+                              <div className="answer">{obj.website == '' ? 'N/A' : obj.website}</div>
                             </div>
                             <div className="category">
                               <h5>Age Range: </h5>
-                              <div className="answer">{obj.ageWindow}</div>
+                              <div className="answer">{obj.ageWindow == '' ? 'N/A' : obj.ageWindow}</div>
                             </div>
                             <div className="category">
                               <h5>Dates: </h5>
-                              <div className="answer">{obj.dates}</div>
+                              <div className="answer">{obj.dates == '' ? 'N/A' : obj.dates}</div>
                             </div>
                             <div className="category">
                               <h5>Daily Service Hours: </h5>
@@ -241,47 +245,51 @@ class MainPage extends Component {
                               <div className="credentials">
                                 <div className="subCategory">
                                   <h6>Sunday: </h6>
-                                  <div className="subAnswer">{obj.Sunday}</div>
+                                  <div className="subAnswer">{obj.Sunday == '' ? 'N/A' : obj.Sunday}</div>
                                 </div>
                                 <div className="subCategory">
                                   <h6>Monday: </h6>
-                                  <div className="subAnswer">{obj.Monday}</div>
+                                  <div className="subAnswer">{obj.Monday == '' ? 'N/A' : obj.Monday}</div>
                                 </div>
                                 <div className="subCategory">
                                   <h6>Tuesday: </h6>
-                                  <div className="subAnswer">{obj.Tuesday}</div>
+                                  <div className="subAnswer">{obj.Tuesday == '' ? 'N/A' : obj.Tuesday}</div>
                                 </div>
                                 <div className="subCategory">
                                   <h6>Wednesday: </h6>
                                   <div className="subAnswer">
-                                    {obj.Wednesday}
+                                    {obj.Wednesday == '' ? 'N/A' : obj.Wednesday}
                                   </div>
                                 </div>
                                 <div className="subCategory">
                                   <h6>Thursday: </h6>
                                   <div className="subAnswer">
-                                    {obj.Thursday}
+                                    {obj.Thursday == '' ? 'N/A' : obj.Thursday}
                                   </div>
                                 </div>
                                 <div className="subCategory">
                                   <h6>Friday: </h6>
-                                  <div className="subAnswer">{obj.Friday}</div>
+                                  <div className="subAnswer">{obj.Friday == '' ? 'N/A' : obj.Friday}</div>
                                 </div>
                                 <div className="subCategory">
                                   <h6>Saturday: </h6>
                                   <div className="subAnswer">
-                                    {obj.Saturday}
+                                    {obj.Saturday == '' ? 'N/A' : obj.Saturday}
                                   </div>
                                 </div>
                               </div>
                             </div>
                             <div className="category">
                               <h5>Job Title: </h5>
-                              <div className="answer">{obj.jobTitle}</div>
+                              <div className="answer">{obj.jobTitle == '' ? 'N/A' : obj.jobTitle}</div>
+                            </div>
+                            <div className="category">
+                              <h5>Volunteering Space: </h5>
+                              <div className="answer">{obj.volunteeringSpace == '' ? 'N/A' : obj.volunteeringSpace}</div>
                             </div>
                             <div className="category">
                               <h5>Job Description: </h5>
-                              <div className="answer">{obj.jobDescription}</div>
+                              <div className="answer">{obj.jobDescription == '' ? 'N/A' : obj.jobDescription}</div>
                             </div>
                             <div className="category">
                               <h5>Credentials: </h5>
@@ -289,33 +297,33 @@ class MainPage extends Component {
                               <div className="credentials">
                                 <div className="subCategory">
                                   <h6>GPA: </h6>
-                                  <div className="subAnswer">{obj.gpa}</div>
+                                  <div className="subAnswer">{obj.gpa == '' ? 'N/A' : obj.gpa}</div>
                                 </div>
                                 <div className="subCategory">
                                   <h6>Certification: </h6>
                                   <div className="subAnswer">
-                                    {obj.certficiation}
+                                    {obj.certification == '' ? 'N/A' : obj.certification}
                                   </div>
                                 </div>
                                 <div className="subCategory">
                                   <h6>Skills: </h6>
-                                  <div className="subAnswer">{obj.skills}</div>
+                                  <div className="subAnswer">{obj.skills == '' ? 'N/A' : obj.skills}</div>
                                 </div>
                                 <div className="subCategory">
                                   <h6>Language: </h6>
                                   <div className="subAnswer">
-                                    {obj.languages}
+                                    {obj.languages == '' ? 'N/A' : obj.languages}
                                   </div>
                                 </div>
                               </div>
                             </div>
                             <div className="category">
                               <h5>Dress Code:</h5>{" "}
-                              <div className="answer">{obj.dressCode}</div>
+                              <div className="answer">{obj.dressCode == '' ? 'N/A' : obj.dressCode}</div>
                             </div>
                             <h5>Any Further Specifications:</h5>{" "}
                             <div className="answer">
-                              {obj.anyFurtherSpecifications}
+                              {obj.anyFurtherSpecifications == '' ? 'N/A' : obj.anyFurtherSpecifications}
                             </div>
                             <Link to={`business?ItemId=${obj.id}`}>
                               <button

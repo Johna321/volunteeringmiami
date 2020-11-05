@@ -66,6 +66,15 @@
     animation-duration: 0.5s;
 }
 
+.panel-body{
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    max-height: 80px;
+    max-width: 750px;
+}
+
 .sortBy{
     padding-left: 0px;
     float: left;
@@ -201,11 +210,19 @@
 }
 
 .answer{
-    text-indent: 20px;
+    margin-left: 20px;
+    text-align: justify;
+    text-justify: auto;
 }
 
 .category{
     margin-bottom: 0.5rem;
+}
+
+.businessNames{
+    max-height: 53px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .subCategory{
