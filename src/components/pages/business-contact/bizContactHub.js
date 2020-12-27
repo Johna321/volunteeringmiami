@@ -22,7 +22,7 @@ class bizContactHub extends Component{
         return(
             <div className="bigparent">
                 {this.state.business.length > 0 && 
-                <Template name={this.state.business[0].name} email={this.state.business[0].email} />}
+                <Template name={this.state.business[0].name} businessId={this.state.business[0].id} email={this.state.business[0].email} />}
             </div>
         );
     }

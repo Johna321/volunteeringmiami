@@ -8,8 +8,33 @@
 }
 
 .contact-us{
-    height: calc(100vh - 32px);
-    
+    min-height: calc(100vh - 32px);
+}
+
+.mobileContactUs{
+    min-height: 96vh;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobileContactLogo{
+    height: 30px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+}
+
+.mobileContactField{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.mobileContactForm{
+    width: 100%;
+    color: lightgrey;
+    font-size: 1.25rem;
 }
 
 .sendButton{

@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import './contact-us.css';
 import contactLogo from './contactlogo.png';
+import {
+    isMobile,
+  } from "react-device-detect";
 
 class ContactUs extends Component{
     state = {
@@ -13,6 +16,8 @@ class ContactUs extends Component{
     }
     render(){
         return(
+            <div>
+            {!isMobile ?
             <div className="contact-us">
                 
                 <div className="contactLogo">
@@ -46,6 +51,40 @@ class ContactUs extends Component{
                             })
                     }}>Send</button>
                 </div>
+            </div>
+            :
+            <div className="mobileContactUs">
+                <img src={contactLogo} className="mobileContactLogo" alt="Contact Us" />
+                <div className="mobileContactForm">
+                    <div className="mobileContactField">
+                        Your Email
+                        <input type="email" className="form-control" id="inputEmail" onChange={(event)=>{this.setState({SenderEmail: event.target.value});}}/>
+                    </div>
+                    <div className="mobileContactField">
+                        Your Name
+                        <input type="text" className="form-control" id="inputName" onChange={(event)=>{this.setState({Name: event.target.value});}}/>
+                    </div>
+                    <div className="mobileContactField">
+                        Message
+                        <textarea type="text" className="form-control" id="inputMessage" onChange={(event)=>{this.setState({Body: event.target.value});}} />
+                    </div>
+                    
+                </div>
+                <button className="btn btn-dark"   onClick={()=>{
+                        fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/contact?Body=${this.state.Body}&Email=${this.state.ourEmail}&Subject=${this.state.Subject}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&ContactUs=${this.state.entryPoint}`)
+                            .then(res => res.json())
+                            .then((result) => {
+                                console.log(result);
+                                alert('Message sent successfully');
+                                window.history.back();
+                            },(error) => {
+                                console.log(error);
+                                alert('Error: '+error);
+                                window.location.reload();
+                            })
+                    }}>Send</button>
+            </div>
+            }
             </div>
         );
     }
