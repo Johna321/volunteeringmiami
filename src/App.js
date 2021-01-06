@@ -6,6 +6,8 @@ import About from './components/pages/about/about.jsx';
 import ContactUs from './components/pages/contact-us/contact-us.jsx';
 import bizContactUs from './components/pages/business-contact/bizContactHub';
 import navbarLogo from './navbarlogo.ico';
+import navpopup from './newnavpopup.png';
+import closeButton from './newclose.png';
 import RecruitCompany from './components/pages/recruit/recruitcompany';
 import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, NavbarText} from 'reactstrap';
 import {
@@ -43,9 +45,20 @@ function App() {
                 </div>
               </div>
               }
-            </div> : <div></div>}
+            </div> : 
+            <div>
+              {popUpClosed ? <div></div> : 
+              <div className="popupDesktop">
+                <input type="image" className="popupCloseButton" onClick={togglePopUp} src={closeButton} />
+                <div className="popupImageHolder">
+                  <img src={navpopup} className="popupimage"/>
+                </div>
+                
+              </div>
+              }  
+            </div>}
             
-            <div className="navigationbar">
+            <div className="navigationbar" style={{zIndex: 3}}>
               <Navbar color='dark' dark expand='md'>
                 <NavbarBrand href="/"><a className="navbar-brand" href="/"><img src={navbarLogo} height="30" className="navbarLogo"/></a></NavbarBrand>
                 <NavbarToggler className="" onClick={toggle}></NavbarToggler>

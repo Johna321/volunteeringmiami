@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import './template.css';
+let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 class Template extends Component{
     state = {
         Body: 'N/A',
         Subject: 'Volunteering Request: ',
-        Name: 'N/A',
-        SenderEmail: 'N/A',
+        Name: '',
+        SenderEmail: '',
         Age: 'N/A',
         School: 'N/A',
         GPA: 'N/A',
@@ -16,9 +17,11 @@ class Template extends Component{
         entryPoint: '0',
         tosChecked: false
     }
+    
 
     
     render(){
+        
         return(
             <div className="stuff">
                 <h1 className="businessTitle">Contact {this.props.name}</h1>
@@ -53,7 +56,7 @@ class Template extends Component{
                     </div>
                     
                 </div>
-                {this.state.tosChecked ? 
+                {(this.state.tosChecked && this.state.SenderEmail && this.state.Name) ? 
                 <button className="btn btn-dark" onClick={()=>{
                     fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/contact?Body=${this.state.Body}&Email=${this.props.email}&Subject=${this.state.Subject + this.state.Name}&CompanyName=${this.props.name}&CompanyId=${this.props.businessId}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&Age=${this.state.Age}&School=${this.state.School}&GPA=${this.state.GPA}&Cert=${this.state.Cert}&Skills=${this.state.Skills}&Languages=${this.state.Languages}&ContactUs=${this.state.entryPoint}`)
                     .then(res => res.json())

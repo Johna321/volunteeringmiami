@@ -39,7 +39,7 @@
   scroll-behavior: smooth;
   text-align: center;
   color: black;
-  
+  z-index: -1;
 }
 
 .popupcontainer{
@@ -74,6 +74,43 @@
   border-radius: 20px 20px 20px 20px;
   border-bottom: 3px solid #c5c3c3;
   border-right:3px solid #c5c3c3 ;
+  transform: translate(10%, 0)
+}
+
+.popupDesktop{
+  position: fixed;
+  
+  width: 50%;
+  height: 80%;
+  top: 10%;
+  z-index: 3;
+  background-color: white;
+  border-radius: 20px 20px 20px 20px;
+  border-bottom: 3px solid #c5c3c3;
+  border-right:3px solid #c5c3c3 ;
+  transform: translate(50%, 0);
+}
+
+.popupCloseButton{
+  width: 37.5px;
+  height: 37.5px;
+  position: absolute;
+  left: 1%;
+  top: 1%;
+}
+
+.popupImageHolder{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.popupimage{
+  width: 90%;
+  max-height: 90%;
 }
 
 .navbar-brand{

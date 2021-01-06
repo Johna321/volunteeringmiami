@@ -16,6 +16,9 @@ import health from './icons/health.png';
 import information from './icons/information.png';
 import law from './icons/law.png';
 import vocation from './icons/vocation.png';
+import newIcon from './icons/new.png';
+import old from './icons/old.png';
+import search from './icons/search.png';
 import {
   ButtonDropdown,
   DropdownToggle,
@@ -136,9 +139,10 @@ class MainPage extends Component {
                 <ButtonDropdown
                   isOpen={this.state.dropdownToggled}
                   toggle={this.toggleDropdown}
+                  style={{zIndex: 2}}
                 >
                   <DropdownToggle caret color="light">
-                    Sort By:
+                    Discover
                   </DropdownToggle>
                   <DropdownMenu className="mainDropDown">
                     <DropdownItem
@@ -269,7 +273,7 @@ class MainPage extends Component {
                         this.refreshBusinesses();
                       }}
                     >
-                      <img className="dropdownIcon" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="27.5" height="25"/>
+                      <img className="dropdownIcon" src={newIcon} width="27.5" height="25"/>
                       New
                     </DropdownItem>
                     <DropdownItem
@@ -282,22 +286,25 @@ class MainPage extends Component {
                         this.refreshBusinesses();
                       }}
                     >
-                      <img className="dropdownIcon" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="27.5" height="25"/>
+                      <img className="dropdownIcon" src={old} width="27.5" height="25"/>
                       Old
                     </DropdownItem>
                   </DropdownMenu>
                 </ButtonDropdown>
               </div>
-              <div>
+              <div className="search">
                 <input
                   onChange={(event) => {
                     this.setState({ search: event.target.value });
                     this.refreshBusinesses();
                   }}
-                  className="search"
+                  className="form-control searchBar"
                 ></input>
+                <div className="searchIcon">
+                  <img src={search} width="27.5" height="25"  />
+                </div>
               </div>
-              <div className="container">
+              <div className='container'>
                 <InfiniteScroll
                   dataLength={this.state.businesses.length}
                   next={this.loadMore}
@@ -307,10 +314,11 @@ class MainPage extends Component {
                     {this.state.businesses.map((obj) => {
                       return (
                         <div>
+                          
                           <div
                             //className={this.state.whatIndustry ? obj.industry.includes('Health') ? "panel panel-default health" : obj.industry.includes('Business') ? "panel panel-default business" : "panel panel-default" }
                             className={`panel panel-default ${this.state.whatIndustry ? obj.industry.map(obj => `${obj === this.state.whatIndustry ? obj : ``}`).join(" ") : ''} ${obj.expired ? `expired` : ``}`}
-                            style={{maxHeight: 206}}
+                            style={{maxHeight: 206, zIndex: 1}}
                             
                           >
                             <img
@@ -347,7 +355,7 @@ class MainPage extends Component {
                           </div>
                           {obj.expanded !== false ? (
                             <div
-                              className="panel panel-default"
+                              className="panel panel-default expandedDiv"
                               style={{
                                 marginLeft: 100,
                                 marginTop: -80,
@@ -512,15 +520,18 @@ class MainPage extends Component {
                                       : obj.dressCode}
                                   </div>
                                 </div>
-                                <h5>Any Further Specifications:</h5>{" "}
-                                <div className="answer">
-                                  {obj.anyFurtherSpecifications == ""
-                                    ? "N/A"
-                                    : obj.anyFurtherSpecifications}
+                                <div className="category">
+                                  <h5>Any Further Specifications:</h5>{" "}
+                                  <div className="answer">
+                                    {obj.anyFurtherSpecifications == ""
+                                      ? "N/A"
+                                      : obj.anyFurtherSpecifications}
+                                  </div>
                                 </div>
                                 <Link to={`business?ItemId=${obj.id}`}>
                                   <button
                                     type="button"
+                                    
                                     className="btn btn-secondary apply-button"
                                   >
                                     Apply
