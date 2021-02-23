@@ -38,14 +38,30 @@
     width: auto;
 }
 
+.nonprofitDropdown{
+    width: 80%;
+    z-index: 3;
+    border-color: #ced4da !important;
+}
+
 .mobileRecruitParagraph{
     text-align: left;
+}
+
+.btn-light{
+    border-color: #ced4da !important;
+    background-color: white !important;
 }
 
 .agreementTOS{
     text-align: justify;
     width: 75%;
     margin-left: 10%;
+}
+
+.nonprofitDropdownItem{
+    width: 100%;
+    z-index: 5;
 }
 
 .recruitInput{

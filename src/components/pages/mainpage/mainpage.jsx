@@ -19,6 +19,7 @@ import vocation from './icons/vocation.png';
 import newIcon from './icons/new.png';
 import old from './icons/old.png';
 import search from './icons/search.png';
+import nonprofit from './icons/nonprofit.png';
 import {
   ButtonDropdown,
   DropdownToggle,
@@ -266,6 +267,19 @@ class MainPage extends Component {
                     <DropdownItem
                       onClick={() => {
                         this.setState({
+                          orderBy: "industry",
+                          ascOrDesc: "DESC",
+                          whatIndustry: "Nonprofit",
+                        });
+                        this.refreshBusinesses();
+                      }}
+                    >
+                      <img className="dropdownIcon" src={nonprofit} width="27.5" height="25"/>
+                      Nonprofit
+                    </DropdownItem>
+                    <DropdownItem
+                      onClick={() => {
+                        this.setState({
                           orderBy: "id",
                           ascOrDesc: "DESC",
                           whatIndustry: "",
@@ -333,7 +347,7 @@ class MainPage extends Component {
                             </div>
                             <div className="panel-body">
                               <h5>{obj.location ? obj.location : "N/A"}</h5>
-                              {obj.jobDescription == ""
+                              {!obj.jobDescription 
                                 ? "N/A"
                                 : obj.jobDescription}
                               <div className="arrowdropdown">
@@ -372,9 +386,9 @@ class MainPage extends Component {
                                   <div className="answer">{obj.location}</div>
                                 </div>
                                 <div className="category">
-                                  <h5>Company Description: </h5>
+                                  <h5>Organization Description: </h5>
                                   <div className="answer">
-                                    {obj.companyDescription == ""
+                                    {!obj.companyDescription 
                                       ? "N/A"
                                       : obj.companyDescription}
                                   </div>
@@ -382,13 +396,19 @@ class MainPage extends Component {
                                 <div className="category">
                                   <h5>Website: </h5>
                                   <div className="answer">
-                                    {obj.website == "" ? "N/A" : obj.website}
+                                    {!obj.website  ? "N/A" : obj.website}
+                                  </div>
+                                </div>
+                                <div className="category">
+                                  <h5>Nonprofit Status: </h5>
+                                  <div className="answer">
+                                    {obj.nonprofit ? "Nonprofit" : "Other"}
                                   </div>
                                 </div>
                                 <div className="category">
                                   <h5>Age Range: </h5>
                                   <div className="answer">
-                                    {obj.ageWindow == ""
+                                    {!obj.ageWindow 
                                       ? "N/A"
                                       : obj.ageWindow}
                                   </div>
@@ -396,7 +416,7 @@ class MainPage extends Component {
                                 <div className="category">
                                   <h5>Dates: </h5>
                                   <div className="answer">
-                                    {obj.dates == "" ? "N/A" : obj.dates}
+                                    {!obj.dates  ? "N/A" : obj.dates}
                                   </div>
                                 </div>
                                 <div className="category">
@@ -407,19 +427,19 @@ class MainPage extends Component {
                                     <div className="subCategory">
                                       <h6>Sunday: </h6>
                                       <div className="subAnswer">
-                                        {obj.Sunday == "" ? "N/A" : obj.Sunday}
+                                        {!obj.Sunday  ? "N/A" : obj.Sunday}
                                       </div>
                                     </div>
                                     <div className="subCategory">
                                       <h6>Monday: </h6>
                                       <div className="subAnswer">
-                                        {obj.Monday == "" ? "N/A" : obj.Monday}
+                                        {!obj.Monday  ? "N/A" : obj.Monday}
                                       </div>
                                     </div>
                                     <div className="subCategory">
                                       <h6>Tuesday: </h6>
                                       <div className="subAnswer">
-                                        {obj.Tuesday == ""
+                                        {!obj.Tuesday 
                                           ? "N/A"
                                           : obj.Tuesday}
                                       </div>
@@ -427,7 +447,7 @@ class MainPage extends Component {
                                     <div className="subCategory">
                                       <h6>Wednesday: </h6>
                                       <div className="subAnswer">
-                                        {obj.Wednesday == ""
+                                        {!obj.Wednesday 
                                           ? "N/A"
                                           : obj.Wednesday}
                                       </div>
@@ -435,7 +455,7 @@ class MainPage extends Component {
                                     <div className="subCategory">
                                       <h6>Thursday: </h6>
                                       <div className="subAnswer">
-                                        {obj.Thursday == ""
+                                        {!obj.Thursday 
                                           ? "N/A"
                                           : obj.Thursday}
                                       </div>
@@ -443,13 +463,13 @@ class MainPage extends Component {
                                     <div className="subCategory">
                                       <h6>Friday: </h6>
                                       <div className="subAnswer">
-                                        {obj.Friday == "" ? "N/A" : obj.Friday}
+                                        {!obj.Friday  ? "N/A" : obj.Friday}
                                       </div>
                                     </div>
                                     <div className="subCategory">
                                       <h6>Saturday: </h6>
                                       <div className="subAnswer">
-                                        {obj.Saturday == ""
+                                        {!obj.Saturday 
                                           ? "N/A"
                                           : obj.Saturday}
                                       </div>
@@ -459,13 +479,13 @@ class MainPage extends Component {
                                 <div className="category">
                                   <h5>Job Title: </h5>
                                   <div className="answer">
-                                    {obj.jobTitle == "" ? "N/A" : obj.jobTitle}
+                                    {!obj.jobTitle  ? "N/A" : obj.jobTitle}
                                   </div>
                                 </div>
                                 <div className="category">
                                   <h5>Volunteering Space: </h5>
                                   <div className="answer">
-                                    {obj.volunteeringSpace == ""
+                                    {!obj.volunteeringSpace 
                                       ? "N/A"
                                       : obj.volunteeringSpace}
                                   </div>
@@ -473,7 +493,7 @@ class MainPage extends Component {
                                 <div className="category">
                                   <h5>Job Description: </h5>
                                   <div className="answer">
-                                    {obj.jobDescription == ""
+                                    {!obj.jobDescription 
                                       ? "N/A"
                                       : obj.jobDescription}
                                   </div>
@@ -485,13 +505,13 @@ class MainPage extends Component {
                                     <div className="subCategory">
                                       <h6>GPA: </h6>
                                       <div className="subAnswer">
-                                        {obj.gpa == "" ? "N/A" : obj.gpa}
+                                        {!obj.gpa  ? "N/A" : obj.gpa}
                                       </div>
                                     </div>
                                     <div className="subCategory">
                                       <h6>Certification: </h6>
                                       <div className="subAnswer">
-                                        {obj.certification == ""
+                                        {!obj.certification 
                                           ? "N/A"
                                           : obj.certification}
                                       </div>
@@ -499,13 +519,13 @@ class MainPage extends Component {
                                     <div className="subCategory">
                                       <h6>Skills: </h6>
                                       <div className="subAnswer">
-                                        {obj.skills == "" ? "N/A" : obj.skills}
+                                        {!obj.skills  ? "N/A" : obj.skills}
                                       </div>
                                     </div>
                                     <div className="subCategory">
                                       <h6>Language: </h6>
                                       <div className="subAnswer">
-                                        {obj.languages == ""
+                                        {!obj.languages 
                                           ? "N/A"
                                           : obj.languages}
                                       </div>
@@ -515,7 +535,7 @@ class MainPage extends Component {
                                 <div className="category">
                                   <h5>Dress Code:</h5>{" "}
                                   <div className="answer">
-                                    {obj.dressCode == ""
+                                    {!obj.dressCode 
                                       ? "N/A"
                                       : obj.dressCode}
                                   </div>
@@ -523,7 +543,7 @@ class MainPage extends Component {
                                 <div className="category">
                                   <h5>Any Further Specifications:</h5>{" "}
                                   <div className="answer">
-                                    {obj.anyFurtherSpecifications == ""
+                                    {!obj.anyFurtherSpecifications 
                                       ? "N/A"
                                       : obj.anyFurtherSpecifications}
                                   </div>

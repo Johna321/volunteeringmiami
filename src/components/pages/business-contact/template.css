@@ -14,14 +14,28 @@ textarea{
 }
 
 .applicationForm{
-    height: 575px;
+    height: 600px;
     width: 50%;
     margin-left: 0%;
+}
+
+.schoolDropdown{
+    width: 75%;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.schoolDropdownItem{
+    width: 100%;
 }
 
 .tosLinkApply{
     color: white;
     text-decoration: none;
+}
+
+.schoolDropdownToggle{
+    float: left;
 }
 
 .form-control{

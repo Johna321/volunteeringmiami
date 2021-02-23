@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './recruitcompany.css';
 import whoCanRecruitMobile from './infographicnewrevised.png';
-import whoCanRecruit from './infographicrevised.png';
+import whoCanRecruit from './infographicnewnew.png';
 import background from './background.png';
 import businessesJson from '../../../businesses';
 import bizpic from '../mainpage/businessphotos/bizimage.jpg'; 
@@ -9,6 +9,12 @@ import arrow from "../../../arrow.png";
 import {
     isMobile,
   } from "react-device-detect";
+import {
+    ButtonDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+  } from "reactstrap";
 
 
 class RecruitCompany extends Component{
@@ -37,13 +43,23 @@ class RecruitCompany extends Component{
         Languages: '',
         DressCode: '',
         Specifications: '',
+        nonProfit: false,
         expanded: true,
-        tosChecked: false
+        tosChecked: false,
+        dropdownToggled: false
     }
     
     expandButton(){
         !this.state.expanded ? this.setState({expanded: true}) : this.setState({expanded: false})
     }
+
+    toggleDropdown = () => {
+        if (this.state.dropdownToggled === false) {
+          this.setState({ dropdownToggled: true });
+        } else {
+          this.setState({ dropdownToggled: false });
+        }
+      };
 
     render(){
         //const logoOpacity = Math.min(100 / this.state.scrollHeight, 1)
@@ -86,8 +102,8 @@ class RecruitCompany extends Component{
                         <h1>Add a Volunteer Listing</h1>
                         <form>
                             <div className="singleInput">
-                                <label for="inputEmail">Company Name</label>
-                                <input type="email" className="form-control recruitInput" id="inputEmail" placeholder="Company Name" onChange={(event)=>{this.setState({CompanyName: event.target.value});}}  />
+                                <label for="inputEmail">Organization Name</label>
+                                <input type="email" className="form-control recruitInput" id="inputEmail" placeholder="Organization name" onChange={(event)=>{this.setState({CompanyName: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -108,8 +124,8 @@ class RecruitCompany extends Component{
                                 </div>
                             </div>
                             <div className="singleInput">
-                                <label for="inputEmail">Company Description</label>
-                                <input type="email" className="form-control recruitInput" id="inputEmail" placeholder="Company Description" onChange={(event)=>{this.setState({CompanyDescription: event.target.value});}}  />
+                                <label for="inputEmail">Organization Description</label>
+                                <input type="email" className="form-control recruitInput" id="inputEmail" placeholder="Organization description" onChange={(event)=>{this.setState({CompanyDescription: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -136,6 +152,38 @@ class RecruitCompany extends Component{
                                     <div className="infoText">
                                         <span>
                                             Your organization’s website. Preferably, the URL should be concise, e.g. <u>www.volunteeringmiami.org</u>. If not applicable, please input <u>N/A.</u> 
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="singleInput" style={{zIndex: 5}}>
+                                <label for="inputMessage">Nonprofit Status</label>
+                                <ButtonDropdown className="nonprofitDropdown" id="inputSchool" isOpen={this.state.dropdownToggled} toggle={this.toggleDropdown}>
+                                    <DropdownToggle style={{color: 'grey', zIndex: 5}} className="schoolDropdownToggle text-left" caret color="light">Nonprofit</DropdownToggle>
+                                    <DropdownMenu  className="nonprofitDropdownItem" right>
+                                        <DropdownItem style={{zIndex: 5}} onClick={() => {
+                                            
+                                            this.setState({
+                                                nonProfit: true
+                                            })
+                                            
+                                        }} >
+                                            Non Profit
+                                        </DropdownItem>
+                                        <DropdownItem onClick={() => {
+                                            
+                                            this.setState({
+                                                nonprofit: false
+                                            })
+                                        }}>
+                                            Other
+                                        </DropdownItem>
+                                    </DropdownMenu>
+                                </ButtonDropdown>
+                                <div className="information" style={{zIndex: 3}}>ⓘ
+                                    <div className="infoText">
+                                        <span>
+                                            Please indicate if your organization is officially registered as a 501(c)(3) by selecting the corresponding option.
                                         </span>
                                     </div>
                                 </div>
@@ -349,6 +397,7 @@ class RecruitCompany extends Component{
                                     </div>
                                 </div>
                             </div>
+                            
                             <div className="agreementTOS" style={{marginTop: 15}}>
                                 <input style={{marginRight: 15}} type="checkbox" onClick={() => this.setState({tosChecked: !this.state.tosChecked})}/>
                                 
@@ -359,7 +408,7 @@ class RecruitCompany extends Component{
                         </form>
                         {this.state.tosChecked && this.state.CompanyName != '' && this.state.Email != '' ? 
                         <button className="btn btn-dark" style={{marginTop: 20}} onClick={()=>{
-                            fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/recruit?CompanyName=${this.state.CompanyName}&Location=${this.state.Location}&CompanyDescription=${this.state.CompanyDescription}&Email=${this.state.Email}&VolunteersNeeded=${this.state.VolunteersNeeded}&Website=${this.state.Website}&AgeRange=${this.state.AgeRange}&Dates=${this.state.Dates}&Sunday=${this.state.Sunday}&Monday=${this.state.Monday}&Tuesday=${this.state.Tuesday}&Wednesday=${this.state.Wednesday}&Thursday=${this.state.Thursday}&Friday=${this.state.Friday}&Saturday=${this.state.Saturday}&JobTitle=${this.state.JobTitle}&VolunteeringSpace=${this.state.VolunteeringSpace}&JobDescription=${this.state.JobDescription}&GPA=${this.state.GPA}&Certifications=${this.state.Certifications}&Skills=${this.state.Skills}&Languages=${this.state.Languages}&DressCode=${this.state.DressCode}&Specifications=${this.state.Specifications}`)
+                            fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/recruit?CompanyName=${this.state.CompanyName}&Location=${this.state.Location}&CompanyDescription=${this.state.CompanyDescription}&Email=${this.state.Email}&Nonprofit=${this.state.nonProfit}&VolunteersNeeded=${this.state.VolunteersNeeded}&Website=${this.state.Website}&AgeRange=${this.state.AgeRange}&Dates=${this.state.Dates}&Sunday=${this.state.Sunday}&Monday=${this.state.Monday}&Tuesday=${this.state.Tuesday}&Wednesday=${this.state.Wednesday}&Thursday=${this.state.Thursday}&Friday=${this.state.Friday}&Saturday=${this.state.Saturday}&JobTitle=${this.state.JobTitle}&VolunteeringSpace=${this.state.VolunteeringSpace}&JobDescription=${this.state.JobDescription}&GPA=${this.state.GPA}&Certifications=${this.state.Certifications}&Skills=${this.state.Skills}&Languages=${this.state.Languages}&DressCode=${this.state.DressCode}&Specifications=${this.state.Specifications}`)
                             .then(res => res.json())
                             .then((result) => {
                                 console.log(result);

@@ -1,5 +1,13 @@
 import React, {Component} from 'react';
 import './template.css';
+import {
+    ButtonDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+  } from "reactstrap";
+import arrow from "../../../arrow.png";
+
 let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 class Template extends Component{
@@ -10,18 +18,31 @@ class Template extends Component{
         SenderEmail: '',
         Age: 'N/A',
         School: 'N/A',
+        Grade: 'N/A',
         GPA: 'N/A',
         Cert: 'N/A',
         Skills: 'N/A',
         Languages: 'N/A',
         entryPoint: '0',
-        tosChecked: false
+        tosChecked: false,
+        dropdownToggled: false,
+        schoolText: false
     }
     
+    toggleDropdown = () => {
+        if (this.state.dropdownToggled === false) {
+          this.setState({ dropdownToggled: true });
+        } else {
+          this.setState({ dropdownToggled: false });
+        }
+      };
 
+    downloadFile = (school) => {
+        //window.open(`https://volunteeringmiami.com/communityservicepapers/${school}.pdf`, "_blank")
+        window.open(`https://volunteeringmiami.com/images/palmbiz.png`, "_blank")
+    }
     
     render(){
-        
         return(
             <div className="stuff">
                 <h1 className="businessTitle">Contact {this.props.name}</h1>
@@ -35,8 +56,9 @@ class Template extends Component{
                     <input type="text" className="form-control" id="inputName" placeHolder="Last Name, First Name" onChange={(event)=>{this.setState({Name: event.target.value});}}  />
                     <label for="inputAge">Age</label>
                     <input type="text" className="form-control" id="inputAge" placeHolder="Age" onChange={(event)=>{this.setState({Age: event.target.value});}}  />
-                    <label for="inputSchool">School, Grade</label>
-                    <input type="text" className="form-control" id="inputSchool" placeHolder="If applicable, school and grade level" onChange={(event)=>{this.setState({School: event.target.value});}}  />
+                    
+                    <label for="inputSchool">Grade</label>
+                    <input type="text" className="form-control" id="inputSchool" placeHolder="If applicable, school and grade level" onChange={(event)=>{this.setState({Grade: event.target.value});}}  />
                     <label for="inputGPA">GPA</label>
                     <input type="text" className="form-control" id="inputGPA" placeHolder="Grade point average (unweighted, weighted)" onChange={(event)=>{this.setState({GPA: event.target.value});}}  />
                     <label for="inputCert">Certification</label>
@@ -45,6 +67,39 @@ class Template extends Component{
                     <input type="text" className="form-control" id="inputTalent" placeHolder="ex. chess, programming, etc." onChange={(event)=>{this.setState({Skills: event.target.value});}}  />
                     <label for="inputLang">Languages</label>
                     <input type="text" className="form-control" id="inputLang" placeHolder="Any proficiency in foreign language" onChange={(event)=>{this.setState({Languages: event.target.value});}}  />
+                    <label for="inputSchool">School</label>
+                    {!this.state.schoolText ? <ButtonDropdown className="schoolDropdown" id="inputSchool" isOpen={this.state.dropdownToggled} toggle={this.toggleDropdown}>
+                        <DropdownToggle style={{color: 'grey'}} className="schoolDropdownToggle text-left" caret color="light">School</DropdownToggle>
+                        <DropdownMenu  className="schoolDropdownItem" right>
+                            <a href="https://volunteeringmiami.com/communityservicepapers/palmetto.docx" download="palmetto.docx"><DropdownItem onClick={() => {
+                                //this.downloadFile("palmetto");
+                                this.setState({
+                                    School: "Miami Palmetto Senior High School"
+                                })
+                                
+                            }} >
+                                Miami Palmetto Senior High School
+                            </DropdownItem></a>
+                            <a href="https://volunteeringmiami.com/communityservicepapers/coral_reef.docx" download="coralreef.docx"><DropdownItem onClick={() => {
+                                //this.downloadFile("coral reef");
+                                this.setState({
+                                    School: "Coral Reef Senior High School"
+                                })
+                                
+                            }}>
+                                Coral Reef Senior High School
+                            </DropdownItem></a>
+                            <DropdownItem onClick={() => {
+                                this.setState({
+                                    schoolText: true
+                                })
+                            }}>
+                                Other
+                            </DropdownItem>
+                        </DropdownMenu>
+                    </ButtonDropdown> : 
+                    <div><input type="text" className="form-control" id="inputSchool" placeHolder="School" onChange={(event)=>{this.setState({School: event.target.value});}}/> </div>
+                    }
                     <label for="inputMessage">Message</label>
                     <textarea type="text" className="form-control" id="inputMessage" placeHolder="Any additional notes"onChange={(event)=>{this.setState({Body: event.target.value});}}  />
                     
@@ -58,7 +113,7 @@ class Template extends Component{
                 </div>
                 {(this.state.tosChecked && this.state.SenderEmail && this.state.Name) ? 
                 <button className="btn btn-dark" onClick={()=>{
-                    fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/contact?Body=${this.state.Body}&Email=${this.props.email}&Subject=${this.state.Subject + this.state.Name}&CompanyName=${this.props.name}&CompanyId=${this.props.businessId}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&Age=${this.state.Age}&School=${this.state.School}&GPA=${this.state.GPA}&Cert=${this.state.Cert}&Skills=${this.state.Skills}&Languages=${this.state.Languages}&ContactUs=${this.state.entryPoint}`)
+                    fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/contact?Body=${this.state.Body}&Email=${this.props.email}&Subject=${this.state.Subject + this.state.Name}&CompanyName=${this.props.name}&CompanyId=${this.props.businessId}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&Age=${this.state.Age}&Grade=${this.state.Grade}&School=${this.state.School}&GPA=${this.state.GPA}&Cert=${this.state.Cert}&Skills=${this.state.Skills}&Languages=${this.state.Languages}&ContactUs=${this.state.entryPoint}`)
                     .then(res => res.json())
                     .then((result) => {
                         console.log(result);

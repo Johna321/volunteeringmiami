@@ -47,15 +47,7 @@ function App() {
               }
             </div> : 
             <div>
-              {popUpClosed ? <div></div> : 
-              <div className="popupDesktop">
-                <input type="image" className="popupCloseButton" onClick={togglePopUp} src={closeButton} />
-                <div className="popupImageHolder">
-                  <img src={navpopup} className="popupimage"/>
-                </div>
-                
-              </div>
-              }  
+              
             </div>}
             
             <div className="navigationbar" style={{zIndex: 3}}>
