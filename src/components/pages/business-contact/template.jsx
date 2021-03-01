@@ -69,7 +69,7 @@ class Template extends Component{
                     <input type="text" className="form-control" id="inputLang" placeHolder="Any proficiency in foreign language" onChange={(event)=>{this.setState({Languages: event.target.value});}}  />
                     <label for="inputSchool">School</label>
                     {!this.state.schoolText ? <ButtonDropdown className="schoolDropdown" id="inputSchool" isOpen={this.state.dropdownToggled} toggle={this.toggleDropdown}>
-                        <DropdownToggle style={{color: 'grey'}} className="schoolDropdownToggle text-left" caret color="light">School</DropdownToggle>
+                        <DropdownToggle style={{color: 'grey'}} className="schoolDropdownToggle text-left" caret color="light">{this.state.School != 'N/A' ? this.state.School : 'School'}</DropdownToggle>
                         <DropdownMenu  className="schoolDropdownItem" right>
                             <a href="https://volunteeringmiami.com/communityservicepapers/palmetto.docx" download="palmetto.docx"><DropdownItem onClick={() => {
                                 //this.downloadFile("palmetto");

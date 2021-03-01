@@ -43,7 +43,7 @@ class RecruitCompany extends Component{
         Languages: '',
         DressCode: '',
         Specifications: '',
-        nonProfit: false,
+        nonProfit: '',
         expanded: true,
         tosChecked: false,
         dropdownToggled: false
@@ -159,12 +159,12 @@ class RecruitCompany extends Component{
                             <div className="singleInput" style={{zIndex: 5}}>
                                 <label for="inputMessage">Nonprofit Status</label>
                                 <ButtonDropdown className="nonprofitDropdown" id="inputSchool" isOpen={this.state.dropdownToggled} toggle={this.toggleDropdown}>
-                                    <DropdownToggle style={{color: 'grey', zIndex: 5}} className="schoolDropdownToggle text-left" caret color="light">Nonprofit</DropdownToggle>
+                                    <DropdownToggle style={{color: 'grey', zIndex: 5}} className="schoolDropdownToggle text-left" caret color="light">{this.state.nonProfit != '' ? this.state.nonProfit : 'Nonprofit Status'}</DropdownToggle>
                                     <DropdownMenu  className="nonprofitDropdownItem" right>
                                         <DropdownItem style={{zIndex: 5}} onClick={() => {
                                             
                                             this.setState({
-                                                nonProfit: true
+                                                nonProfit: 'Nonprofit'
                                             })
                                             
                                         }} >
@@ -173,7 +173,7 @@ class RecruitCompany extends Component{
                                         <DropdownItem onClick={() => {
                                             
                                             this.setState({
-                                                nonprofit: false
+                                                nonProfit: 'Other'
                                             })
                                         }}>
                                             Other
