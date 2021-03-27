@@ -142,9 +142,10 @@
   z-index: 2;
 }
 
-.okbutton{
-  
+.navbarDropdown{
+  border-color: #343A40 !important;
 }
+
 
 .navbarLogo{
   margin-bottom: 0.15rem;

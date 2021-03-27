@@ -66,6 +66,11 @@
 
 .recruitInput{
     padding: 0.375rem 1.75rem 0.375rem 0.75rem !important; 
+    width: 80% !important;
+    resize: none;
+    overflow: auto;
+    margin: 10px;
+    
 }
 
 .information{
@@ -201,13 +206,13 @@ h1{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 
 .singleInput input{
     margin: 0;
     z-index: 0;
-    width:  80% !important;
 }
 .singleInput label{
     margin: 0;

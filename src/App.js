@@ -16,6 +16,11 @@ import {
   isBrowser,
   isMobile,
 } from "react-device-detect";
+import Amplify, { Auth } from "aws-amplify";
+import {Environment} from './environment.js';
+
+
+Amplify.configure(Environment);
 
 
 function App() {
@@ -29,7 +34,7 @@ function App() {
           <div className="App">
             {isMobile ? 
             <div className="popupcontainer">
-              {popUpClosed ? <div></div> : 
+              {/*{popUpClosed ? <div></div> : 
               <div className="popup">
                 <div className="popupdivider" />
                 <div className="popupbody">
@@ -44,7 +49,7 @@ function App() {
                   </button>
                 </div>
               </div>
-              }
+              }*/}
             </div> : 
             <div>
               
@@ -53,7 +58,7 @@ function App() {
             <div className="navigationbar" style={{zIndex: 3}}>
               <Navbar color='dark' dark expand='md'>
                 <NavbarBrand href="/"><a className="navbar-brand" href="/"><img src={navbarLogo} height="30" className="navbarLogo"/></a></NavbarBrand>
-                <NavbarToggler className="" onClick={toggle}></NavbarToggler>
+                <NavbarToggler className="navbarDropdown" onClick={toggle}></NavbarToggler>
                 <Collapse isOpen={isOpen} navbar>
                   <Nav className="mr-auto" navbar>
                     <NavItem>

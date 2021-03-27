@@ -7,6 +7,7 @@ import {
     DropdownItem,
   } from "reactstrap";
 import arrow from "../../../arrow.png";
+import { Storage } from "aws-amplify";
 
 let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -23,6 +24,7 @@ class Template extends Component{
         Cert: 'N/A',
         Skills: 'N/A',
         Languages: 'N/A',
+        UploadedFile: '',
         entryPoint: '0',
         tosChecked: false,
         dropdownToggled: false,
@@ -36,6 +38,25 @@ class Template extends Component{
           this.setState({ dropdownToggled: false });
         }
       };
+
+    fileHandler = async (event) =>{
+        const file = event.target.files[0];
+        const name = `${new Date().toISOString()}-${file.name}`;
+        this.setState({
+            UploadedFile: name
+        })
+        try {
+            let res = await Storage.put(name, file);
+            console.log(res);
+        } catch (err){
+            console.log(err)
+        }
+        /* code for aws backend attachment link:
+            Here is an additional attachment from the applicant: <br />
+            <a href="http://volunteeringmiami-files.s3-website.us-east-2.amazonaws.com/public/${event.queryStringParameters.UploadedFile}">${event.queryStringParameters.UploadedFile}</a>
+            <br /><br />
+        */
+    }
 
     downloadFile = (school) => {
         //window.open(`https://volunteeringmiami.com/communityservicepapers/${school}.pdf`, "_blank")
@@ -102,6 +123,7 @@ class Template extends Component{
                     }
                     <label for="inputMessage">Message</label>
                     <textarea type="text" className="form-control" id="inputMessage" placeHolder="Any additional notes"onChange={(event)=>{this.setState({Body: event.target.value});}}  />
+                    <input type="file" onChange={this.fileHandler}/>
                     
                 </form>
                 <div style={{marginBottom: 15}} className="tosCheckbox">
@@ -109,11 +131,11 @@ class Template extends Component{
                         <input style={{marginRight: 10}} type="checkbox" id="tos" onChange={() => this.setState({tosChecked: !this.state.tosChecked})}/>
                         I agree to the Volunteering Miami <a style={{color: "white"}} href="https://volunteeringmiami.com/termsofservice/Terms_of_Service.pdf"><b>Terms of Service</b></a>
                     </div>
-                    
                 </div>
+                
                 {(this.state.tosChecked && this.state.SenderEmail && this.state.Name) ? 
                 <button className="btn btn-dark" onClick={()=>{
-                    fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/contact?Body=${this.state.Body}&Email=${this.props.email}&Subject=${this.state.Subject + this.state.Name}&CompanyName=${this.props.name}&CompanyId=${this.props.businessId}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&Age=${this.state.Age}&Grade=${this.state.Grade}&School=${this.state.School}&GPA=${this.state.GPA}&Cert=${this.state.Cert}&Skills=${this.state.Skills}&Languages=${this.state.Languages}&ContactUs=${this.state.entryPoint}`)
+                    fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/contact?Body=${this.state.Body}&UploadedFile=${this.state.UploadedFile}&Email=${this.props.email}&Subject=${this.state.Subject + this.state.Name}&CompanyName=${this.props.name}&CompanyId=${this.props.businessId}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&Age=${this.state.Age}&Grade=${this.state.Grade}&School=${this.state.School}&GPA=${this.state.GPA}&Cert=${this.state.Cert}&Skills=${this.state.Skills}&Languages=${this.state.Languages}&ContactUs=${this.state.entryPoint}`)
                     .then(res => res.json())
                     .then((result) => {
                         console.log(result);

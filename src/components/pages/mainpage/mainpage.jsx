@@ -140,7 +140,7 @@ class MainPage extends Component {
                 <ButtonDropdown
                   isOpen={this.state.dropdownToggled}
                   toggle={this.toggleDropdown}
-                  style={{zIndex: 2}}
+                  style={{zIndex: 2, width: 187.5}}
                 >
                   <DropdownToggle caret color="light">
                     Discover
@@ -575,16 +575,54 @@ class MainPage extends Component {
             <div className="mobileMainpageLogo">
               <div className="mobile-bot-bar" />
               <div className="mobileIntroduction">
-                <img
+                {/*<img
                   src={mobileLogo}
                   alt="background"
                   className="mobileMainpageLogoImage"
-                />
+                />*/}
                 <img
                   src={mobileBanner}
                   alt="background"
                   className="mobileBanner"
                 />
+                <div className="mobile-app-logo">
+                  <img
+                    src={logo}
+                    alt="logo"
+                    style={{ opacity: logoOpacity }}
+                    className="mobileLogoImage"
+                  />
+                  <img
+                    src={logo}
+                    alt="logo"
+                    style={{ opacity: logoOpacity }}
+                    className="mobileLogoImage"
+                  />
+                  <img
+                    src={logo}
+                    alt="logo"
+                    style={{ opacity: logoOpacity }}
+                    className="mobileLogoImage"
+                  />
+                  <img
+                    src={logo}
+                    alt="logo"
+                    style={{ opacity: logoOpacity }}
+                    className="mobileLogoImage"
+                  />
+                  <img
+                    src={logo}
+                    alt="logo"
+                    style={{ opacity: logoOpacity }}
+                    className="mobileLogoImage"
+                  />
+                  <img
+                    src={logo}
+                    alt="logo"
+                    style={{ opacity: logoOpacity }}
+                    className="mobileLogoImage"
+                  />
+                </div>
               </div>
             </div>
             <div>
@@ -599,23 +637,28 @@ class MainPage extends Component {
                       <div>
                         <div
                           className="mobilePanel panel-default"
-                          style={{ height: 325 }}
+                          style={{ height: 440 }}
                         >
-                          <img
-                            //src={obj.location ? `https://maps.googleapis.com/maps/api/streetview?key=AIzaSyBBk4SuCFLjvk_OgUh28LYnBGNx2Y7i-ho&size=300x178&location=${obj.location}` : 'https://volunteeringmiami.com/images/bizimage.jpg'}
-                            src={obj.photo ? obj.photo : bizPic}
-                            className="rounded float-right .img-thumbnail mobileBizpic"
-                            alt="pic of business"
-                          />
-
                           <div className="mobileBusinessNames">
                             <h3>{obj.name}</h3>
+                          </div>
+                          <div className="mobile-panel-body">
+                            {obj.location == ""
+                              ? "N/A"
+                              : obj.location}
                           </div>
                           <div className="mobile-panel-body">
                             {obj.jobDescription == ""
                               ? "N/A"
                               : obj.jobDescription}
                           </div>
+                          <img
+                            //src={obj.location ? `https://maps.googleapis.com/maps/api/streetview?key=AIzaSyBBk4SuCFLjvk_OgUh28LYnBGNx2Y7i-ho&size=300x178&location=${obj.location}` : 'https://volunteeringmiami.com/images/bizimage.jpg'}
+                            src={obj.photo ? obj.photo : bizPic}
+                            className="float-right .img-thumbnail mobileBizpic"
+                            alt="pic of business"
+                          />
+                          <button className="mobileApplyButton"></button>
                         </div>
                       </div>
                     );

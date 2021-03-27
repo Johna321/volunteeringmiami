@@ -15,6 +15,7 @@ import {
     DropdownMenu,
     DropdownItem,
   } from "reactstrap";
+import Textarea from 'react-expanding-textarea';
 
 
 class RecruitCompany extends Component{
@@ -103,7 +104,7 @@ class RecruitCompany extends Component{
                         <form>
                             <div className="singleInput">
                                 <label for="inputEmail">Organization Name</label>
-                                <input type="email" className="form-control recruitInput" id="inputEmail" placeholder="Organization name" onChange={(event)=>{this.setState({CompanyName: event.target.value});}}  />
+                                <Textarea type="email" className="form-control recruitInput" id="inputEmail" placeholder="Organization name" onChange={(event)=>{this.setState({CompanyName: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -114,7 +115,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputEmail">Address</label>
-                                <input type="email" className="form-control recruitInput" id="inputEmail" placeholder="Address" onChange={(event)=>{this.setState({Location: event.target.value});}}  />
+                                <Textarea type="email" className="form-control recruitInput" id="inputEmail" placeholder="Address" onChange={(event)=>{this.setState({Location: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -125,7 +126,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputEmail">Organization Description</label>
-                                <input type="email" className="form-control recruitInput" id="inputEmail" placeholder="Organization description" onChange={(event)=>{this.setState({CompanyDescription: event.target.value});}}  />
+                                <Textarea type="email" className="form-control recruitInput" id="inputEmail" placeholder="Organization description" onChange={(event)=>{this.setState({CompanyDescription: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -136,7 +137,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputEmail">Email</label>
-                                <input type="email" className="form-control recruitInput" id="inputEmail" placeholder="Email" onChange={(event)=>{this.setState({Email: event.target.value});}}  />
+                                <Textarea type="email" className="form-control recruitInput" id="inputEmail" placeholder="Email" onChange={(event)=>{this.setState({Email: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -147,7 +148,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputAge">Website</label>
-                                <input type="text" className="form-control recruitInput" id="inputName" placeHolder="Website" onChange={(event)=>{this.setState({Website: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputName" placeHolder="Website" onChange={(event)=>{this.setState({Website: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -190,7 +191,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputMessage">Volunteers Needed</label>
-                                <input type="text" className="form-control recruitInput" id="inputMessage" placeHolder="Volunteers needed" onChange={(event)=>{this.setState({VolunteersNeeded: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputMessage" placeHolder="Volunteers needed" onChange={(event)=>{this.setState({VolunteersNeeded: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -201,7 +202,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool">Age Range</label>
-                                <input type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Age range" onChange={(event)=>{this.setState({AgeRange: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Age range" onChange={(event)=>{this.setState({AgeRange: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -212,7 +213,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputCert">Dates</label>
-                                <input type="text" className="form-control recruitInput" id="inputCert" placeHolder="Dates" onChange={(event)=>{this.setState({Dates: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputCert" placeHolder="Dates" onChange={(event)=>{this.setState({Dates: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -223,7 +224,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool">Sunday Hours</label>
-                                <input type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Work times on Sundays" onChange={(event)=>{this.setState({Sunday: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Work times on Sundays" onChange={(event)=>{this.setState({Sunday: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -234,7 +235,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool">Monday Hours</label>
-                                <input type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Work times on Mondays" onChange={(event)=>{this.setState({Monday: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Work times on Mondays" onChange={(event)=>{this.setState({Monday: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -245,7 +246,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool">Tuesday Hours</label>
-                                <input type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Work times on Tuesdays" onChange={(event)=>{this.setState({Tuesday: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Work times on Tuesdays" onChange={(event)=>{this.setState({Tuesday: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -256,7 +257,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool" >Wednesday Hours</label>
-                                <input type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Work times on Wednesdays" onChange={(event)=>{this.setState({Wednesday: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Work times on Wednesdays" onChange={(event)=>{this.setState({Wednesday: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -267,7 +268,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool" >Thursday Hours</label>
-                                <input type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Work times on Thursdays" onChange={(event)=>{this.setState({Thursday: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Work times on Thursdays" onChange={(event)=>{this.setState({Thursday: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -278,7 +279,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool">Friday Hours</label>
-                                <input type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Work times on Fridays" onChange={(event)=>{this.setState({Friday: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Work times on Fridays" onChange={(event)=>{this.setState({Friday: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -289,7 +290,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputSchool" >Saturday Hours</label>
-                                <input type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Work time on Saturdays" onChange={(event)=>{this.setState({Saturday: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputSchool" placeHolder="Work time on Saturdays" onChange={(event)=>{this.setState({Saturday: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -300,7 +301,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputTalent">Job Title</label>
-                                <input type="text" className="form-control recruitInput" id="inputTalent" placeHolder="Job title" onChange={(event)=>{this.setState({JobTitle: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputTalent" placeHolder="Job title" onChange={(event)=>{this.setState({JobTitle: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -311,7 +312,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputTalent">Volunteering Space</label>
-                                <input type="text" className="form-control recruitInput" id="inputTalent" placeHolder="Volunteering space" onChange={(event)=>{this.setState({VolunteeringSpace: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputTalent" placeHolder="Volunteering space" onChange={(event)=>{this.setState({VolunteeringSpace: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -322,7 +323,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputTalent">Job Description</label>
-                                <input type="text" className="form-control recruitInput" id="inputTalent" placeHolder="Job description" onChange={(event)=>{this.setState({JobDescription: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputTalent" placeHolder="Job description" onChange={(event)=>{this.setState({JobDescription: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -333,7 +334,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputLang">GPA</label>
-                                <input type="text" className="form-control recruitInput" id="inputLang" placeHolder="GPA" onChange={(event)=>{this.setState({GPA: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputLang" placeHolder="GPA" onChange={(event)=>{this.setState({GPA: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -344,7 +345,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputMessage">Certifications</label>
-                                <input type="text" className="form-control recruitInput" id="inputMessage" placeHolder="Certifications"onChange={(event)=>{this.setState({Certifications: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputMessage" placeHolder="Certifications"onChange={(event)=>{this.setState({Certifications: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -355,7 +356,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputMessage">Skills</label>
-                                <input type="text" className="form-control recruitInput" id="inputMessage" placeHolder="Skills"onChange={(event)=>{this.setState({Skills: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputMessage" placeHolder="Skills"onChange={(event)=>{this.setState({Skills: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -366,7 +367,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputMessage">Languages</label>
-                                <input type="text" className="form-control recruitInput" id="inputMessage" placeHolder="Languages"onChange={(event)=>{this.setState({Languages: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputMessage" placeHolder="Languages"onChange={(event)=>{this.setState({Languages: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -377,7 +378,7 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputMessage">Dress Code</label>
-                                <input type="text" className="form-control recruitInput" id="inputMessage" placeHolder="Dress code"onChange={(event)=>{this.setState({DressCode: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputMessage" placeHolder="Dress code"onChange={(event)=>{this.setState({DressCode: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
@@ -388,13 +389,13 @@ class RecruitCompany extends Component{
                             </div>
                             <div className="singleInput">
                                 <label for="inputMessage" style={{marginTop: -13}}>Any Further Specifications</label>
-                                <input type="text" className="form-control recruitInput" id="inputMessage" placeHolder="Any additional notes"onChange={(event)=>{this.setState({Specifications: event.target.value});}}  />
+                                <Textarea type="text" className="form-control recruitInput" id="inputMessage" placeHolder="Any additional notes"onChange={(event)=>{this.setState({Specifications: event.target.value});}}  />
                                 <div className="information">ⓘ
                                     <div className="infoText">
                                         <span>
                                             Here, list any requirements missing in the categories above. If not applicable, please input <u>N/A</u>.
                                         </span>
-                                    </div>
+                                    </div>  
                                 </div>
                             </div>
                             
@@ -408,8 +409,44 @@ class RecruitCompany extends Component{
                         </form>
                         {this.state.tosChecked && this.state.CompanyName != '' && this.state.Email != '' ? 
                         <button className="btn btn-dark" style={{marginTop: 20}} onClick={()=>{
-                            fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/recruit?CompanyName=${this.state.CompanyName}&Location=${this.state.Location}&CompanyDescription=${this.state.CompanyDescription}&Email=${this.state.Email}&Nonprofit=${this.state.nonProfit}&VolunteersNeeded=${this.state.VolunteersNeeded}&Website=${this.state.Website}&AgeRange=${this.state.AgeRange}&Dates=${this.state.Dates}&Sunday=${this.state.Sunday}&Monday=${this.state.Monday}&Tuesday=${this.state.Tuesday}&Wednesday=${this.state.Wednesday}&Thursday=${this.state.Thursday}&Friday=${this.state.Friday}&Saturday=${this.state.Saturday}&JobTitle=${this.state.JobTitle}&VolunteeringSpace=${this.state.VolunteeringSpace}&JobDescription=${this.state.JobDescription}&GPA=${this.state.GPA}&Certifications=${this.state.Certifications}&Skills=${this.state.Skills}&Languages=${this.state.Languages}&DressCode=${this.state.DressCode}&Specifications=${this.state.Specifications}`)
+                            /*fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/recruit?CompanyName=${this.state.CompanyName}&Location=${this.state.Location}&CompanyDescription=${this.state.CompanyDescription}&Email=${this.state.Email}&Nonprofit=${this.state.nonProfit}&VolunteersNeeded=${this.state.VolunteersNeeded}&Website=${this.state.Website}&AgeRange=${this.state.AgeRange}&Dates=${this.state.Dates}&Sunday=${this.state.Sunday}&Monday=${this.state.Monday}&Tuesday=${this.state.Tuesday}&Wednesday=${this.state.Wednesday}&Thursday=${this.state.Thursday}&Friday=${this.state.Friday}&Saturday=${this.state.Saturday}&JobTitle=${this.state.JobTitle}&VolunteeringSpace=${this.state.VolunteeringSpace}&JobDescription=${this.state.JobDescription}&GPA=${this.state.GPA}&Certifications=${this.state.Certifications}&Skills=${this.state.Skills}&Languages=${this.state.Languages}&DressCode=${this.state.DressCode}&Specifications=${this.state.Specifications}`)
                             .then(res => res.json())
+                            .then((result) => {
+                                console.log(result);
+                                alert('Application sent successfully');
+                                window.location.href='/';
+                            },(error) => {
+                                console.log(error);
+                                alert('Error: '+error);
+                                window.location.reload();
+                            })*/
+                            fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/recruit`, {method: 'POST', body: JSON.stringify({
+                                CompanyName: this.state.CompanyName,
+                                Location: this.state.Location,
+                                CompanyDescription: this.state.CompanyDescription,
+                                Email: this.state.Email,
+                                Nonprofit: this.state.nonProfit,
+                                VolunteersNeeded: this.state.VolunteersNeeded,
+                                Website: this.state.Website,
+                                AgeRange: this.state.AgeRange,
+                                Dates: this.state.Dates,
+                                Sunday: this.state.Sunday,
+                                Monday: this.state.Monday,
+                                Tuesday: this.state.Tuesday,
+                                Wednesday: this.state.Wednesday,
+                                Thursday: this.state.Thursday,
+                                Friday: this.state.Friday,
+                                Saturday: this.state.Saturday,
+                                JobTitle: this.state.JobTitle,
+                                VolunteeringSpace: this.state.VolunteeringSpace,
+                                JobDescription: this.state.JobDescription,
+                                GPA: this.state.GPA,
+                                Certifications: this.state.Certifications,
+                                Skills: this.state.Skills,
+                                Languages: this.state.Languages,
+                                DressCode: this.state.DressCode,
+                                Specifications: this.state.Specifications
+                            })}).then(res => res.json())
                             .then((result) => {
                                 console.log(result);
                                 alert('Application sent successfully');
