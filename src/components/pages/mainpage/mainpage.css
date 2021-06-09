@@ -57,7 +57,8 @@
 }
 
 .mobileLogoImage{
-    padding: 15px;
+    margin-bottom: 10%;
+    width: 95%;
 }
 
 .top{
@@ -364,6 +365,7 @@
 .mobileMainpageLogoImage{
     width: 85%;
     z-index: 1;
+    
 }
 
 .bot-bar{
@@ -400,6 +402,7 @@
     overflow: hidden;
     position: relative;
     margin-bottom: 30px;
+    background-color: #343A40;
 }
 
 .show{

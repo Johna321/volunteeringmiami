@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './recruitcompany.css';
-import whoCanRecruitMobile from './infographicnewrevised.png';
+import whoCanRecruitMobile from './infographicnewnew.png';
 import whoCanRecruit from './infographicnewnew.png';
 import background from './background.png';
 import businessesJson from '../../../businesses';

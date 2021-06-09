@@ -12,9 +12,11 @@
     "react-device-detect": "^1.11.14",
     "react-dom": "^16.8.6",
     "react-expanding-textarea": "^2.3.1",
+    "react-file-drop": "^3.1.2",
     "react-infinite-scroll-component": "^5.0.5",
-    "react-router-dom": "^5.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.0.1",
+    "react-view-pager": "^0.6.0",
     "reactstrap": "^8.2.0"
   },
   "scripts": {

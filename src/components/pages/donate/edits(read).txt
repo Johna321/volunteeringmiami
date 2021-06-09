@@ -1,0 +1,19 @@
+IN APP.JS
+
+added line 8:
+	  import Donate from './components/pages/donate/donate.jsx'; 
+added line 80-82:
+	<NavItem>
+                      <NavLink style={{color: 'white'}} href="/donate">Donate</NavLink>
+                  </NavItem>
+added line 94: 
+	<Route path="/donate" exact component={Donate} />
+
+IN COMPONENTS>PAGES
+
+added "donate" folder in download (should have jsx + css + pngs needed for the page)
+
+====================
+If anything is fucky and doesnt work bc of some dumb shit i did lmk ill compare code
+
+

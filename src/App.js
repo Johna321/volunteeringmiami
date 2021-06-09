@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import MainPage from './components/pages/mainpage/mainpage.jsx';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link, useLocation } from 'react-router-dom';
 import About from './components/pages/about/about.jsx';
 import ContactUs from './components/pages/contact-us/contact-us.jsx';
 import bizContactUs from './components/pages/business-contact/bizContactHub';
@@ -18,9 +18,12 @@ import {
 } from "react-device-detect";
 import Amplify, { Auth } from "aws-amplify";
 import {Environment} from './environment.js';
+import Donate from './components/pages/donate/donate.jsx';
+
 
 
 Amplify.configure(Environment);
+
 
 
 function App() {
@@ -28,6 +31,7 @@ function App() {
   const toggle = () => setIsOpen(!isOpen);
   const [popUpClosed, setPopUpOpen] = useState(false);
   const togglePopUp = () => setPopUpOpen(!popUpClosed);
+  
   
   return (
         <Router>
@@ -55,38 +59,45 @@ function App() {
               
             </div>}
             
-            <div className="navigationbar" style={{zIndex: 3}}>
+            <div className={isMobile && window.location.pathname == '/' ? "navigationbarwhite" : "navigationbar"} style={{zIndex: 3}}>
               <Navbar color='dark' dark expand='md'>
-                <NavbarBrand href="/"><a className="navbar-brand" href="/"><img src={navbarLogo} height="30" className="navbarLogo"/></a></NavbarBrand>
+               <NavbarBrand><Link to={{
+                  pathname: '/'
+                }}><a className="navbar-brand" ><img src={navbarLogo} height="30" className="navbarLogo"/></a></Link></NavbarBrand>
                 <NavbarToggler className="navbarDropdown" onClick={toggle}></NavbarToggler>
                 <Collapse isOpen={isOpen} navbar>
                   <Nav className="mr-auto" navbar>
                     <NavItem>
-                      <NavLink style={{color: 'white'}} href="/">Home</NavLink>
+                      <Link to='/' style={{textDecorationLine: 'none'}}><NavLink style={{color: 'white'}}>Home</NavLink></Link>
                     </NavItem>
-                    <NavItem>
+                    {!isMobile ? <NavItem>
                       <NavLink style={{color: 'white'}} href="/#bot-bar">Volunteer Now</NavLink>
+                    </NavItem> : ''}
+                    <NavItem>
+                      <Link to='/recruit' style={{textDecorationLine: 'none'}}><NavLink style={{color: 'white'}} href="/recruit">Recruit Volunteers</NavLink></Link>
                     </NavItem>
                     <NavItem>
-                      <NavLink style={{color: 'white'}} href="/recruit">Recruit Volunteers</NavLink>
+                      <Link to='/about' style={{textDecorationLine: 'none'}}><NavLink style={{color: 'white'}} href="/about">About</NavLink></Link>
                     </NavItem>
                     <NavItem>
-                      <NavLink style={{color: 'white'}} href="/about">About</NavLink>
+                      <Link to='/donate' style={{textDecorationLine: 'none'}}><NavLink style={{color: 'white'}} href="/donate">Donate</NavLink></Link>
                     </NavItem>
                     <NavItem>
-                      <NavLink style={{color: 'white'}} href="/contact-us">Contact</NavLink>
+                      <Link to='/contact-us' style={{textDecorationLine: 'none'}}><NavLink style={{color: 'white'}} href="/contact-us">Contact</NavLink></Link>
                     </NavItem>
                   </Nav>
                 </Collapse>
               </Navbar>
             </div>
-
+            
             <Switch>
               <Route path="/" exact component={MainPage} />
               <Route path="/about" exact component={About} />
               <Route path="/contact-us" exact component={ContactUs}/>
               <Route path="/business" component={bizContactUs} />
               <Route path="/recruit" exact component={RecruitCompany} />
+              <Route path="/donate" exact component={Donate} />
+              
             </Switch>
 
             <div className="footerBottom">

@@ -4,7 +4,7 @@ import logo from "../../../volmiamisvg2.svg";
 import navbarLogo from "../../../vmlogonav2.png";
 import arrow from "../../../arrow.png";
 import banner from "./banner.jpg";
-import mobileLogo from "./bannerandlogo2.png";
+import mobileLogo from "./mobilebanner.png";
 import mobileBanner from "./banner.jpg";
 import { Link } from "react-router-dom";
 import business from './icons/business.png';
@@ -43,7 +43,7 @@ class MainPage extends Component {
     filterBy: "New",
     businesses: [],
     offset: 0,
-    limit: 5,
+    limit: isMobile ? 30 : 5,
     orderBy: "id",
     ascOrDesc: "ASC",
     whatIndustry: "",
@@ -79,6 +79,20 @@ class MainPage extends Component {
     window.onscroll = () => {
       this.setState({ scrollHeight: window.scrollY });
     };
+    /*if (window.location.search) {
+      const searchParams = new URLSearchParams(window.location.search);
+      if (searchParams.has('ItemId')){
+        let ItemId = searchParams.get('ItemId');
+        setTimeout(() => {
+          if (this.state.businesses.filter(obj => obj.id === ItemId).length > 0){
+            window.document.querySelector('#' + ItemId).scrollIntoView({ 
+              behavior: 'smooth' 
+            });
+          }
+        }, 1000);
+      }
+    }*/
+
   };
 
   loadMore = async () => {
@@ -113,7 +127,7 @@ class MainPage extends Component {
   }
 
   render() {
-    const logoOpacity = Math.min(100 / this.state.scrollHeight, 1);
+    const logoOpacity = this.state.scrollHeight < 0 ? 1 : Math.min(100 / this.state.scrollHeight, 1);
     var show = this.state.toggleDropdown === "true" ? "show" : "noshow";
 
     return (
@@ -327,7 +341,7 @@ class MainPage extends Component {
                   <div className="panel-group">
                     {this.state.businesses.map((obj) => {
                       return (
-                        <div>
+                        <div id={obj.id}>
                           
                           <div
                             //className={this.state.whatIndustry ? obj.industry.includes('Health') ? "panel panel-default health" : obj.industry.includes('Business') ? "panel panel-default business" : "panel panel-default" }
@@ -551,7 +565,6 @@ class MainPage extends Component {
                                 <Link to={`business?ItemId=${obj.id}`}>
                                   <button
                                     type="button"
-                                    
                                     className="btn btn-secondary apply-button"
                                   >
                                     Apply
@@ -580,44 +593,15 @@ class MainPage extends Component {
                   alt="background"
                   className="mobileMainpageLogoImage"
                 />*/}
-                <img
+                {/*<img
                   src={mobileBanner}
                   alt="background"
                   className="mobileBanner"
-                />
+                />*/}
+                <div className="mobileMainpageLogoImage" />
                 <div className="mobile-app-logo">
                   <img
-                    src={logo}
-                    alt="logo"
-                    style={{ opacity: logoOpacity }}
-                    className="mobileLogoImage"
-                  />
-                  <img
-                    src={logo}
-                    alt="logo"
-                    style={{ opacity: logoOpacity }}
-                    className="mobileLogoImage"
-                  />
-                  <img
-                    src={logo}
-                    alt="logo"
-                    style={{ opacity: logoOpacity }}
-                    className="mobileLogoImage"
-                  />
-                  <img
-                    src={logo}
-                    alt="logo"
-                    style={{ opacity: logoOpacity }}
-                    className="mobileLogoImage"
-                  />
-                  <img
-                    src={logo}
-                    alt="logo"
-                    style={{ opacity: logoOpacity }}
-                    className="mobileLogoImage"
-                  />
-                  <img
-                    src={logo}
+                    src={mobileLogo}
                     alt="logo"
                     style={{ opacity: logoOpacity }}
                     className="mobileLogoImage"
@@ -658,7 +642,7 @@ class MainPage extends Component {
                             className="float-right .img-thumbnail mobileBizpic"
                             alt="pic of business"
                           />
-                          <button className="mobileApplyButton"></button>
+                          <Link className="mobileApplyButton" to={`business?ItemId=${obj.id}`} />
                         </div>
                       </div>
                     );
