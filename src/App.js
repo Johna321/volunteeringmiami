@@ -102,7 +102,7 @@ function App() {
 
             <div className="footerBottom">
                 <div className="footerContact">
-                  Copyright © 2020 Alexandr Kim, John Aitken
+                  Copyright © 2021 Alexandr Kim, John Aitken
                 </div>
           </div>
           </div>

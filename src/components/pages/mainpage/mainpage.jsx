@@ -642,7 +642,7 @@ class MainPage extends Component {
                             className="float-right .img-thumbnail mobileBizpic"
                             alt="pic of business"
                           />
-                          <Link className="mobileApplyButton" to={`business?ItemId=${obj.id}`} />
+                          <Link className="mobileApplyButton" to={`business?ItemId=${obj.id}`}></Link>
                         </div>
                       </div>
                     );
