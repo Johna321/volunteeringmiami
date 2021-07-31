@@ -136,6 +136,8 @@ class MainPage extends Component {
           <div className="parent">
             <div className="logo">
               <div className="bot-bar" />
+              {/* <img style={{height: '75%', margin: '125px auto 0 auto'}} src={mobileLogo} alt="our mainpage logo" /> */}
+              
               <img src={banner} alt="background" className="banner" />
               <img
                 src={isMobile ? navbarLogo : logo}

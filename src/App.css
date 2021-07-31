@@ -146,7 +146,7 @@
   position: fixed;
   width: 100%;
   z-index: 2;
-  border-bottom: solid 1px white;
+  border-bottom: solid 1px #777;
 }
 
 .navbarDropdown{
