@@ -420,7 +420,7 @@ class RecruitCompany extends Component{
                                 alert('Error: '+error);
                                 window.location.reload();
                             })*/
-                            fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/recruit`, {method: 'POST', body: JSON.stringify({
+                            fetch(`https://8fhyajns7c.execute-api.us-east-2.amazonaws.com/prod/recruit`, {method: 'POST', body: JSON.stringify({
                                 CompanyName: this.state.CompanyName,
                                 Location: this.state.Location,
                                 CompanyDescription: this.state.CompanyDescription,

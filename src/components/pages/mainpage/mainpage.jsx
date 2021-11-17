@@ -99,7 +99,7 @@ class MainPage extends Component {
     if (!this.state.loading) {
       this.setState({ loading: true });
       let jsonData = await fetch(
-        `https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/businesses?offset=${this.state.offset}&limit=${this.state.limit}&orderBy=${this.state.orderBy}&ascOrDesc=${this.state.ascOrDesc}&whatIndustry=${this.state.whatIndustry}&search=${this.state.search}`,
+        `https://8fhyajns7c.execute-api.us-east-2.amazonaws.com/prod/businesses?offset=${this.state.offset}&limit=${this.state.limit}&orderBy=${this.state.orderBy}&ascOrDesc=${this.state.ascOrDesc}&whatIndustry=${this.state.whatIndustry}&search=${this.state.search}`,
         { method: "GET" }
       );
       jsonData = await jsonData.json();

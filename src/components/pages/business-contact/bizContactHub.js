@@ -9,7 +9,7 @@ class bizContactHub extends Component{
 
     componentDidMount = async() => {
         let jsonData = await fetch(
-            `https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/businesses?itemId=${new URLSearchParams(window.location.search).get('ItemId')}&limit=1&offset=0&orderBy=id&ascOrDesc=ASC`,
+            `https://8fhyajns7c.execute-api.us-east-2.amazonaws.com/prod/businesses?itemId=${new URLSearchParams(window.location.search).get('ItemId')}&limit=1&offset=0&orderBy=id&ascOrDesc=ASC`,
             { method: "GET" }
         );
         jsonData = await jsonData.json()

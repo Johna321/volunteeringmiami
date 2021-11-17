@@ -38,7 +38,7 @@ class ContactUs extends Component{
                     </div>
 
                     <button className="btn btn-dark sendButton"   onClick={()=>{
-                        fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/contact?Body=${this.state.Body}&Email=${this.state.ourEmail}&Subject=${this.state.Subject}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&ContactUs=${this.state.entryPoint}`)
+                        fetch(`https://8fhyajns7c.execute-api.us-east-2.amazonaws.com/prod/contact?Body=${this.state.Body}&Email=${this.state.ourEmail}&Subject=${this.state.Subject}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&ContactUs=${this.state.entryPoint}`)
                             .then(res => res.json())
                             .then((result) => {
                                 console.log(result);
@@ -71,7 +71,7 @@ class ContactUs extends Component{
                     
                 </div>
                 <button className="btn btn-dark"   onClick={()=>{
-                        fetch(`https://288jofwgy1.execute-api.us-east-2.amazonaws.com/prod/contact?Body=${this.state.Body}&Email=${this.state.ourEmail}&Subject=${this.state.Subject}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&ContactUs=${this.state.entryPoint}`)
+                        fetch(`https://8fhyajns7c.execute-api.us-east-2.amazonaws.com/prod/contact?Body=${this.state.Body}&Email=${this.state.ourEmail}&Subject=${this.state.Subject}&Name=${this.state.Name}&SenderEmail=${this.state.SenderEmail}&ContactUs=${this.state.entryPoint}`)
                             .then(res => res.json())
                             .then((result) => {
                                 console.log(result);

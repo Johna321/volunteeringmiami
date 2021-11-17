@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Switch, Link, useLocation } from 'react
 import About from './components/pages/about/about.jsx';
 import ContactUs from './components/pages/contact-us/contact-us.jsx';
 import bizContactUs from './components/pages/business-contact/bizContactHub';
-import Resources from './components/pages/resources/Resources.jsx';
 import navbarLogo from './navbarlogo.ico';
 import navpopup from './newnavpopup.png';
 import closeButton from './newclose.png';
@@ -86,9 +85,6 @@ function App() {
                     <NavItem>
                       <Link to='/contact-us' style={{textDecorationLine: 'none'}}><NavLink style={{color: 'white'}} href="/contact-us">Contact</NavLink></Link>
                     </NavItem>
-                    <NavItem>
-                      <Link to='/resources' style={{textDecorationLine: 'none'}}><NavLink style={{color: 'white'}} href='/resources'>Resources</NavLink></Link>
-                    </NavItem>
                   </Nav>
                 </Collapse>
               </Navbar>
@@ -101,8 +97,6 @@ function App() {
               <Route path="/business" component={bizContactUs} />
               <Route path="/recruit" exact component={RecruitCompany} />
               <Route path="/donate" exact component={Donate} />
-              <Route path="/resources" exact component={Resources} />
-              
             </Switch>
 
             <div className="footerBottom">
